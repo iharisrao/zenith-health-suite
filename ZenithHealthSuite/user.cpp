@@ -1,7 +1,7 @@
 #include "user.h"
 
 //parameterized constructor
-user::user(Qstring usr, Qstring pass, Qstring n, Qstring g, int a, Qstring e, Qstring c, double w, double h, Qstring med) {
+user::user(QString usr, QString pass, QString n, QString g, int a, QString e, QString c, double w, double h, QString																																																																				 med) {
 	username = usr;
 	password = pass;
 	name = n;
@@ -14,25 +14,25 @@ user::user(Qstring usr, Qstring pass, Qstring n, Qstring g, int a, Qstring e, Qs
 	medicalHistory = med;
 }
 // calling getter
-Qstring user::getUsername() const {
+QString user::getUsername() const {
 		return username;
 }
-Qstring user::getPassword() const {
+QString user::getPassword() const {
 		return password;
 }
-Qstring user::getName() const {
+QString user::getName() const {
 		return name;
 }
-Qstring user::getGender() const {
+QString user::getGender() const {
 	return gender;
 }
 int user::getAge() const {
 	return age;
 }
-Qstring user::getEmail() const {
+QString user::getEmail() const {
 	return email;
 }
-Qstring user::getContactNumber() const {
+QString user::getContactNumber() const {
 	return contactNumber;
 }
 double user::getWeight() const {
@@ -41,7 +41,7 @@ double user::getWeight() const {
 double user::getHeight() const {
 	return height;
 }
-Qstring user::getMedicalHistory() const {
+QString user::getMedicalHistory() const {
 	return medicalHistory;
 }
 

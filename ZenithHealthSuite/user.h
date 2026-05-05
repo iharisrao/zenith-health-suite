@@ -7,30 +7,29 @@
 class user {
 private:
 	//All data is private so it cannot be accidentally modified or deleted by other parts of the application.
-	Qstring username;
-	Qstring password;
-	Qstring name;
-	Qstring gender;
+	QString username;
+	QString password;
+	QString name;
+	QString	gender;
 	int age;
-	Qstring email;
-	Qstring contactNumber;
+	QString email;
+	QString contactNumber;
 	double weight;
 	double height;
-	Qtring medicalHistory;
-
+	QString medicalHistory;
 public:
-	user(Qstring usr, Qstring pass, Qstring n, Qstring g, int a, Qstring e, Qstring c, double w, double h, Qstring med);
+	user(QString usr, QString pass, QString n, QString g, int a, QString e, QString c, double w, double h, QString med);
 	
-	Qstring getUsername() const;
-	Qstring getPassword() const;
-	Qstring getName() const;
-	Qstring getGender() const;
+	QString getUsername() const;
+	QString getPassword() const;
+	QString getName() const;
+	QString getGender() const;
 	int getAge() const;
-	Qstring getEmail() const;
-	Qstring getContactNumber() const;
+	QString getEmail() const;
+	QString getContactNumber() const;
 	double getWeight() const;
 	double getHeight() const;
-	Qstring getMedicalHistory() const;
+	QString getMedicalHistory() const;
 
 	double calculateTargetBPM() const;
 };
