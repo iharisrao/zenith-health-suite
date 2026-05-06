@@ -96,6 +96,7 @@
     <QtUic Include="RegistrationScreen.ui" />
     <QtUic Include="ZenithHealthSuite.ui" />
     <QtMoc Include="ZenithHealthSuite.h" />
+    <ClCompile Include="DatabaseManager.cpp" />
     <ClCompile Include="RegistrationScreen.cpp" />
     <ClCompile Include="user.cpp" />
     <ClCompile Include="ZenithHealthSuite.cpp" />
@@ -103,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="RegistrationScreen.h" />
+    <ClInclude Include="DatabaseManager.h" />
     <ClInclude Include="user.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
