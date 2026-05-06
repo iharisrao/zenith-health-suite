@@ -1,10 +1,13 @@
-#include "ZenithHealthSuite.h"
+#include "RegistrationScreen.h" // 1. Bring in our Registration Blueprint
 #include <QtWidgets/QApplication>
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
-    QApplication app(argc, argv);
-    ZenithHealthSuite window;
-    window.show();
-    return app.exec();
+    QApplication a(argc, argv);
+
+    // 2. Tell the app to build and show our specific screen!
+    RegistrationScreen w;
+    w.show();
+
+    return a.exec();
 }

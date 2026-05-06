@@ -3,8 +3,8 @@
 #include <QMessageBox>              // tool which is used to make pop up alerts and show on screen
 
 RegistrationScreen::RegistrationScreen(QWidget *parent):
-QWidget(parent),
-ui(new Ui::RegistrationScreen)    //same remote control pointer used in .h file to control the ui elements on the registration screen
+QMainWindow(parent),
+ui(new Ui::RegistrationScreenClass)    //same remote control pointer used in .h file to control the ui elements on the registration screen
 {
 	ui->setupUi(this);            // magic line which creates the physical lines and boxes on computer screen from your drag and drop design 
 }
