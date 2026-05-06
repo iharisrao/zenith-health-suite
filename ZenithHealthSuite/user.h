@@ -19,7 +19,7 @@ private:
 	QString medicalHistory;
 public:
 	user(QString usr, QString pass, QString n, QString g, int a, QString e, QString c, double w, double h, QString med);
-	
+
 	QString getUsername() const;
 	QString getPassword() const;
 	QString getName() const;
