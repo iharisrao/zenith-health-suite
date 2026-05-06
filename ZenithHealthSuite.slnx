@@ -2,5 +2,5 @@
   <Configurations>
     <Platform Name="x64" />
   </Configurations>
-  <Project Path="ZenithHealthSuite/ZenithHealthSuite.vcxproj" />
+  <Project Path="ZenithHealthSuite/ZenithHealthSuite.vcxproj" Id="9aa079f2-76dc-4378-ba5f-c05fdabff3d5" />
 </Solution>

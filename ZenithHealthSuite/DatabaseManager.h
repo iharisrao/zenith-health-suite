@@ -1,15 +1,17 @@
 #ifndef DATABASEMANAGER_H
 #define DATABASEMANAGER_H
 #include <QString>
-#include <QSqlDatabase>
+#include <QtSql/QSqlDatabase>
+#include<QtSql/QSqlQuery>
+#include<QtSql/QSqlError>
 
 class {
 public:
-	DATABASEMANAGER()
+	DatabaseManager();
 		bool openConnection();
 	void closeConnection();
 	bool saveUserRegiatration(
-		const QString& fullname, const QString& email, const QString& Email, const QString& contact, int age, const QString& gender, double weight, double height,
+		const QString& username, const QString& Email, const QString& contact, int age, const QString& gender, double weight, double height,
 		const QString& medicalHistory, bool consent
 	);
 private:

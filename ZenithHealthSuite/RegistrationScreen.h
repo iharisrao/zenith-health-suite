@@ -10,6 +10,8 @@ class RegistrationScreen : public QMainWindow
 public:
 	RegistrationScreen(QWidget *parent = nullptr);
 	~RegistrationScreen();
+private slots:
+	void on_completeRegistration_Clicked();	
 
 private:
 	Ui::RegistrationScreenClass ui;
