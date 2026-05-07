@@ -20,21 +20,21 @@ RegistrationScreen::~RegistrationScreen()
 void RegistrationScreen::on_completeRegistrationButton_clicked()
 {
     // 1. Extract data - names must match Object Inspector
-    QString PatientName = ui->namelinedit->text();
-    QString PatientEmail = ui->emailineEdit->text(); // Corrected from emailineEdit
-    QString PatientPhone = ui->phoneLineEdit->text();
+    QString UserName = ui->namelinedit->text();
+    QString UserEmail = ui->emailineEdit->text(); // Corrected from emailineEdit
+    QString UserPhone = ui->phoneLineEdit->text();
 
     // Use value() for spinboxes or text().toInt() for line edits
-    int PatientAge = ui->ageLineEdit->text().toInt();
-    double PatientWeight = ui->weightLineEdit->text().toDouble();
-    double PatientHeight = ui->heightLineEdit->text().toDouble();
+    int UserAge = ui->ageLineEdit->text().toInt();
+    double UserWeight = ui->weightLineEdit->text().toDouble();
+    double UserHeight = ui->heightLineEdit->text().toDouble();
 
-    QString PatientGender = ui->genderComboBox->currentText(); // Fixed "B" in ComboBox
-    QString PatientMedicalHistory = ui->medicalhistrotyLineEdit->text(); // Matches your UI typo
+    QString UserGender = ui->genderComboBox->currentText(); // Fixed "B" in ComboBox
+    QString UserMedicalHistory = ui->medicalhistrotyLineEdit->text(); // Matches your UI typo
     bool hasconsent = ui->consentCheckBox->isChecked();
 
     // --- Validation Section ---
-    if (PatientName.isEmpty() || PatientEmail.isEmpty() || PatientPhone.isEmpty()) {
+    if (UserName.isEmpty() || UserEmail.isEmpty() || UserPhone.isEmpty()) {
         QMessageBox::warning(this, "Missing Information", "Please fill in all required fields.");
         return;
     }
@@ -54,7 +54,7 @@ void RegistrationScreen::on_completeRegistrationButton_clicked()
     */
 	bool issaved = true; // Placeholder for testing without database
     if (issaved) {
-        QMessageBox::information(this, "Success", "Data saved for " + PatientName);
+        QMessageBox::information(this, "Success", "Data saved for " + UserName);
         this->hide();
     }
     else {
