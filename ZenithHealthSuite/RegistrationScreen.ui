@@ -14,29 +14,136 @@
    <string>RegistrationScreen</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QLabel {
-    color: #4A4A4A;    /* modern dark gray text color */
-    font-size: 14px;
-    font-family: 'Open Sans', 'Segoe UI', Arial, sans-serif; 
+   <string notr="true">#centralWidget {
+    background-color: #E9ECEF; 
+}
+QLabel#mainTitle {
+    color: #4A4A4A;     
+    font-size: 20px;    
+    font-weight: bold;
+    background-color: transparent; 
 }
 
-QLabel#label, QLabel#label_2, QLabel#label_3, QLabel#label_4,QLabel#label_5,QLabel#label_6,QLabel#label_7,QLabel#label_8 {
-    color: #004696; /* Sapphire blue for section titles */
-    font-size: 16px;
+QLabel#subTitle {
+    color: #777777;     
+    font-size: 14px;
+    font-weight: normal;
+    background-color: transparent;
+}
+QFrame#card1, QFrame#card2, QFrame#card3 {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px; 
+}
+
+QLabel {
+    color: #888888; 
+    font-size: 11px;
     font-weight: bold;
-    text-transform: uppercase; 
-    padding-bottom: 5px;      /* Adds space under the header */
+    background-color: transparent;
+}
+
+QLabel#sectionNum1, QLabel#sectionNum2, QLabel#sectionNum3 {
+    color: #004696;
+}
+
+
+QLabel#sectionTitle1, QLabel#sectionTitle2, QLabel#sectionTitle3 {
+    color: #111111;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: none; /* Keeps it normal case, not ALL CAPS */
+}
+
+
+QLineEdit, QComboBox, QDateEdit {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #CCCCCC; 
+    padding-bottom: 8px;
+    font-size: 14px;
+    color: #333333;
+}
+
+QLineEdit:focus, QComboBox:focus, QDateEdit:focus {
+    border-bottom: 2px solid #004696;
+}
+
+QDateEdit::drop-down {
+    border: none;
+}
+QComboBox QAbstractItemView {
+    background-color: #FFFFFF;
+    color: #333333;            
+    border: 1px solid #CCCCCC;
+    selection-background-color: #004696; 
+    selection-color: #FFFFFF;  
+}
+
+QTextEdit {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    color: #333333;
+    font-size: 14px;
+}
+QPlainTextEdit {
+    background-color: transparent;
+    border: 1px solid #CCCCCC; 
+    border-radius: 4px;        
+    padding: 10px;             
+    color: #333333;           
+    font-size: 15px;         
+}
+
+QPlainTextEdit:focus {
+    border: 2px solid #004696; 
+    background-color: #F8FBFF; 
+}
+
+QCheckBox {
+    color: #666666;      
+    font-size: 13px;   
+    spacing: 10px;     
+    background-color: transparent;
+}
+QLabel#consentText {
+    color: #666666;
+    font-size: 13px;
+    font-weight: normal;
+    text-transform: none;
+}
+
+QPushButton#completeRegistrationButton {
+    background-color: #004696;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px; 
+    padding: 12px;      
+}
+
+
+QPushButton#completeRegistrationButton:hover {
+    background-color: #002D62; 
+    cursor: pointer;
 }</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QFrame" name="frame">
+   <widget class="QFrame" name="card1">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>140</y>
+      <x>30</x>
+      <y>130</y>
       <width>301</width>
-      <height>411</height>
+      <height>461</height>
      </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LayoutDirection::LeftToRight</enum>
     </property>
     <property name="frameShape">
      <enum>QFrame::Shape::StyledPanel</enum>
@@ -47,77 +154,104 @@ QLabel#label, QLabel#label_2, QLabel#label_3, QLabel#label_4,QLabel#label_5,QLab
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>90</y>
+       <x>30</x>
+       <y>110</y>
        <width>111</width>
        <height>21</height>
       </rect>
      </property>
+     <property name="layoutDirection">
+      <enum>Qt::LayoutDirection::LeftToRight</enum>
+     </property>
      <property name="text">
-      <string>Full Name</string>
+      <string>FULL NAME</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="namelinedit">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>120</y>
+       <x>30</x>
+       <y>140</y>
        <width>221</width>
        <height>24</height>
       </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LayoutDirection::LeftToRight</enum>
+     </property>
+     <property name="placeholderText">
+      <string>Buddy</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_2">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>160</y>
-       <width>71</width>
+       <x>30</x>
+       <y>180</y>
+       <width>91</width>
        <height>21</height>
       </rect>
      </property>
+     <property name="layoutDirection">
+      <enum>Qt::LayoutDirection::LeftToRight</enum>
+     </property>
      <property name="text">
-      <string>Email:</string>
+      <string>EMAIL ADDRESS</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_3">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>230</y>
-       <width>101</width>
+       <x>30</x>
+       <y>250</y>
+       <width>121</width>
        <height>21</height>
       </rect>
      </property>
+     <property name="layoutDirection">
+      <enum>Qt::LayoutDirection::LeftToRight</enum>
+     </property>
      <property name="text">
-      <string>Phone:</string>
+      <string>CONTACT NUMBER</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="phoneLineEdit">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>260</y>
+       <x>30</x>
+       <y>280</y>
        <width>221</width>
        <height>24</height>
       </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LayoutDirection::LeftToRight</enum>
+     </property>
+     <property name="placeholderText">
+      <string>+92 300 0000000</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="emailineEdit">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>190</y>
+       <x>30</x>
+       <y>210</y>
        <width>221</width>
        <height>24</height>
       </rect>
      </property>
+     <property name="layoutDirection">
+      <enum>Qt::LayoutDirection::LeftToRight</enum>
+     </property>
+     <property name="placeholderText">
+      <string>buddy@user.com</string>
+     </property>
     </widget>
-    <widget class="QLabel" name="label_9">
+    <widget class="QLabel" name="sectionNum1">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>20</y>
+       <x>20</x>
+       <y>30</y>
        <width>81</width>
        <height>16</height>
       </rect>
@@ -126,27 +260,82 @@ QLabel#label, QLabel#label_2, QLabel#label_3, QLabel#label_4,QLabel#label_5,QLab
       <string>Section 1 </string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_10">
+    <widget class="QLabel" name="sectionTitle1">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>20</x>
        <y>50</y>
-       <width>141</width>
-       <height>16</height>
+       <width>221</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
       <string>Identity &amp; Access</string>
      </property>
     </widget>
+    <widget class="QLabel" name="usernameLabel">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>320</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>USERNAME</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="passwordLabel">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>390</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>PASSWORD</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="usernameLineEdit">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>350</y>
+       <width>221</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>buddy-1806</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="passwordLineEdit">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>420</y>
+       <width>221</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::EchoMode::Password</enum>
+     </property>
+     <property name="placeholderText">
+      <string>Enter Password</string>
+     </property>
+    </widget>
    </widget>
-   <widget class="QFrame" name="frame_2">
+   <widget class="QFrame" name="card2">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>150</y>
-      <width>421</width>
-      <height>401</height>
+      <x>350</x>
+      <y>130</y>
+      <width>381</width>
+      <height>461</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -155,106 +344,258 @@ QLabel#label, QLabel#label_2, QLabel#label_3, QLabel#label_4,QLabel#label_5,QLab
     <property name="frameShadow">
      <enum>QFrame::Shadow::Raised</enum>
     </property>
-    <widget class="QLineEdit" name="ageLineEdit">
+    <widget class="QLineEdit" name="targetWeightLineEdit">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>110</y>
-       <width>81</width>
+       <x>30</x>
+       <y>140</y>
+       <width>121</width>
        <height>24</height>
       </rect>
+     </property>
+     <property name="placeholderText">
+      <string>50</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_4">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>80</y>
-       <width>71</width>
+       <x>30</x>
+       <y>110</y>
+       <width>111</width>
        <height>21</height>
       </rect>
      </property>
      <property name="text">
-      <string>Age:</string>
+      <string>TARGET WEIGHT</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_8">
      <property name="geometry">
       <rect>
-       <x>190</x>
-       <y>80</y>
+       <x>220</x>
+       <y>110</y>
        <width>91</width>
        <height>21</height>
       </rect>
      </property>
      <property name="text">
-      <string>Gender</string>
+      <string>GENDER</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_5">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>150</y>
+       <x>30</x>
+       <y>180</y>
        <width>101</width>
        <height>21</height>
       </rect>
      </property>
      <property name="text">
-      <string>Weight:</string>
+      <string>WEIGHT</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="weightLineEdit">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>180</y>
+       <x>30</x>
+       <y>210</y>
        <width>113</width>
        <height>24</height>
       </rect>
+     </property>
+     <property name="placeholderText">
+      <string>55</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_6">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>220</y>
+       <x>30</x>
+       <y>250</y>
        <width>91</width>
        <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>Height</string>
+      <string>HEIGHT</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="heightLineEdit">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>260</y>
+       <x>30</x>
+       <y>290</y>
        <width>113</width>
        <height>24</height>
       </rect>
+     </property>
+     <property name="placeholderText">
+      <string>174 cm</string>
      </property>
     </widget>
     <widget class="QComboBox" name="genderComboBox">
      <property name="geometry">
       <rect>
-       <x>200</x>
-       <y>110</y>
+       <x>220</x>
+       <y>140</y>
        <width>141</width>
        <height>24</height>
       </rect>
      </property>
+     <property name="placeholderText">
+      <string>Female</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>Select Gender...</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Male</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Female</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Other</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="sectionNum2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Section 2</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="sectionTitle2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>201</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Biometric Data</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="bloodComboBox">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>210</y>
+       <width>141</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Select...</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>A+</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>A-</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>B+</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>B-</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>O+</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>O-</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>AB+</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>AB-</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="label_9">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>180</y>
+       <width>101</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>BLOOD GROUP</string>
+     </property>
+    </widget>
+    <widget class="QDateEdit" name="dateEdit">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>290</y>
+       <width>141</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_10">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>260</y>
+       <width>49</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>DOB</string>
+     </property>
     </widget>
    </widget>
-   <widget class="QFrame" name="frame_3">
+   <widget class="QFrame" name="card3">
     <property name="geometry">
      <rect>
-      <x>810</x>
-      <y>150</y>
+      <x>750</x>
+      <y>130</y>
       <width>321</width>
-      <height>401</height>
+      <height>461</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -263,60 +604,26 @@ QLabel#label, QLabel#label_2, QLabel#label_3, QLabel#label_4,QLabel#label_5,QLab
     <property name="frameShadow">
      <enum>QFrame::Shadow::Raised</enum>
     </property>
-    <widget class="QLineEdit" name="medicalhistrotyLineEdit">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>140</y>
-       <width>251</width>
-       <height>111</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
-QLineEdit {
-    background-color: #FFFFFF; /* Pure white background */
-    border: 1px solid #DEDEDE; /* Subtle light gray border */
-    border-radius: 4px;        /* Soft, modern rounded corners */
-    padding: 8px;              /* Space inside the field for the text */
-    color: #333333;
-}
-
-/* Apply the same style to the Medical History text area and Gender dropdown */
-QTextEdit, QComboBox {
-    background-color: #FFFFFF;
-    border: 1px solid #DEDEDE;
-    border-radius: 4px;
-    padding: 8px;
-    color: #333333;
-}
-
-/* Standardizing the look for labels inside text fields */
-QLineEdit[text=&quot;&quot;], QTextEdit[text=&quot;&quot;], QComboBox[text=&quot;&quot;] {
-    color: #A0A0A0; /* Light gray for placeholder/empty text */
-}</string>
-     </property>
-    </widget>
     <widget class="QLabel" name="label_7">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>20</x>
        <y>100</y>
        <width>171</width>
        <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>Medical History</string>
+      <string>MEDICAL HISTORY SUMMARY</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_14">
+    <widget class="QLabel" name="sectionTitle3">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>50</y>
-       <width>141</width>
-       <height>16</height>
+       <x>20</x>
+       <y>40</y>
+       <width>261</width>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
@@ -326,83 +633,307 @@ QLineEdit[text=&quot;&quot;], QTextEdit[text=&quot;&quot;], QComboBox[text=&quot
     <widget class="QCheckBox" name="consentCheckBox">
      <property name="geometry">
       <rect>
-       <x>50</x>
-       <y>300</y>
-       <width>181</width>
+       <x>20</x>
+       <y>320</y>
+       <width>31</width>
        <height>21</height>
       </rect>
      </property>
      <property name="text">
-      <string>I consent to HIPAA regulations</string>
+      <string/>
      </property>
     </widget>
     <widget class="QPushButton" name="completeRegistrationButton">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>340</y>
-       <width>231</width>
+       <x>20</x>
+       <y>380</y>
+       <width>281</width>
        <height>51</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-QPushButton#completeRegistrationButton {
-    background-color: #004696; 
-    color: #FFFFFF;             
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 4px;        
-    padding: 12px 24px;         
-    border: none;              
-}
-
-QPushButton#completeRegistrationButton:pressed {
-    background-color: #003673;
-}</string>
+      <string notr="true"/>
      </property>
      <property name="text">
-      <string>Complete Registration</string>
+      <string>Complete Registration      →</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="sectionNum3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Section 3 </string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="consentText">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>300</y>
+       <width>251</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>I agree to the Terms of Service and consent to my health data being used to track my fitness progress.</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPlainTextEdit" name="medicalhistrotyLineEdit">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>140</y>
+       <width>271</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="palette">
+      <palette>
+       <active>
+        <colorrole role="WindowText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>51</red>
+           <green>51</green>
+           <blue>51</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="0">
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Text">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>51</red>
+           <green>51</green>
+           <blue>51</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="ButtonText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>51</red>
+           <green>51</green>
+           <blue>51</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="NoBrush">
+          <color alpha="255">
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="0">
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="PlaceholderText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="128">
+           <red>51</red>
+           <green>51</green>
+           <blue>51</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </active>
+       <inactive>
+        <colorrole role="WindowText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>51</red>
+           <green>51</green>
+           <blue>51</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="0">
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Text">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>51</red>
+           <green>51</green>
+           <blue>51</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="ButtonText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>51</red>
+           <green>51</green>
+           <blue>51</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="NoBrush">
+          <color alpha="255">
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="0">
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="PlaceholderText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="128">
+           <red>51</red>
+           <green>51</green>
+           <blue>51</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </inactive>
+       <disabled>
+        <colorrole role="WindowText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>51</red>
+           <green>51</green>
+           <blue>51</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="0">
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Text">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>51</red>
+           <green>51</green>
+           <blue>51</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="ButtonText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>51</red>
+           <green>51</green>
+           <blue>51</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Base">
+         <brush brushstyle="NoBrush">
+          <color alpha="255">
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="0">
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="PlaceholderText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="128">
+           <red>51</red>
+           <green>51</green>
+           <blue>51</blue>
+          </color>
+         </brush>
+        </colorrole>
+       </disabled>
+      </palette>
+     </property>
+     <property name="plainText">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Enter chronic conditions, previous surgeries or regular medications.  </string>
      </property>
     </widget>
    </widget>
-   <widget class="QLabel" name="label_11">
+   <widget class="QLabel" name="mainTitle">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>160</y>
-      <width>81</width>
-      <height>16</height>
+      <x>420</x>
+      <y>30</y>
+      <width>231</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
-     <string>Section 2</string>
+     <string>Zenith Health Suite</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="label_12">
+   <widget class="QLabel" name="subTitle">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>190</y>
-      <width>111</width>
-      <height>16</height>
+      <x>190</x>
+      <y>60</y>
+      <width>691</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
-     <string>Biometric Data</string>
+     <string>Please provide clinical precision in your data entry for optimal diagnostic accuracy</string>
     </property>
-   </widget>
-   <widget class="QLabel" name="label_13">
-    <property name="geometry">
-     <rect>
-      <x>820</x>
-      <y>160</y>
-      <width>91</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Section 3 </string>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
   </widget>
