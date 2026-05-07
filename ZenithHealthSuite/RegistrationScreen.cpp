@@ -40,19 +40,19 @@ void RegistrationScreen::on_completeRegistrationButton_clicked()
     }
 
     if (!hasconsent) {
-        QMessageBox::warning(this, "Missing Consent", "Error: Patient must consent to regulations!");
+        QMessageBox::warning(this, "Missing Consent", "Error: user must consent to regulations!");
         return;
     }
 
     // --- Database Section ---
-    /*
+    
     DatabaseManager dbmanager;
     bool issaved = dbmanager.saveUserRegistration(
-        PatientName, PatientEmail, PatientPhone, PatientAge,
-        PatientGender, PatientWeight, PatientHeight, PatientMedicalHistory, hasconsent
+        UserName, UserEmail, UserPhone, UserAge,
+        UserGender, UserWeight, UserHeight, UserMedicalHistory, hasconsent
     );
-    */
-	bool issaved = true; // Placeholder for testing without database
+    
+	 // Placeholder for testing without database
     if (issaved) {
         QMessageBox::information(this, "Success", "Data saved for " + UserName);
         this->hide();
