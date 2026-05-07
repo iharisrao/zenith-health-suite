@@ -8,9 +8,7 @@
 class DatabaseManager {
 public:
 	DatabaseManager();
-
-	bool openConnection();
-	void closeConnection();
+	~DatabaseManager();
 
 	bool saveUserRegistration(
 		const QString& username, 
@@ -25,5 +23,6 @@ public:
 	);
 private:
 	QSqlDatabase db;
+	bool setupDatabase();
 };
 #endif // DATABASEMANAGER_H
