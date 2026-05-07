@@ -6,22 +6,20 @@
 namespace Ui {                              // telling c++ that there is registration.ui is available so dont worry about it
 	class RegistrationScreenClass;
 }
-class RegistrationScreen : public QMainWindow    //telling program that our app gets all superpower of QWidgets like minimizing etc
+class RegistrationScreen : public QMainWindow
 {
-	Q_OBJECT        //The magic Qt radio antenna! We MUST have this line, otherwise our button clicks will never reach our C++ code.
-public:
-	explicit RegistrationScreen(QWidget* parent = nullptr);     //runs when we first open the registration screen
-
-	~RegistrationScreen();     // cleans up memeory when we are done with the registration screen
+    Q_OBJECT
 
 public:
-	RegistrationScreen(QWidget *parent = nullptr);
-	~RegistrationScreen();
+    explicit RegistrationScreen(QWidget* parent = nullptr);
+    ~RegistrationScreen();
+
+    
+private slots:
+    void on_completeRegistrationButton_clicked();
 
 private:
-
-	// whenever we want to read what someone typed into the name or age boxes we have to use this 'ui' pointer to grab it
-	Ui::RegistrationScreenClass* ui;
+    Ui::RegistrationScreenClass* ui;
 };
 
 #endif         // RegistrationScreen_h

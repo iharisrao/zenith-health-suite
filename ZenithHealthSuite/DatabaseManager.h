@@ -5,14 +5,23 @@
 #include<QtSql/QSqlQuery>
 #include<QtSql/QSqlError>
 
-class {
+class DatabaseManager {
 public:
 	DatabaseManager();
-		bool openConnection();
+
+	bool openConnection();
 	void closeConnection();
-	bool saveUserRegiatration(
-		const QString& username, const QString& Email, const QString& contact, int age, const QString& gender, double weight, double height,
-		const QString& medicalHistory, bool consent
+
+	bool saveUserRegistration(
+		const QString& username, 
+		const QString& Email, 
+		const QString& contact, 
+		int age, 
+		const QString& gender, 
+		double weight, 
+		double height,
+		const QString& medicalHistory, 
+		bool consent
 	);
 private:
 	QSqlDatabase db;
