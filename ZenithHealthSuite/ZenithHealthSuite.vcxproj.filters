@@ -21,6 +21,18 @@
       <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
       <Extensions>ts</Extensions>
     </Filter>
+    <Filter Include="Registration">
+      <UniqueIdentifier>{3fcff86d-d3cf-4760-b330-c8cd694ae0a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DataBase">
+      <UniqueIdentifier>{0c374533-6507-497f-a76a-dc95c588d78b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{433427d3-5ce9-493e-9cc3-1b8569d681cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DashBoard">
+      <UniqueIdentifier>{164a97a5-3092-45c0-87b0-3d9a0f81cae7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="ZenithHealthSuite.qrc">
@@ -40,32 +52,41 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="user.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="RegistrationScreen.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Registration</Filter>
     </ClCompile>
     <ClCompile Include="DatabaseManager.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>DataBase</Filter>
+    </ClCompile>
+    <ClCompile Include="user.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="DashboardScreen.cpp">
+      <Filter>DashBoard</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="user.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="DatabaseManager.h">
-      <Filter>Header Files</Filter>
+      <Filter>DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="user.h">
+      <Filter>Core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="RegistrationScreen.h">
-      <Filter>Header Files</Filter>
+      <Filter>Registration</Filter>
+    </QtMoc>
+    <QtMoc Include="DashboardScreen.h">
+      <Filter>DashBoard</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="RegistrationScreen.ui">
-      <Filter>Form Files</Filter>
+      <Filter>Registration</Filter>
+    </QtUic>
+    <QtUic Include="DashboardScreen.ui">
+      <Filter>DashBoard</Filter>
     </QtUic>
   </ItemGroup>
 </Project>
