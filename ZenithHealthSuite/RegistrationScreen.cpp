@@ -9,7 +9,9 @@ RegistrationScreen::RegistrationScreen(QWidget  *parent) :
     QMainWindow(parent),
     ui(new Ui::RegistrationScreenClass)
 {
-    ui->setupUi(this);            
+    ui->setupUi(this);    
+
+
     QGraphicsDropShadowEffect* shadow1 = new QGraphicsDropShadowEffect(this);
     shadow1->setBlurRadius(30);
     shadow1->setColor(QColor(0, 0, 0, 15)); 
