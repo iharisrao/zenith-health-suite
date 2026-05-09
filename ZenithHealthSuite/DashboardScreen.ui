@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>DashboardScreenClass</class>
- <widget class="QMainWindow" name="DashboardScreenClass">
+ <class>DashboardScreen</class>
+ <widget class="QMainWindow" name="DashboardScreen">
   <property name="geometry">
    <rect>
     <x>0</x>
