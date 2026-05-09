@@ -64,6 +64,9 @@
     <ClCompile Include="DashboardScreen.cpp">
       <Filter>DashBoard</Filter>
     </ClCompile>
+    <ClCompile Include="DataEntryDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DatabaseManager.h">
@@ -80,6 +83,9 @@
     <QtMoc Include="DashboardScreen.h">
       <Filter>DashBoard</Filter>
     </QtMoc>
+    <QtMoc Include="DataEntryDialog.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="RegistrationScreen.ui">
@@ -87,6 +93,9 @@
     </QtUic>
     <QtUic Include="DashboardScreen.ui">
       <Filter>DashBoard</Filter>
+    </QtUic>
+    <QtUic Include="DataEntryDialog.ui">
+      <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
 </Project>

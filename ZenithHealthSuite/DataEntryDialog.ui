@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DataEntryDialogClass</class>
+ <widget class="QDialog" name="DataEntryDialogClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>408</width>
+    <height>450</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>450</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>DataEntryDialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QDialog {
+    background-color: #F4F7F6; 
+}
+
+QTabWidget::pane {
+    border: 1px solid #E0E0E0;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+}
+
+QTabBar::tab {
+    background-color: #E9ECEF;
+    color: #5F6368;
+    padding: 10px 25px;
+    font-size: 13px;
+    font-weight: bold;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    margin-right: 2px;
+}
+QTabBar::tab:selected {
+    background-color: #007BFF; 
+    color: #FFFFFF;
+}
+
+QComboBox, QSpinBox, QDoubleSpinBox, QDateEdit {
+    background-color: #F8F9FA;
+    border: 1px solid #CED4DA;
+    border-radius: 5px;
+    padding: 6px;
+    color: #333333;
+    font-size: 13px;
+    min-height: 26px;
+font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+}
+QComboBox:focus, QSpinBox:focus, QDoubleSpinBox:focus, QDateEdit:focus {
+    border: 1px solid #007BFF;
+    background-color: #FFFFFF;
+}
+
+
+QLabel {
+    font-weight: bold;
+    color: #2C3E50;
+    font-size: 13px;
+font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+}
+
+QPushButton {
+    background-color: #007BFF; 
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 13px;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 20px;
+    min-width: 80px;
+}
+
+QPushButton:hover {
+    background-color: #0056b3;
+}
+
+QPushButton:pressed {
+    background-color: #004085; 
+}
+</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="label_14">
+       <property name="text">
+        <string>Log Date:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QDateEdit" name="logDateEdit">
+       <property name="displayFormat">
+        <string>MMM d, yyyy</string>
+       </property>
+       <property name="calendarPopup">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>250</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Activity</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <layout class="QFormLayout" name="formLayout">
+         <property name="verticalSpacing">
+          <number>18</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Exercise Name:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QComboBox" name="exerciseComboBox">
+           <item>
+            <property name="text">
+             <string>--- CARDIO ---</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Running</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Cycling</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Swimming</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Rowing</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>--- STRENGTH ---</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Weightlifting</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Bodyweight / Calisthenics</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>--- SPORTS &amp; OTHER ---</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Yoga &amp; Pilates</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>General Walking</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Rest Day</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>Duration (mins):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QSpinBox" name="durationSpinBox">
+           <property name="maximum">
+            <number>300</number>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>Intensity:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QComboBox" name="intensityComboBox">
+           <item>
+            <property name="text">
+             <string>Light (Active Recovery)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Moderate (Noticeable breathing)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Vigorous (Heavy breathing)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Very Hard (Muscle fatigue)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Maximum (All-out effort)</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>Calories Burned:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QSpinBox" name="calorieburnedSpinBox"/>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>Vitals</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <layout class="QFormLayout" name="formLayout_2">
+         <property name="verticalSpacing">
+          <number>18</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>Step Count:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QSpinBox" name="stepsSpinBox">
+           <property name="maximum">
+            <number>50000</number>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>Sleep (Hours):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QDoubleSpinBox" name="sleepSpinBox">
+           <property name="maximum">
+            <double>24.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_11">
+           <property name="text">
+            <string>Water Intake (Liters):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QSpinBox" name="waterintakeSpinBox">
+           <property name="maximum">
+            <number>10</number>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_12">
+           <property name="text">
+            <string>Active Heart Rate (BPM):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QSpinBox" name="heartrateSpinBox"/>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_13">
+           <property name="text">
+            <string>Today's Weight (kg):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QDoubleSpinBox" name="weightSpinBox">
+           <property name="maximum">
+            <double>300.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_3">
+      <attribute name="title">
+       <string>Nutrition</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <layout class="QFormLayout" name="formLayout_3">
+         <property name="verticalSpacing">
+          <number>18</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string>Calories Eaten:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QSpinBox" name="calorieseatenSpinBox">
+           <property name="maximum">
+            <number>10000</number>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string>Protein (g):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QSpinBox" name="proteinSpinBox">
+           <property name="maximum">
+            <number>1000</number>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_9">
+           <property name="text">
+            <string>Carbs (g):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QSpinBox" name="carbsSpinBox">
+           <property name="maximum">
+            <number>1000</number>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_10">
+           <property name="text">
+            <string>Fats (g):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QSpinBox" name="fatsSpinBox">
+           <property name="maximum">
+            <number>1000</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="savebuttonBox">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>logDateEdit</tabstop>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>exerciseComboBox</tabstop>
+  <tabstop>durationSpinBox</tabstop>
+  <tabstop>intensityComboBox</tabstop>
+  <tabstop>calorieburnedSpinBox</tabstop>
+  <tabstop>stepsSpinBox</tabstop>
+  <tabstop>sleepSpinBox</tabstop>
+  <tabstop>waterintakeSpinBox</tabstop>
+  <tabstop>heartrateSpinBox</tabstop>
+  <tabstop>weightSpinBox</tabstop>
+  <tabstop>calorieseatenSpinBox</tabstop>
+  <tabstop>proteinSpinBox</tabstop>
+  <tabstop>carbsSpinBox</tabstop>
+  <tabstop>fatsSpinBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
