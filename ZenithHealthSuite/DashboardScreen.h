@@ -39,7 +39,7 @@ private slots:
     void on_bellButton_clicked(); 
 
 private:
-    Ui::DashboardScreen* ui;
+	Ui::DashboardScreenClass ui;
 };
 
 #endif // DASHBOARDSCREEN_H
