@@ -12,6 +12,6 @@ public:
 	~DashboardScreen();
 
 private:
-	Ui::DashboardScreenClass ui;
+	Ui::DashboardScreen ui;
 };
 
