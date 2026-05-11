@@ -16,7 +16,7 @@ public:
     explicit DashboardScreen(QWidget* parent = nullptr);
     ~DashboardScreen();
 
-    void updateDashboardMetrics(int calories, int steps, int heartRate);
+    void updateDashboardMetrics(int caloriesConsumed, int caloriesGoal, int steps, int activeEnergy);
 
 private slots:
     
@@ -40,6 +40,8 @@ private slots:
 
 private:
 	Ui::DashboardScreen *ui;
+    void setupHeartRateChart();
+    void setupActiveEnergyChart();
 };
 
 #endif // DASHBOARDSCREEN_H
