@@ -1,7 +1,5 @@
 #include "DashboardScreen.h"
 #include "ui_DashboardScreen.h"
-
-// We include this because it is the only screen we have actually built!
 #include "DataEntryDialog.h" 
 
 DashboardScreen::DashboardScreen(QWidget* parent)
@@ -9,6 +7,7 @@ DashboardScreen::DashboardScreen(QWidget* parent)
     , ui(new Ui::DashboardScreen)
 {
     ui->setupUi(this);
+    this->showMaximized();
 }
 
 DashboardScreen::~DashboardScreen()
@@ -16,19 +15,13 @@ DashboardScreen::~DashboardScreen()
     delete ui;
 }
 
-// =====================================================================
-// THE ONLY LIVE BUTTON (Because you built the UI for it)
-// =====================================================================
 void DashboardScreen::on_addActivityButton_clicked()
 {
     qDebug() << "Launching Data Entry Pop-up...";
     DataEntryDialog popUpWindow(this);
-    popUpWindow.exec(); // Freezes dashboard, opens the pop-up
+    popUpWindow.exec(); 
 }
 
-// =====================================================================
-// PLACEHOLDER NAVIGATION WIRING (Safe to click, won't crash)
-// =====================================================================
 
 void DashboardScreen::on_dashboardButton_clicked() {
     qDebug() << "You are already on the Dashboard!";
@@ -75,10 +68,6 @@ void DashboardScreen::on_bellButton_clicked() {
     qDebug() << "No new notifications.";
 }
 
-// =====================================================================
-// BUDDY'S BACKEND CONNECTION FUNCTION
-// =====================================================================
-// When Buddy loads the database, she calls this function to fill your UI cards!
 void DashboardScreen::updateDashboardMetrics(int calories, int steps, int heartRate)
 {
     // buddy code will come here
