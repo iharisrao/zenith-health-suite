@@ -2,12 +2,14 @@
 #include "ui_DashboardScreen.h"
 #include "DataEntryDialog.h" 
 
+
 DashboardScreen::DashboardScreen(QWidget* parent)
     : QMainWindow(parent)
     , ui(new Ui::DashboardScreen)
 {
     ui->setupUi(this);
     this->showMaximized();
+
 }
 
 DashboardScreen::~DashboardScreen()

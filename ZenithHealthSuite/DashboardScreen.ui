@@ -200,30 +200,53 @@ QProgressBar {
 #stepCountProgressBar::chunk { background-color: #1558A8; border-radius: 4px; } 
 #sleepProgressBar::chunk { background-color: #6B4BA3; border-radius: 4px; }
 
-QTableWidget {
+
+QLabel#activityLogTitle {
+    color: #222222;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+QLabel#viewAllLabel {
+    color: #1558A8;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+QTableWidget#activityTable {
     border: none;
-    gridline-color: transparent;
+    gridline-color: transparent; 
     background-color: transparent;
     color: #222222;
     font-size: 13px;
     font-weight: 600;
+    outline: none; 
 }
 
 QHeaderView::section {
     background-color: transparent;
     color: #8C98A4;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
     border: none;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #EAEAEA;
+    border-bottom: 1px solid #EAEAEA; 
+    padding: 10px 5px 10px 10px; /* FIXED: Left padding added */
+    text-align: left;
 }
 
-QTableWidget::item {
-    border-bottom: 1px solid #F4F7FA;
-    padding: 10px 0px;
+QTableWidget#activityTable::item {
+    border-bottom: 1px solid #F4F7FA; 
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding: 6px 5px 6px 10px; /* FIXED: Left padding added */
+}
+
+QTableWidget#activityTable::item:selected {
+    background-color: transparent;
+    color: #222222;
 }
 
 /* Colorful Status Pills - UPDATED WITH BORDER FIX */
@@ -250,8 +273,6 @@ QLabel#stressStatusLabel {
     color: #E65100 !important;            
     border-radius: 4px;
     padding: 4px 8px;
-    font-weight: bold;
-    border: 1px solid transparent;
 }</string>
   </property>
   <property name="iconSize">
@@ -762,6 +783,12 @@ QLabel#stressStatusLabel {
              <item>
               <widget class="QWidget" name="bottomCardsRow" native="true">
                <layout class="QHBoxLayout" name="horizontalLayout_2">
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
                 <item>
                  <widget class="QFrame" name="activeEnergyCard">
                   <property name="sizePolicy">
@@ -894,31 +921,157 @@ QLabel#stressStatusLabel {
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
-               <layout class="QVBoxLayout" name="verticalLayout_8">
-                <property name="leftMargin">
-                 <number>20</number>
-                </property>
-                <property name="topMargin">
-                 <number>20</number>
-                </property>
-                <property name="rightMargin">
-                 <number>20</number>
-                </property>
-                <property name="bottomMargin">
-                 <number>20</number>
-                </property>
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>250</height>
+                </size>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_13">
                 <item>
-                 <widget class="QLabel" name="activityTitle">
-                  <property name="text">
-                   <string>ACTIVITY LOG</string>
-                  </property>
-                  <property name="margin">
-                   <number>20</number>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QTableWidget" name="activityLogTable"/>
+                 <layout class="QVBoxLayout" name="verticalLayout_8">
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_10">
+                    <item>
+                     <widget class="QLabel" name="activityLogTitle">
+                      <property name="text">
+                       <string>Activity Log</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <spacer name="horizontalSpacer_6">
+                      <property name="orientation">
+                       <enum>Qt::Orientation::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="viewAllLabel">
+                      <property name="text">
+                       <string>View All</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <widget class="QTableWidget" name="activityTable">
+                    <property name="frameShape">
+                     <enum>QFrame::Shape::NoFrame</enum>
+                    </property>
+                    <property name="verticalScrollBarPolicy">
+                     <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
+                    </property>
+                    <property name="editTriggers">
+                     <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+                    </property>
+                    <property name="selectionMode">
+                     <enum>QAbstractItemView::SelectionMode::NoSelection</enum>
+                    </property>
+                    <attribute name="horizontalHeaderStretchLastSection">
+                     <bool>true</bool>
+                    </attribute>
+                    <attribute name="verticalHeaderVisible">
+                     <bool>false</bool>
+                    </attribute>
+                    <row/>
+                    <row/>
+                    <row/>
+                    <column>
+                     <property name="text">
+                      <string>EXERCISE</string>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>DURATION</string>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>INTENSITY</string>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>CALS</string>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>STATUS</string>
+                     </property>
+                    </column>
+                    <item row="0" column="0">
+                     <property name="text">
+                      <string>Running</string>
+                     </property>
+                    </item>
+                    <item row="0" column="1">
+                     <property name="text">
+                      <string>45 Min</string>
+                     </property>
+                    </item>
+                    <item row="0" column="2">
+                     <property name="text">
+                      <string>High</string>
+                     </property>
+                    </item>
+                    <item row="0" column="3">
+                     <property name="text">
+                      <string>420 kcal</string>
+                     </property>
+                    </item>
+                    <item row="1" column="0">
+                     <property name="text">
+                      <string>Cycling</string>
+                     </property>
+                    </item>
+                    <item row="1" column="1">
+                     <property name="text">
+                      <string>30 Min</string>
+                     </property>
+                    </item>
+                    <item row="1" column="2">
+                     <property name="text">
+                      <string>Medium</string>
+                     </property>
+                    </item>
+                    <item row="1" column="3">
+                     <property name="text">
+                      <string>250 kcal</string>
+                     </property>
+                    </item>
+                    <item row="2" column="0">
+                     <property name="text">
+                      <string>Yoga</string>
+                     </property>
+                    </item>
+                    <item row="2" column="1">
+                     <property name="text">
+                      <string>20 Min</string>
+                     </property>
+                    </item>
+                    <item row="2" column="2">
+                     <property name="text">
+                      <string>Low</string>
+                     </property>
+                    </item>
+                    <item row="2" column="3">
+                     <property name="text">
+                      <string>100 kcal</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                 </layout>
                 </item>
                </layout>
               </widget>
@@ -929,6 +1082,12 @@ QLabel#stressStatusLabel {
           <item>
            <widget class="QWidget" name="rightColumnWidget" native="true">
             <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,0,0">
+             <property name="topMargin">
+              <number>9</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
              <item>
               <widget class="QFrame" name="sleepQualityCard">
                <property name="sizePolicy">
@@ -1032,6 +1191,12 @@ QLabel#stressStatusLabel {
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_9">
                 <item>
