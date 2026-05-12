@@ -42,6 +42,7 @@ private:
 	Ui::DashboardScreen *ui;
     void setupHeartRateChart();
     void setupActiveEnergyChart();
+    void setupTableBadges();
 };
 
 #endif // DASHBOARDSCREEN_H

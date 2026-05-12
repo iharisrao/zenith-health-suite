@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1482</width>
-    <height>684</height>
+    <width>1487</width>
+    <height>746</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -18,7 +18,7 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>0</width>
+    <width>800</width>
     <height>0</height>
    </size>
   </property>
@@ -282,8 +282,8 @@ QLabel#stressStatusLabel {
    </size>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QHBoxLayout" name="horizontalLayout_4">
-    <item>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
      <widget class="QWidget" name="sidebarWidget" native="true">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
@@ -293,7 +293,7 @@ QLabel#stressStatusLabel {
       </property>
       <property name="minimumSize">
        <size>
-        <width>261</width>
+        <width>250</width>
         <height>0</height>
        </size>
       </property>
@@ -509,7 +509,7 @@ QLabel#stressStatusLabel {
       </widget>
      </widget>
     </item>
-    <item>
+    <item row="0" column="1">
      <widget class="QWidget" name="mainContentWidget" native="true">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -698,6 +698,9 @@ QLabel#stressStatusLabel {
        <item>
         <widget class="QWidget" name="dashboardAreaWidget" native="true">
          <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,1">
+          <property name="topMargin">
+           <number>0</number>
+          </property>
           <item>
            <widget class="QWidget" name="leftColumnWidget" native="true">
             <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0,2,0">
@@ -837,7 +840,14 @@ QLabel#stressStatusLabel {
                     </layout>
                    </item>
                    <item>
-                    <widget class="QWidget" name="activeEnergyChartBox" native="true"/>
+                    <widget class="QWidget" name="activeEnergyChartBox" native="true">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>35</height>
+                      </size>
+                     </property>
+                    </widget>
                    </item>
                   </layout>
                  </widget>
@@ -895,9 +905,7 @@ QLabel#stressStatusLabel {
                    <item>
                     <widget class="QProgressBar" name="stepCountProgressBar">
                      <property name="styleSheet">
-                      <string notr="true">
-
-</string>
+                      <string notr="true"/>
                      </property>
                      <property name="value">
                       <number>75</number>
@@ -953,7 +961,25 @@ QLabel#stressStatusLabel {
                      </spacer>
                     </item>
                     <item>
-                     <widget class="QLabel" name="viewAllLabel">
+                     <widget class="QPushButton" name="pushButton">
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton {
+    color: #1976D2;
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+QPushButton:hover {
+    color: #0D47A1;
+    text-decoration: underline;
+}
+
+QPushButton:pressed {
+    color: #82B1FF;
+}</string>
+                      </property>
                       <property name="text">
                        <string>View All</string>
                       </property>

@@ -146,7 +146,7 @@ DailyMetrics DatabaseManager::getDailyMetrics(const QString& username, const QDa
     query.bindValue(":username", username);
     query.bindValue(":date" ,date.toString("yyyy_MM_dd"));
     if (query.exec() && query.next()) {
-        data.caloriesConsumed = query.value("calories_goal").toInt();
+        data.caloriesConsumed = query.value("calories_consumed").toInt();
         data.protien = query.value("protien_g").toInt();
         data.carbs = query.value("carbs_g").toInt();
         data.fats = query.value("fats_g").toInt();
@@ -172,7 +172,7 @@ QList<ActivityRecord>DatabaseManager::getActivityLog(const QString& username, co
     query.prepare("select * from ActivityLog WHERE username=:username and record_date=:date");
     query.bindValue(":username", username);
     query.bindValue(":date", date.toString("yyyy-MM-dd"));
-    if (!query.exec()) {
+    if (query.exec()) {
         while (query.next()) {
             ActivityRecord record;
             record.exerciseName = query.value("exercise_name").toString();
