@@ -53,10 +53,15 @@ public:
 		const QString& medicalHistory,
 		bool consent
 	);
-
+	//////new functions
 	void createDashboardTables();
 	DailyMetrics getDailyMetrics(const QString&  username, const QDate& date);
 	QList<ActivityRecord> getActivityLog(const QString& username, const QDate& date);
+
+	bool addActivityRecord(const QString& username, const QDate& date, const QString& exerciseName, int durationMins, const QString& intensity, int caloriesBurned);
+	bool saveNutritionData(const QString& username, const QDate& date, int calories, int protien, int carbs, int fats);
+	bool saveVitalsData(const QString& username, const QDate& date, int steps, double sleepHours, double waterIntake, int heartRate, double weight);
+
 private:
 	QSqlDatabase db;
 	bool setupDatabase();
