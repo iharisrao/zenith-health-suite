@@ -1,7 +1,11 @@
 #include "DataEntryDialog.h"
 #include "ui_DataEntryDialog.h"
+#include "DataBaseManager.h"
+#include<QMessageBox>
 
-DataEntryDialog::DataEntryDialog(QWidget* parent)
+
+
+DataEntryDialog::DataEntryDialog(QWidget* parent) 
 	: QDialog(parent),
 	  ui(new Ui::DataEntryDialog)
 {
@@ -18,7 +22,7 @@ void DataEntryDialog::setPreviousWeight(double lastWeight) {
 }
 
 void DataEntryDialog::on_buttonBox_accepted() {
-	QString logDate = ui->logDateEdit->date().toString("yyyy-MM-dd");
+	QDate logDate=ui->logDateEdit->date();
 
 	QString exercise = ui->exerciseComboBox->currentText();
 	int duration = ui->durationSpinBox->value();
@@ -28,7 +32,7 @@ void DataEntryDialog::on_buttonBox_accepted() {
 	int steps = ui->stepsSpinBox->value();
 	double sleep = ui->sleepSpinBox->value();
 	double water = ui->waterintakeSpinBox->value();
-	double heartRate = ui->heartrateSpinBox->value();
+	int heartRate = ui->heartrateSpinBox->value();
 	double weight = ui->weightSpinBox->value();
 
 	int caloriesEaten = ui->calorieseatenSpinBox->value();
@@ -36,18 +40,25 @@ void DataEntryDialog::on_buttonBox_accepted() {
 	int carbs = ui->carbsSpinBox->value();
 	int fats = ui->fatsSpinBox->value();
 
+	DatabaseManager dbManager;
+	QString currentUsername = "TestUser";
+	bool success = true;
 
-	qDebug() << "========== NEW HEALTH LOG RECORDED ==========";
-	qDebug() << "Date:" << logDate;
-	qDebug() << "--- ACTIVITY ---";
-	qDebug() << "Exercise:" << exercise << "(" << intensity << ")";
-	qDebug() << "Duration:" << duration << "mins | Burned:" << caloriesBurned << "kcal";
-	qDebug() << "--- VITALS ---";
-	qDebug() << "Steps:" << steps << "| Sleep:" << sleep << "hrs | Water:" << water << "L";
-	qDebug() << "Heart Rate:" << heartRate << "bpm | Weight:" << weight << "kg";
-	qDebug() << "--- NUTRITION ---";
-	qDebug() << "Intake:" << caloriesEaten << "kcal";
-	qDebug() << "Macros -> Protein:" << protein << "g | Carbs:" << carbs << "g | Fats:" << fats << "g";
-	qDebug() << "=============================================";
+	if (duration > 0) {
+		success &= dbManager.addActivityRecord(currentUsername, logDate, exercise, duration, intensity, caloriesBurned);
+	}
+
+	success &= dbManager.saveVitalsData(currentUsername, logDate, steps, sleep, water, heartRate, weight);
+	success &= dbManager.saveNutritionData(currentUsername, logDate, caloriesEaten, protein, carbs, fats);
+
+	if (success) {
+		QMessageBox::information(this, "Success", "Aapka data successfully save ho gaya hai!");
+	}
+	else {
+		QMessageBox::warning(this, "Error", "Data save hone mein masla aaya hai.");
+	}
 }
+
+
+	
 
