@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/account.png</file>
+        <file>icons/lock.png</file>
+        <file>images/bg_dark.jpg</file>
+    </qresource>
+</RCC>
