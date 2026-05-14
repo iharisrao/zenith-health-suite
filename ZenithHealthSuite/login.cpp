@@ -5,6 +5,7 @@ login::login(QWidget *parent)
 {
 	ui.setupUi(this);
 	this->setWindowTitle("ZenithHealthSuite - Login");
+
 }
 
 login::~login()
