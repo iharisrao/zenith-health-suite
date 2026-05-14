@@ -1,8 +1,8 @@
 #include "DataEntryDialog.h"
 #include "ui_DataEntryDialog.h"
 #include "DataBaseManager.h"
-#include<QMessageBox>
-
+#include <QMessageBox>
+#include <QString>	
 
 
 DataEntryDialog::DataEntryDialog(QWidget* parent) 
@@ -11,6 +11,8 @@ DataEntryDialog::DataEntryDialog(QWidget* parent)
 {
 	ui->setupUi(this);
 	ui->logDateEdit->setDate(QDate::currentDate());
+	connect(ui->savebuttonBox, &QDialogButtonBox::accepted, this, &DataEntryDialog::on_buttonBox_accepted);
+	connect(ui->savebuttonBox, &QDialogButtonBox::rejected, this, &DataEntryDialog::on_buttonBox_rejected);
 }
 
 DataEntryDialog::~DataEntryDialog() {
@@ -52,13 +54,20 @@ void DataEntryDialog::on_buttonBox_accepted() {
 	success &= dbManager.saveNutritionData(currentUsername, logDate, caloriesEaten, protein, carbs, fats);
 
 	if (success) {
-		QMessageBox::information(this, "Success", "Aapka data successfully save ho gaya hai!");
+		QMessageBox::information(this, "Success", "Your data has been saved successfully!");
+		this->accept();
 	}
 	else {
-		QMessageBox::warning(this, "Error", "Data save hone mein masla aaya hai.");
+		QMessageBox::warning(this, "Error", "An error occurred while saving the data.");
 	}
+
+}
+void DataEntryDialog::on_buttonBox_rejected() {
+	this->reject(); 
 }
 
-
 	
+
+
+
 
