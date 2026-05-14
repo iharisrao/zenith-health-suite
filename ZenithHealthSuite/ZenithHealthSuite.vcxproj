@@ -98,15 +98,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <QtRcc Include="Resource.qrc" />
     <QtRcc Include="ZenithHealthSuite.qrc" />
     <QtUic Include="DashboardScreen.ui" />
     <QtUic Include="DataEntryDialog.ui" />
+    <QtUic Include="login.ui" />
     <QtUic Include="RegistrationScreen.ui" />
     <QtUic Include="ZenithHealthSuite.ui" />
     <QtMoc Include="ZenithHealthSuite.h" />
     <ClCompile Include="DashboardScreen.cpp" />
     <ClCompile Include="DatabaseManager.cpp" />
     <ClCompile Include="DataEntryDialog.cpp" />
+    <ClCompile Include="login.cpp" />
     <ClCompile Include="RegistrationScreen.cpp" />
     <ClCompile Include="user.cpp" />
     <ClCompile Include="ZenithHealthSuite.cpp" />
@@ -117,6 +120,7 @@
     <QtMoc Include="DashboardScreen.h" />
     <ClInclude Include="DatabaseManager.h" />
     <QtMoc Include="DataEntryDialog.h" />
+    <QtMoc Include="login.h" />
     <ClInclude Include="user.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

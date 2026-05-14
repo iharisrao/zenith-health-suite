@@ -47,6 +47,9 @@
     <ClCompile Include="ZenithHealthSuite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <QtRcc Include="Resource.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -65,6 +68,9 @@
       <Filter>DashBoard</Filter>
     </ClCompile>
     <ClCompile Include="DataEntryDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="login.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -86,6 +92,9 @@
     <QtMoc Include="DataEntryDialog.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="login.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="RegistrationScreen.ui">
@@ -95,6 +104,9 @@
       <Filter>DashBoard</Filter>
     </QtUic>
     <QtUic Include="DataEntryDialog.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="login.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
