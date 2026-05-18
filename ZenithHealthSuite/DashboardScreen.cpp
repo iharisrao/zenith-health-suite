@@ -54,7 +54,9 @@ void DashboardScreen::on_goalsButton_clicked() {
 }
 
 void DashboardScreen::on_historyButton_clicked() {
-    qDebug() << "History coming soon...";
+    HistoryScreen* historyScreen = new HistoryScreen();
+    historyScreen->show();
+    this->close();
 }
 
 void DashboardScreen::on_settingsButton_clicked() {

@@ -79,6 +79,9 @@
     <ClCompile Include="login.cpp">
       <Filter>Login</Filter>
     </ClCompile>
+    <ClCompile Include="History.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DatabaseManager.h">
@@ -101,6 +104,9 @@
     <QtMoc Include="login.h">
       <Filter>Login</Filter>
     </QtMoc>
+    <QtMoc Include="History.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="RegistrationScreen.ui">
@@ -114,6 +120,9 @@
     </QtUic>
     <QtUic Include="login.ui">
       <Filter>Login</Filter>
+    </QtUic>
+    <QtUic Include="History.ui">
+      <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
 </Project>

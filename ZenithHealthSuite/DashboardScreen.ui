@@ -83,21 +83,6 @@ QPushButton#dashboardButton {
     border-radius: 0px 8px 8px 0px !important;
 }
 
-#addActivityButton {
-    background-color: #1558A8 !important;
-    color: #FFFFFF !important;
-    text-align: center;
-    padding: 10px;
-    margin: 5px 15px;
-    border-radius: 8px;
-    font-weight: bold;
-    border: none;
-    min-height: 40px;
-}
-
-#addActivityButton:hover {
-    background-color: #0E417F !important;
-}
 
 #dailyIntakeCard, #activeEnergyCard, #stepCountCard, 
 #activityLogCard, #sleepQualityCard, #heartRateCard, #systemStatusCard {

@@ -11,6 +11,7 @@ Activity::Activity(QWidget* parent) :
     ui->setupUi(this);
     this->showMaximized();
     this->setWindowTitle("ZenithHealthSuite - Activity");
+
     setupCurrentDate();
     ui->tabWidget->setCurrentIndex(0);
     loadIntegratedMetrics();
@@ -41,7 +42,9 @@ void Activity::on_goalsButton_clicked() {
 }
 
 void Activity::on_historyButton_clicked() {
-    qDebug() << "History coming soon...";
+    HistoryScreen* historyScreen = new HistoryScreen();
+    historyScreen->show();
+    this->close();
 }
 
 void Activity::on_settingsButton_clicked() {

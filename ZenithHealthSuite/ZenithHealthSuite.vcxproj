@@ -37,7 +37,7 @@
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
     <QtInstall>6.11.0_msvc2022_64</QtInstall>
-    <QtModules>core;gui;widgets;sql;charts;chartsqml</QtModules>
+    <QtModules>core;gui;widgets;printsupport;sql;charts;chartsqml</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
@@ -102,6 +102,7 @@
     <QtRcc Include="ZenithHealthSuite.qrc" />
     <QtUic Include="Activity.ui" />
     <QtUic Include="DashboardScreen.ui" />
+    <QtUic Include="History.ui" />
     <QtUic Include="login.ui" />
     <QtUic Include="RegistrationScreen.ui" />
     <QtUic Include="ZenithHealthSuite.ui" />
@@ -109,6 +110,7 @@
     <ClCompile Include="Activity.cpp" />
     <ClCompile Include="DashboardScreen.cpp" />
     <ClCompile Include="DatabaseManager.cpp" />
+    <ClCompile Include="History.cpp" />
     <ClCompile Include="login.cpp" />
     <ClCompile Include="RegistrationScreen.cpp" />
     <ClCompile Include="user.cpp" />
@@ -121,6 +123,7 @@
     <QtMoc Include="Activity.h" />
     <ClInclude Include="DatabaseManager.h" />
     <QtMoc Include="login.h" />
+    <QtMoc Include="History.h" />
     <ClInclude Include="user.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
