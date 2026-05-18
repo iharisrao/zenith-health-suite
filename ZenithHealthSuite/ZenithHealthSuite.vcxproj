@@ -102,7 +102,6 @@
     <QtRcc Include="ZenithHealthSuite.qrc" />
     <QtUic Include="Activity.ui" />
     <QtUic Include="DashboardScreen.ui" />
-    <QtUic Include="DataEntryDialog.ui" />
     <QtUic Include="login.ui" />
     <QtUic Include="RegistrationScreen.ui" />
     <QtUic Include="ZenithHealthSuite.ui" />
@@ -110,7 +109,6 @@
     <ClCompile Include="Activity.cpp" />
     <ClCompile Include="DashboardScreen.cpp" />
     <ClCompile Include="DatabaseManager.cpp" />
-    <ClCompile Include="DataEntryDialog.cpp" />
     <ClCompile Include="login.cpp" />
     <ClCompile Include="RegistrationScreen.cpp" />
     <ClCompile Include="user.cpp" />
@@ -122,7 +120,6 @@
     <QtMoc Include="DashboardScreen.h" />
     <QtMoc Include="Activity.h" />
     <ClInclude Include="DatabaseManager.h" />
-    <QtMoc Include="DataEntryDialog.h" />
     <QtMoc Include="login.h" />
     <ClInclude Include="user.h" />
   </ItemGroup>
