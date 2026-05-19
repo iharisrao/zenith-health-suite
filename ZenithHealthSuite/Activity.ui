@@ -1,0 +1,1122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ActivityClass</class>
+ <widget class="QMainWindow" name="ActivityClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1487</width>
+    <height>760</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Activity</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#centralwidget { background-color: #F4F7FA; }
+QFrame { background-color: #FFFFFF; border-radius: 12px; border: none; }
+QLineEdit, QSpinBox, QDoubleSpinBox, QComboBox { background-color: #F8FAFC; border: none; border-bottom: 2px solid #E2E8F0; border-radius: 4px 4px 0px 0px; padding: 10px 15px; color: #0F172A; font-weight: bold; font-size: 14px; }
+QLineEdit:focus, QSpinBox:focus, QDoubleSpinBox:focus, QComboBox:focus { background-color: #F0F7FF; border-bottom: 2px solid #1558A8; }
+QSpinBox::up-button, QSpinBox::down-button, QDoubleSpinBox::up-button, QDoubleSpinBox::down-button { width: 0px; border: none; background: transparent; }
+QComboBox { font-weight: normal; }
+QComboBox::drop-down { subcontrol-origin: padding; subcontrol-position: top right; width: 35px; border: none; }
+QComboBox::down-arrow { image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAXklEQVQYV2NkIBIwEqmOgXz4//9/BkYGBgYWBgYGGzxmMAI1MTEwMDCwMjAweOBWBCNAGmDymGACuBXBCJBmkDwmGOZ/BkYGLIphCrBpxGYYpmOIQvL/fxB78SlEBgB9rBl32XhFhAAAAABJRU5ErkJggg==&quot;); width: 14px; height: 14px; }
+QComboBox::down-arrow:on { top: 1px; left: 1px; }
+QComboBox QAbstractItemView { font-weight: normal; background-color: #FFFFFF; selection-background-color: #F0F7FF; selection-color: #1558A8; border: 1px solid #E2E8F0; border-radius: 4px; outline: 0px; }
+QTabWidget::pane { border: none; background: transparent; }
+QTabWidget::tab-bar { alignment: center; }
+QTabBar { background-color: #E2E8F0; border-radius: 20px; }
+QTabBar::tab { background-color: transparent; color: #64748B; padding: 8px 30px; border-radius: 15px; margin: 4px; font-weight: bold; font-size: 13px; }
+QTabBar::tab:selected { background-color: #FFFFFF; color: #1558A8; border: none; }
+QLabel { color: #475569; font-weight: bold; background: transparent; border: none; }
+QPushButton { background-color: #1558A8; color: white; border-radius: 8px; padding: 12px; font-weight: bold; font-size: 14px; border: none; }
+QPushButton:hover { background-color: #0E417F; }
+#sidebarWidget { background-color: #F8FAFC; border-right: 1px solid #E2E8F0; border-radius: 0px; }
+#appNameLabel { color: #1558A8; font-size: 20px; font-weight: 900; letter-spacing: -0.5px; }
+#sidebarWidget QPushButton { background: transparent; color: #64748B; text-align: left; padding: 12px 20px; margin: 4px 16px; border-radius: 10px; font-weight: 700; font-size: 14px; qproperty-iconSize: 22px 22px; }
+#sidebarWidget QPushButton:hover { background-color: #E2E8F0; color: #0F172A; }
+QPushButton#activityButton { background-color: #EFF6FF !important; color: #1558A8 !important; border: none !important; font-weight: 900 !important; }
+#headerWidget { background: transparent; border-bottom: 1px solid #E2E8F0; }
+QLabel#lblHeaderTitle { color: #0F172A; font-size: 22px; font-weight: 900; }
+QPushButton#btnHeaderDate { background-color: #FFFFFF; color: #475569; border: 1px solid #E2E8F0; border-radius: 16px; padding: 6px 20px; font-weight: bold; }
+QPushButton#btnNotification, QPushButton#btnUserProfile { background-color: #FFFFFF; color: #475569; border: 1px solid #E2E8F0; border-radius: 18px; min-width: 36px; max-width: 36px; min-height: 36px; max-height: 36px; qproperty-iconSize: 18px 18px; }
+QPushButton#btnHeaderDate:hover, QPushButton#btnNotification:hover, QPushButton#btnUserProfile:hover { background-color: #F8FAFC; border: 1px solid #CBD5E1; }
+QLabel#lblLogActivity, QLabel#lblLogVitals, QLabel#lblLogNutrition { color: #0F172A; font-size: 16px; font-weight: 900; background: transparent; border: none; padding-bottom: 10px; }
+QFrame#vitalsRefCard { background-color: #F8FAFC; border-radius: 12px; border: 1px solid #E2E8F0; }
+QLabel#lblClinicalTitle { color: #1558A8; font-size: 13px; font-weight: 900; letter-spacing: 1px; padding-bottom: 8px; }
+QFrame#lineClinical { border: none; background-color: #CBD5E1; max-height: 2px; }</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QWidget" name="sidebarWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>241</width>
+      <height>601</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>250</width>
+      <height>16777215</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;
+</string>
+    </property>
+    <widget class="QLabel" name="appNameLabel">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>9</y>
+       <width>191</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Zenith Health Suite</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>41</y>
+       <width>172</width>
+       <height>541</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QPushButton" name="dashboardButton">
+        <property name="text">
+         <string>Dashboard</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>icons/dashboard_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png</normaloff>icons/dashboard_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>22</width>
+          <height>22</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="analyticsButton">
+        <property name="text">
+         <string>Analytics</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>icons/analytics_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png</normaloff>icons/analytics_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>22</width>
+          <height>22</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="activityButton">
+        <property name="text">
+         <string>Activity</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>icons/moving_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</normaloff>icons/moving_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>22</width>
+          <height>22</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="goalsButton">
+        <property name="text">
+         <string>Goals</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>icons/circle_circle_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</normaloff>icons/circle_circle_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>22</width>
+          <height>22</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="historyButton">
+        <property name="text">
+         <string>History</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>icons/history_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</normaloff>icons/history_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>22</width>
+          <height>22</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="settingsButton">
+        <property name="text">
+         <string>Settings</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>icons/settings_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png</normaloff>icons/settings_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>22</width>
+          <height>22</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="supportButton">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Support</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>icons/contact_support_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</normaloff>icons/contact_support_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>22</width>
+          <height>22</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="mainContentWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>0</y>
+      <width>1061</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #f4f6f8;</string>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="spacing">
+      <number>2</number>
+     </property>
+     <property name="leftMargin">
+      <number>5</number>
+     </property>
+     <item>
+      <widget class="QWidget" name="headerWidget" native="true">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>100</height>
+        </size>
+       </property>
+       <widget class="QLabel" name="lblHeaderTitle">
+        <property name="geometry">
+         <rect>
+          <x>15</x>
+          <y>10</y>
+          <width>250</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>250</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Data Logging</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnUserProfile">
+        <property name="geometry">
+         <rect>
+          <x>930</x>
+          <y>0</y>
+          <width>62</width>
+          <height>62</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>icons/account_circle_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</normaloff>icons/account_circle_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>18</width>
+          <height>18</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnHeaderDate">
+        <property name="geometry">
+         <rect>
+          <x>670</x>
+          <y>10</y>
+          <width>171</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>16 May, 2026</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnNotification">
+        <property name="geometry">
+         <rect>
+          <x>860</x>
+          <y>0</y>
+          <width>62</width>
+          <height>62</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>icons/notifications_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</normaloff>icons/notifications_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>18</width>
+          <height>18</height>
+         </size>
+        </property>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>100</y>
+      <width>971</width>
+      <height>501</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>2</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Activity</string>
+     </attribute>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <widget class="QFrame" name="leftInputFrame">
+        <property name="frameShape">
+         <enum>QFrame::Shape::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Raised</enum>
+        </property>
+        <widget class="QWidget" name="verticalLayoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>20</y>
+           <width>441</width>
+           <height>351</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QLabel" name="lblLogActivity">
+            <property name="text">
+             <string>Log New Activity</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblExerciseName">
+            <property name="text">
+             <string>EXERCISE NAME</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboExerciseName_2">
+            <item>
+             <property name="text">
+              <string>High-Intensity Interval Training (HIIT)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Running / Jogging</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Brisk Walking</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Cycling / Spinning</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Weightlifting / Strength Training</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Yoga &amp; Meditation</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Swimming</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Cardio Boxing</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Pilates</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Calisthenics (Bodyweight Workout)</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <layout class="QGridLayout" name="gridLayout">
+            <item row="0" column="1">
+             <widget class="QLabel" name="lblIntensity">
+              <property name="text">
+               <string>INTENSITY (1-10)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QSpinBox" name="spinDuration"/>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="lblDuration">
+              <property name="text">
+               <string>DURATION (MIN)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QSpinBox" name="spinIntensity"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblCalories">
+            <property name="text">
+             <string>CALORIES BURNED (EST.)</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineCalories"/>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QFrame" name="metricsCard">
+         <property name="geometry">
+          <rect>
+           <x>480</x>
+           <y>90</y>
+           <width>461</width>
+           <height>211</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+QFrame#metricsCard {
+    background-color: #F8FAFC !important; 
+    border-radius: 12px !important;
+    border: none !important;
+}
+
+QFrame#metricsCard QLabel {
+    background: transparent !important;
+}
+
+
+QLabel#lblStepCountTitle, 
+QLabel#lblSleepQualityTitle, 
+QLabel#lblWaterIntakeTitle, 
+QLabel#lblMacrosTitle {
+    font-size: 10px;
+    color: #8C98A4;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+QLabel#lblStepCountValue, 
+QLabel#lblSleepQualityValue, 
+QLabel#lblWaterIntakeValue {
+    font-size: 20px;
+    font-weight: 900; 
+    color: #0F172A;
+}
+
+
+QLabel#lblMacrosValue {
+    font-size: 16px;
+    font-weight: 900;
+    color: #22C55E; 
+}</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Shape::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <property name="leftMargin">
+           <number>20</number>
+          </property>
+          <property name="topMargin">
+           <number>20</number>
+          </property>
+          <property name="rightMargin">
+           <number>20</number>
+          </property>
+          <property name="bottomMargin">
+           <number>20</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="lblMetricsTitle">
+            <property name="text">
+             <string>INTEGRATED DAILY METRICS</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="Line" name="line">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QGridLayout" name="gridLayout_2">
+            <item row="0" column="0">
+             <widget class="QLabel" name="lblStepCountTitle">
+              <property name="text">
+               <string>STEP COUNT</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="lblSleepQualityTitle">
+              <property name="text">
+               <string>SLEEP QUALITY</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="lblStepCountValue">
+              <property name="text">
+               <string>1200</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QLabel" name="lblMacrosValue">
+              <property name="text">
+               <string>Optimal</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLabel" name="lblMacrosTitle">
+              <property name="text">
+               <string>MACROS LOGGED</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="lblWaterIntakeTitle">
+              <property name="text">
+               <string>WATER INTAKE</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="lblWaterIntakeValue">
+              <property name="text">
+               <string>2 L</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLabel" name="lblSleepQualityValue">
+              <property name="text">
+               <string>8.5</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Orientation::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+        <zorder>metricsCard</zorder>
+        <zorder>verticalLayoutWidget</zorder>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="text">
+         <string>SAVE</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Vitals </string>
+     </attribute>
+     <widget class="QFrame" name="vitalsMainCard">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>941</width>
+        <height>411</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_10">
+       <property name="leftMargin">
+        <number>20</number>
+       </property>
+       <property name="topMargin">
+        <number>20</number>
+       </property>
+       <property name="rightMargin">
+        <number>20</number>
+       </property>
+       <property name="bottomMargin">
+        <number>20</number>
+       </property>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QFrame" name="vitalsFormFrame">
+           <property name="frameShape">
+            <enum>QFrame::Shape::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Shadow::Raised</enum>
+           </property>
+           <widget class="QWidget" name="gridLayoutWidget_3">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>10</y>
+              <width>411</width>
+              <height>281</height>
+             </rect>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_3">
+             <item row="4" column="1">
+              <layout class="QHBoxLayout" name="horizontalLayout_3">
+               <item>
+                <widget class="QSpinBox" name="pinBPSys"/>
+               </item>
+               <item>
+                <widget class="QLabel" name="label">
+                 <property name="text">
+                  <string>/</string>
+                 </property>
+                 <property name="scaledContents">
+                  <bool>false</bool>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QSpinBox" name="spinBPDia"/>
+               </item>
+              </layout>
+             </item>
+             <item row="6" column="0">
+              <widget class="QSpinBox" name="spinSugar"/>
+             </item>
+             <item row="4" column="0">
+              <widget class="QSpinBox" name="spinHeartRate"/>
+             </item>
+             <item row="2" column="0">
+              <widget class="QDoubleSpinBox" name="spinWeight"/>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLabel" name="lblTemp">
+               <property name="text">
+                <string>BODY TEMPERATURE (°C)</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="lblHeartRate">
+               <property name="text">
+                <string>HEART RATE (BPM)</string>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="1">
+              <widget class="QSpinBox" name="spinStress"/>
+             </item>
+             <item row="2" column="1">
+              <widget class="QDoubleSpinBox" name="spinTemp"/>
+             </item>
+             <item row="3" column="1">
+              <widget class="QLabel" name="lblBP">
+               <property name="text">
+                <string>BLOOD PRESSURE (SYS / DIA)</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="lblWeight">
+               <property name="text">
+                <string>WEIGHT (KG)</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="1">
+              <widget class="QLabel" name="lblStress">
+               <property name="text">
+                <string>STRESS LEVEL (1-10)</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="0">
+              <widget class="QLabel" name="lblSugar">
+               <property name="text">
+                <string>BLOOD SUGAR (mg/dL)</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QLabel" name="lblLogVitals">
+               <property name="text">
+                <string>Log Vitals</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="vitalsRefCard">
+           <property name="frameShape">
+            <enum>QFrame::Shape::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Shadow::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_9">
+            <property name="leftMargin">
+             <number>20</number>
+            </property>
+            <property name="topMargin">
+             <number>20</number>
+            </property>
+            <property name="rightMargin">
+             <number>20</number>
+            </property>
+            <property name="bottomMargin">
+             <number>20</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="lblClinicalTitle">
+              <property name="text">
+               <string>CLINICAL REFERENCE RANGES</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="Line" name="lineClinical">
+              <property name="styleSheet">
+               <string notr="true">QFrame#lineClinical {
+    border: none; 
+    background-color: #CBD5E1; 
+    max-height: 2px; 
+}</string>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="lblRefDetails">
+              <property name="text">
+               <string>&lt;p style=&quot;margin-bottom: 12px;&quot;&gt;
+    &lt;span style=&quot;color: #0F172A; font-weight: bold; font-size: 13px;&quot;&gt;HEART RATE: 60 - 100 bpm&lt;/span&gt;&lt;br&gt;
+    &lt;span style=&quot;color: #8C98A4; font-size: 12px;&quot;&gt;Resting heart rate indicates fitness.&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;p style=&quot;margin-bottom: 12px;&quot;&gt;
+    &lt;span style=&quot;color: #0F172A; font-weight: bold; font-size: 13px;&quot;&gt;BLOOD PRESSURE: 120 / 80&lt;/span&gt;&lt;br&gt;
+    &lt;span style=&quot;color: #8C98A4; font-size: 12px;&quot;&gt;Systolic &amp;lt; 120, Diastolic &amp;lt; 80.&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;p style=&quot;margin-bottom: 12px;&quot;&gt;
+    &lt;span style=&quot;color: #0F172A; font-weight: bold; font-size: 13px;&quot;&gt;BLOOD SUGAR: &amp;lt; 140 mg/dL&lt;/span&gt;&lt;br&gt;
+    &lt;span style=&quot;color: #8C98A4; font-size: 12px;&quot;&gt;Normal random glucose level.&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;p style=&quot;margin-bottom: 0px;&quot;&gt;
+    &lt;span style=&quot;color: #0F172A; font-weight: bold; font-size: 13px;&quot;&gt;TEMPERATURE: 36.5 - 37.2 °C&lt;/span&gt;&lt;br&gt;
+    &lt;span style=&quot;color: #8C98A4; font-size: 12px;&quot;&gt;Normal human body temperature.&lt;/span&gt;
+&lt;/p&gt;</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Orientation::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>57</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnSaveVitals">
+         <property name="text">
+          <string>SAVE</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>Nutrition</string>
+     </attribute>
+     <widget class="QFrame" name="nutritionMainCard">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>-50</y>
+        <width>941</width>
+        <height>561</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <widget class="QWidget" name="verticalLayoutWidget_7">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>50</y>
+         <width>911</width>
+         <height>476</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_11">
+        <property name="leftMargin">
+         <number>20</number>
+        </property>
+        <property name="topMargin">
+         <number>20</number>
+        </property>
+        <property name="rightMargin">
+         <number>20</number>
+        </property>
+        <property name="bottomMargin">
+         <number>20</number>
+        </property>
+        <item>
+         <layout class="QGridLayout" name="gridLayout_4">
+          <item row="3" column="1">
+           <widget class="QLabel" name="lblProtein">
+            <property name="text">
+             <string>PROTEIN (g)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QSpinBox" name="spinCals"/>
+          </item>
+          <item row="5" column="1">
+           <widget class="QLabel" name="lblFats">
+            <property name="text">
+             <string>FATS (g)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="lblCals">
+            <property name="text">
+             <string>CALORIES (kCal)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QComboBox" name="comboMealType">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <item>
+             <property name="text">
+              <string>Breakfast</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Morning Snack</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Lunch</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Evening Snack</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dinner</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Pre-Workout</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Post-Workout</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Late Night Snack</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="6" column="0">
+           <widget class="QSpinBox" name="spinCarbs"/>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="lineFoodName"/>
+          </item>
+          <item row="4" column="1">
+           <widget class="QSpinBox" name="spinProtein"/>
+          </item>
+          <item row="6" column="1">
+           <widget class="QSpinBox" name="spinFats"/>
+          </item>
+          <item row="8" column="0">
+           <widget class="QSpinBox" name="spinWater"/>
+          </item>
+          <item row="7" column="0">
+           <widget class="QLabel" name="lblWater">
+            <property name="text">
+             <string>WATER INTAKE (Liters)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="lblMealType">
+            <property name="text">
+             <string>MEAL TYPE</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="lblCarbs">
+            <property name="text">
+             <string>CARBS (g)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLabel" name="lblFoodName_2">
+            <property name="text">
+             <string>FOOD NAME</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="1">
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>CAFFEINE (Cups)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="1">
+           <widget class="QSpinBox" name="spinCaffeine"/>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="lblLogNutrition">
+            <property name="text">
+             <string>Log Nutrition</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnSaveMeal">
+          <property name="text">
+           <string>SAVE</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1487</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

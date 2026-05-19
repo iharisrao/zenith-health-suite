@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>loginClass</class>
- <widget class="QMainWindow" name="loginClass">
+ <class>login</class>
+ <widget class="QMainWindow" name="login">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -21,7 +21,7 @@
   <widget class="QWidget" name="centralWidget">
    <widget class="QFrame" name="background">
     <property name="enabled">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
     <property name="geometry">
      <rect>
@@ -156,7 +156,7 @@ QLabel#securitylabel {
     </property>
     <widget class="QFrame" name="mainCard">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -174,7 +174,7 @@ QLabel#securitylabel {
      </property>
      <widget class="QFrame" name="loginbox">
       <property name="enabled">
-       <bool>false</bool>
+       <bool>true</bool>
       </property>
       <property name="geometry">
        <rect>
@@ -235,7 +235,7 @@ QLabel#securitylabel {
       </widget>
       <widget class="QLineEdit" name="usernameLineEdit">
        <property name="enabled">
-        <bool>false</bool>
+        <bool>true</bool>
        </property>
        <property name="geometry">
         <rect>
@@ -473,6 +473,8 @@ QLabel#securitylabel {
        <enum>QFrame::Shadow::Raised</enum>
       </property>
      </widget>
+     <zorder>imageFrame</zorder>
+     <zorder>loginbox</zorder>
     </widget>
    </widget>
   </widget>

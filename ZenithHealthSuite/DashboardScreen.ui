@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1487</width>
-    <height>746</height>
+    <height>760</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -75,11 +75,12 @@
     color: #1558A8;            
 }
 
-#dashboardButton {
+QPushButton#dashboardButton {
     background-color: #F0F7FF !important;
     color: #1558A8 !important;
-    border-left: 4px solid #1558A8;
-    border-radius: 0px 8px 8px 0px; 
+    font-weight: 900 !important;
+    border-left: 4px solid #1558A8 !important;
+    border-radius: 0px 8px 8px 0px !important;
 }
 
 #addActivityButton {
@@ -293,7 +294,7 @@ QLabel#stressStatusLabel {
       </property>
       <property name="minimumSize">
        <size>
-        <width>250</width>
+        <width>261</width>
         <height>0</height>
        </size>
       </property>
@@ -363,7 +364,7 @@ QLabel#stressStatusLabel {
         <rect>
          <x>40</x>
          <y>50</y>
-         <width>169</width>
+         <width>179</width>
          <height>296</height>
         </rect>
        </property>
