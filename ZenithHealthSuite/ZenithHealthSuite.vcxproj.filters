@@ -33,6 +33,12 @@
     <Filter Include="DashBoard">
       <UniqueIdentifier>{164a97a5-3092-45c0-87b0-3d9a0f81cae7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Activity">
+      <UniqueIdentifier>{5da1d596-2067-4450-b01a-1236efb265a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Login">
+      <UniqueIdentifier>{7b61645b-6484-4e3f-99a0-160d9d937e64}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="ZenithHealthSuite.qrc">
@@ -67,10 +73,13 @@
     <ClCompile Include="DashboardScreen.cpp">
       <Filter>DashBoard</Filter>
     </ClCompile>
-    <ClCompile Include="DataEntryDialog.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Activity.cpp">
+      <Filter>Activity</Filter>
     </ClCompile>
     <ClCompile Include="login.cpp">
+      <Filter>Login</Filter>
+    </ClCompile>
+    <ClCompile Include="History.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -89,10 +98,13 @@
     <QtMoc Include="DashboardScreen.h">
       <Filter>DashBoard</Filter>
     </QtMoc>
-    <QtMoc Include="DataEntryDialog.h">
-      <Filter>Header Files</Filter>
+    <QtMoc Include="Activity.h">
+      <Filter>Activity</Filter>
     </QtMoc>
     <QtMoc Include="login.h">
+      <Filter>Login</Filter>
+    </QtMoc>
+    <QtMoc Include="History.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -103,10 +115,13 @@
     <QtUic Include="DashboardScreen.ui">
       <Filter>DashBoard</Filter>
     </QtUic>
-    <QtUic Include="DataEntryDialog.ui">
-      <Filter>Form Files</Filter>
+    <QtUic Include="Activity.ui">
+      <Filter>Activity</Filter>
     </QtUic>
     <QtUic Include="login.ui">
+      <Filter>Login</Filter>
+    </QtUic>
+    <QtUic Include="History.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

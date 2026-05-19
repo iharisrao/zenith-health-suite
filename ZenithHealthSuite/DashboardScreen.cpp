@@ -1,6 +1,5 @@
 #include "DashboardScreen.h"
 #include "ui_DashboardScreen.h"
-#include "DataEntryDialog.h"
 
 #include <QChart>
 #include <QChartView>
@@ -35,13 +34,6 @@ DashboardScreen::~DashboardScreen()
     delete ui;
 }
 
-void DashboardScreen::on_addActivityButton_clicked()
-{
-    qDebug() << "Launching Data Entry Pop-up...";
-    DataEntryDialog popUpWindow(this);
-    popUpWindow.exec(); 
-}
-
 
 void DashboardScreen::on_dashboardButton_clicked() {
     qDebug() << "Already on the Dashboard!";
@@ -52,7 +44,9 @@ void DashboardScreen::on_analyticsButton_clicked() {
 }
 
 void DashboardScreen::on_activityButton_clicked() {
-    qDebug() << "Activity log coming soon...";
+    Activity* activityScreen = new Activity();
+    activityScreen->show();
+    this->close();
 }
 
 void DashboardScreen::on_goalsButton_clicked() {
@@ -60,7 +54,9 @@ void DashboardScreen::on_goalsButton_clicked() {
 }
 
 void DashboardScreen::on_historyButton_clicked() {
-    qDebug() << "History coming soon...";
+    HistoryScreen* historyScreen = new HistoryScreen();
+    historyScreen->show();
+    this->close();
 }
 
 void DashboardScreen::on_settingsButton_clicked() {
@@ -69,14 +65,6 @@ void DashboardScreen::on_settingsButton_clicked() {
 
 void DashboardScreen::on_supportButton_clicked() {
     qDebug() << "Support coming soon...";
-}
-
-void DashboardScreen::on_buddyButton_clicked() {
-    qDebug() << "Buddy AI coming soon...";
-}
-
-void DashboardScreen::on_premiumButton_clicked() {
-    qDebug() << "Premium checkout...";
 }
 
 void DashboardScreen::on_profileButton_clicked() {

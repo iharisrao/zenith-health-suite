@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include <QDebug> 
+#include "Activity.h"
+#include "History.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class DashboardScreen; }
@@ -25,14 +27,8 @@ private slots:
     void on_activityButton_clicked();
     void on_goalsButton_clicked();
     void on_historyButton_clicked();
-
-    
-    void on_addActivityButton_clicked();
-
     void on_settingsButton_clicked();
     void on_supportButton_clicked();
-    void on_buddyButton_clicked();
-    void on_premiumButton_clicked();
 
     
     void on_profileButton_clicked();

@@ -1,0 +1,902 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>HistoryScreen</class>
+ <widget class="QMainWindow" name="HistoryScreen">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1487</width>
+    <height>760</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>History</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#headerWidget {
+    background-color: transparent;
+    border-bottom: none;
+}
+
+QLabel#lblHeaderTitle {
+    color: #1558A8;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#headerWidget QPushButton {
+    background-color: transparent;
+    border: none;
+    color: #8C98A4;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+#headerWidget QPushButton:hover {
+    color: #1558A8;
+}
+
+#navOverviewButton {
+    color: #1558A8 !important;
+    border-bottom: 3px solid #1558A8;
+    border-radius: 0px;
+}
+
+QLabel {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+}
+
+#sidebarWidget {
+    background-color: #FFFFFF;
+    border-right: 1px solid #E5E7EB;
+    min-width: 260px; 
+}
+
+#appNameLabel {
+    color: #1558A8;
+    font-size: 18px;
+    font-weight: 800;
+    padding: 5px 15px 0px 15px;
+    background-color: transparent;
+    margin-top: 0px;
+    border: none;
+    min-height: 30px;
+    max-height: 35px;
+}
+
+#sidebarWidget QPushButton {
+    text-align: left;
+    padding: 8px 20px;
+    background-color: transparent;
+    border: none;
+    color: #6B7280; 
+    font-size: 14px;
+    font-weight: 600;
+    margin: 2px 15px; 
+    border-radius: 8px;
+    min-height: 34px; 
+}
+
+#sidebarWidget QPushButton:hover {
+    background-color: #F0F7FF; 
+    color: #1558A8;            
+}
+
+QPushButton#historyButton {
+    background-color: #F0F7FF !important;
+    color: #1558A8 !important;
+    font-weight: 900 !important;
+    border-left: 4px solid #1558A8 !important;
+    border-radius: 0px 8px 8px 0px !important;
+}
+
+/* =========================================
+   1. MAIN CONTAINERS
+========================================= */
+QFrame#topCardsFrame {
+    background: transparent !important;
+    border: none !important;
+}
+
+QFrame#tableHeaderFrame, QFrame#paginationFrame {
+    background-color: #FFFFFF !important;
+    border-radius: 12px !important;
+    border: 1px solid #E2E8F0 !important;
+}
+
+QFrame#cardTotalWorkouts, QFrame#cardActiveHours, QFrame#cardAvgHeartRate, QFrame#cardConsistency {
+    background-color: #FFFFFF !important;
+    border-radius: 12px !important;
+    border: 1px solid #E2E8F0 !important;
+}
+
+/* =========================================
+   2. TOP CARDS TEXT (Boldness Kam Ki Hai)
+========================================= */
+QLabel#lblTotalWorkoutsTitle, QLabel#lblActiveHoursTitle, QLabel#lblAvgHeartRateTitle, QLabel#lblConsistencyTitle {
+    color: #64748B !important;
+    font-family: &quot;Segoe UI&quot;, Arial, sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 11px !important;
+    letter-spacing: 1px !important;
+    border: none !important;
+    background: transparent !important;
+}
+
+/* Yahan Boldness 900 se kam kar ke sirf 'bold' kar di hai */
+QLabel#lblTotalWorkoutsValue, QLabel#lblActiveHoursValue, QLabel#lblAvgHeartRateValue, QLabel#lblConsistencyValue {
+    color: #0F172A !important;
+    font-family: &quot;Segoe UI&quot;, Arial, sans-serif !important;
+    font-weight: bold !important; 
+    font-size: 28px !important; 
+    border: none !important;
+    background: transparent !important;
+}
+
+/* =========================================
+   3. TABLE TITLES (Boldness Kam Ki Hai)
+========================================= */
+QLabel#lblTableTitle {
+    color: #0F172A !important;
+    font-family: &quot;Segoe UI&quot;, Arial, sans-serif !important;
+    font-weight: bold !important; /* 900 khatam kar diya */
+    font-size: 20px !important;
+    border: none !important;
+    background: transparent !important;
+}
+
+QLabel#lblTableSubtitle {
+    color: #64748B !important;
+    font-family: &quot;Segoe UI&quot;, Arial, sans-serif !important;
+    font-size: 13px !important;
+    border: none !important;
+    background: transparent !important;
+}
+
+/* =========================================
+   4. PROFESSIONAL BUTTONS (Zabardasti lagayi hai)
+========================================= */
+QComboBox#comboFilter {
+    background-color: #F8FAFC !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 6px !important;
+    padding: 6px 12px !important;
+    color: #0F172A !important;
+    font-family: &quot;Segoe UI&quot;, Arial, sans-serif !important;
+    font-weight: bold !important;
+    font-size: 13px !important;
+}
+
+QComboBox#comboFilter::drop-down {
+    border: none !important;
+    width: 0px !important;
+}
+
+QComboBox#comboFilter::down-arrow {
+    image: none !important;
+}
+
+QPushButton#btnExport {
+    background-color: #FFFFFF !important;
+    border: 1px solid #000000 !important; /* Black Outline as per your code */
+    border-radius: 6px !important;
+    padding: 6px 16px !important;
+    color: #000000 !important; /* Black Text as per your code */
+    font-family: &quot;Segoe UI&quot;, Arial, sans-serif !important;
+    font-weight: bold !important;
+    font-size: 13px !important;
+}
+
+QPushButton#btnExport:hover {
+    background-color: #000000 !important;
+    color: #FFFFFF !important; /* Hover par text white ho jaye */
+}
+
+/* =========================================
+   5. THE MAIN TABLE
+========================================= */
+QTableWidget {
+    background-color: #FFFFFF !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 10px !important;
+    gridline-color: transparent !important;
+    font-family: &quot;Segoe UI&quot;, Arial, sans-serif !important;
+    font-size: 13px !important;
+    color: #475569 !important;
+}
+
+QHeaderView::section {
+    background-color: #FFFFFF !important;
+    color: #8C98A4 !important;
+    font-family: &quot;Segoe UI&quot;, Arial, sans-serif !important;
+    font-weight: bold !important;
+    font-size: 11px !important;
+    padding: 16px !important;
+    border: none !important;
+    border-bottom: 2px solid #F1F5F9 !important;
+    text-align: left !important;
+}
+
+QTableWidget::item {
+    padding: 12px 10px !important;
+    border-bottom: 1px solid #F1F5F9 !important;
+}
+
+/* =========================================
+   6. PAGINATION BUTTONS (Fixing '1')
+========================================= */
+QPushButton#btnPrevPage, QPushButton#btnNextPage, QPushButton#btnPage2, QPushButton#btnPage3 {
+    background-color: #FFFFFF !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 6px !important;
+    color: #475569 !important;
+    font-family: &quot;Segoe UI&quot;, Arial, sans-serif !important;
+    font-weight: bold !important;
+    font-size: 13px !important;
+    min-width: 32px !important;
+    min-height: 32px !important;
+}
+
+
+QLabel#lblShowingRecords {
+    color: #64748B !important;
+    font-family: &quot;Segoe UI&quot;, Arial, sans-serif !important;
+    font-size: 13px !important;
+    background: transparent !important;
+    border: none !important;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QWidget" name="sidebarWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>261</width>
+      <height>661</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>261</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>250</width>
+      <height>16777215</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;
+</string>
+    </property>
+    <widget class="QLabel" name="appNameLabel">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>9</y>
+       <width>204</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Zenith Health Suite</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>41</x>
+       <y>51</y>
+       <width>179</width>
+       <height>521</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QPushButton" name="dashboardButton">
+        <property name="text">
+         <string>Dashboard</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>icons/dashboard_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png</normaloff>icons/dashboard_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="analyticsButton">
+        <property name="text">
+         <string>Analytics</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>icons/analytics_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png</normaloff>icons/analytics_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="activityButton">
+        <property name="text">
+         <string>Activity</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>icons/moving_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</normaloff>icons/moving_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="goalsButton">
+        <property name="text">
+         <string>Goals</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>icons/circle_circle_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</normaloff>icons/circle_circle_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="historyButton">
+        <property name="text">
+         <string>History</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>icons/history_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</normaloff>icons/history_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="settingsButton">
+        <property name="text">
+         <string>Settings</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>icons/analytics_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png</normaloff>icons/analytics_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="supportButton">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>54</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Support</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>icons/contact_support_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</normaloff>icons/contact_support_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="mainContentWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>0</y>
+      <width>1021</width>
+      <height>661</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #f4f6f8;</string>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="spacing">
+      <number>2</number>
+     </property>
+     <property name="leftMargin">
+      <number>5</number>
+     </property>
+     <item>
+      <widget class="QWidget" name="headerWidget" native="true">
+       <property name="maximumSize">
+        <size>
+         <width>1000</width>
+         <height>100</height>
+        </size>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <property name="spacing">
+         <number>20</number>
+        </property>
+        <property name="leftMargin">
+         <number>15</number>
+        </property>
+        <property name="topMargin">
+         <number>10</number>
+        </property>
+        <property name="rightMargin">
+         <number>15</number>
+        </property>
+        <property name="bottomMargin">
+         <number>10</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="lblHeaderTitle">
+          <property name="minimumSize">
+           <size>
+            <width>250</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>History Explorer</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>13</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="syncDataButton">
+          <property name="minimumSize">
+           <size>
+            <width>120</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">#syncDataButton {
+    background-color: #1558A8 !important; 
+    color: #FFFFFF !important;             
+    font-weight: bold;
+    font-size: 13px;
+    border-radius: 8px;
+    padding: 8px 20px;
+    border: none;
+}
+
+#syncDataButton:hover {
+    background-color: #0E417F !important;
+}
+</string>
+          </property>
+          <property name="text">
+           <string>Sync Data</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="bellButton">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>icons/notifications_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</normaloff>icons/notifications_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>24</width>
+            <height>24</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="profileButton">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>icons/account_circle_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</normaloff>icons/account_circle_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>24</width>
+            <height>24</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QWidget" name="HistoryAreaWidget" native="true">
+       <widget class="QFrame" name="topCardsFrame">
+        <property name="geometry">
+         <rect>
+          <x>9</x>
+          <y>10</y>
+          <width>981</width>
+          <height>111</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Raised</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QFrame" name="cardTotalWorkouts">
+           <property name="frameShape">
+            <enum>QFrame::Shape::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Shadow::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <widget class="QLabel" name="lblTotalWorkoutsTitle">
+              <property name="text">
+               <string>TOTAL WORKOUTS</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="lblTotalWorkoutsValue">
+              <property name="text">
+               <string>0</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="cardActiveHours">
+           <property name="frameShape">
+            <enum>QFrame::Shape::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Shadow::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item>
+             <widget class="QLabel" name="lblActiveHoursTitle">
+              <property name="text">
+               <string>ACTIVE HOURS</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="lblActiveHoursValue">
+              <property name="text">
+               <string>0h</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="cardAvgHeartRate">
+           <property name="frameShape">
+            <enum>QFrame::Shape::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Shadow::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_5">
+            <item>
+             <widget class="QLabel" name="lblAvgHeartRateTitle">
+              <property name="text">
+               <string>AVG HEART RATE</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="lblAvgHeartRateValue">
+              <property name="text">
+               <string>0 bpm</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="cardConsistency">
+           <property name="frameShape">
+            <enum>QFrame::Shape::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Shadow::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_6">
+            <item>
+             <widget class="QLabel" name="lblConsistencyTitle">
+              <property name="text">
+               <string>CONSISTENCY SCORE</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="lblConsistencyValue">
+              <property name="text">
+               <string>0%</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QFrame" name="tableHeaderFrame">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>130</y>
+          <width>981</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Raised</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <layout class="QGridLayout" name="gridLayout">
+           <item row="0" column="0">
+            <widget class="QLabel" name="lblTableTitle">
+             <property name="text">
+              <string>Activity Logs</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="lblTableSubtitle">
+             <property name="text">
+              <string>Comprehensive history of clinical and fitness data</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>453</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboFilter"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnExport">
+           <property name="text">
+            <string>Export PDF</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>icons/download_2_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</normaloff>icons/download_2_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>18</width>
+             <height>18</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QTableWidget" name="tableHistory">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>210</y>
+          <width>981</width>
+          <height>192</height>
+         </rect>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>true</bool>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+        </property>
+        <property name="showGrid">
+         <bool>false</bool>
+        </property>
+        <attribute name="verticalHeaderVisible">
+         <bool>false</bool>
+        </attribute>
+       </widget>
+       <widget class="QFrame" name="paginationFrame">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>440</y>
+          <width>981</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Raised</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QLabel" name="lblShowingRecords">
+           <property name="text">
+            <string>Showing 1-6 of 248 records</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>593</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnPrevPage">
+           <property name="text">
+            <string>&lt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnPage1">
+           <property name="styleSheet">
+            <string notr="true">/* The Blue '1' Button - NUCLEAR FIX */
+QPushButton#btnPage1 {
+    background-color: #1558A8 !important;
+    color: #FFFFFF !important; 
+    
+    /* Windows engine ko disable karne ka formula */
+    border-style: solid !important;
+    border-width: 1px !important;
+    border-color: #1558A8 !important;
+    
+    border-radius: 6px !important;
+    font-family: &quot;Segoe UI&quot;, Arial, sans-serif !important;
+    font-weight: bold !important;
+    font-size: 13px !important;
+    min-width: 32px !important;
+    min-height: 32px !important;
+}</string>
+           </property>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnPage2">
+           <property name="text">
+            <string>2</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnPage3">
+           <property name="text">
+            <string>3</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnNextPage">
+           <property name="text">
+            <string>&gt;</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

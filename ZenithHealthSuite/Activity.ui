@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>ActivityClass</class>
- <widget class="QMainWindow" name="ActivityClass">
+ <class>Activity</class>
+ <widget class="QMainWindow" name="Activity">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -38,11 +38,52 @@ QTabBar::tab:selected { background-color: #FFFFFF; color: #1558A8; border: none;
 QLabel { color: #475569; font-weight: bold; background: transparent; border: none; }
 QPushButton { background-color: #1558A8; color: white; border-radius: 8px; padding: 12px; font-weight: bold; font-size: 14px; border: none; }
 QPushButton:hover { background-color: #0E417F; }
-#sidebarWidget { background-color: #F8FAFC; border-right: 1px solid #E2E8F0; border-radius: 0px; }
-#appNameLabel { color: #1558A8; font-size: 20px; font-weight: 900; letter-spacing: -0.5px; }
-#sidebarWidget QPushButton { background: transparent; color: #64748B; text-align: left; padding: 12px 20px; margin: 4px 16px; border-radius: 10px; font-weight: 700; font-size: 14px; qproperty-iconSize: 22px 22px; }
-#sidebarWidget QPushButton:hover { background-color: #E2E8F0; color: #0F172A; }
-QPushButton#activityButton { background-color: #EFF6FF !important; color: #1558A8 !important; border: none !important; font-weight: 900 !important; }
+
+#sidebarWidget {
+    background-color: #FFFFFF;
+    border-right: 1px solid #E5E7EB;
+    min-width: 260px; 
+}
+
+#appNameLabel {
+    color: #1558A8;
+    font-size: 18px;
+    font-weight: 800;
+    padding: 5px 15px 0px 15px;
+    background-color: transparent;
+    margin-top: 0px;
+    border: none;
+    min-height: 30px;
+    max-height: 35px;
+}
+
+#sidebarWidget QPushButton {
+    text-align: left;
+    padding: 8px 20px;
+    background-color: transparent;
+    border: none;
+    color: #6B7280; 
+    font-size: 14px;
+    font-weight: 600;
+    margin: 2px 15px; 
+    border-radius: 8px;
+    min-height: 34px; 
+}
+
+#sidebarWidget QPushButton:hover {
+    background-color: #F0F7FF; 
+    color: #1558A8;            
+}
+
+QPushButton#activityButton {
+    background-color: #F0F7FF !important;
+    color: #1558A8 !important;
+    font-weight: 900 !important;
+    border-left: 4px solid #1558A8 !important;
+    border-radius: 0px 8px 8px 0px !important;
+}
+
+
 #headerWidget { background: transparent; border-bottom: 1px solid #E2E8F0; }
 QLabel#lblHeaderTitle { color: #0F172A; font-size: 22px; font-weight: 900; }
 QPushButton#btnHeaderDate { background-color: #FFFFFF; color: #475569; border: 1px solid #E2E8F0; border-radius: 16px; padding: 6px 20px; font-weight: bold; }
@@ -59,7 +100,7 @@ QFrame#lineClinical { border: none; background-color: #CBD5E1; max-height: 2px; 
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>241</width>
+      <width>261</width>
       <height>601</height>
      </rect>
     </property>
@@ -71,7 +112,7 @@ QFrame#lineClinical { border: none; background-color: #CBD5E1; max-height: 2px; 
     </property>
     <property name="minimumSize">
      <size>
-      <width>0</width>
+      <width>261</width>
       <height>0</height>
      </size>
     </property>
@@ -103,7 +144,7 @@ QFrame#lineClinical { border: none; background-color: #CBD5E1; max-height: 2px; 
       <rect>
        <x>40</x>
        <y>41</y>
-       <width>172</width>
+       <width>177</width>
        <height>541</height>
       </rect>
      </property>
@@ -215,7 +256,7 @@ QFrame#lineClinical { border: none; background-color: #CBD5E1; max-height: 2px; 
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>0</height>
+          <height>54</height>
          </size>
         </property>
         <property name="text">
@@ -239,9 +280,9 @@ QFrame#lineClinical { border: none; background-color: #CBD5E1; max-height: 2px; 
    <widget class="QWidget" name="mainContentWidget" native="true">
     <property name="geometry">
      <rect>
-      <x>240</x>
+      <x>260</x>
       <y>0</y>
-      <width>1061</width>
+      <width>1041</width>
       <height>81</height>
      </rect>
     </property>
@@ -361,7 +402,7 @@ QFrame#lineClinical { border: none; background-color: #CBD5E1; max-height: 2px; 
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -670,7 +711,7 @@ QLabel#lblMacrosValue {
         <x>10</x>
         <y>10</y>
         <width>941</width>
-        <height>411</height>
+        <height>451</height>
        </rect>
       </property>
       <property name="frameShape">
@@ -708,10 +749,27 @@ QLabel#lblMacrosValue {
               <x>20</x>
               <y>10</y>
               <width>411</width>
-              <height>281</height>
+              <height>332</height>
              </rect>
             </property>
             <layout class="QGridLayout" name="gridLayout_3">
+             <item row="2" column="1">
+              <widget class="QDoubleSpinBox" name="spinTemp"/>
+             </item>
+             <item row="5" column="1">
+              <widget class="QLabel" name="lblStress">
+               <property name="text">
+                <string>STRESS LEVEL (1-10)</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QLabel" name="lblLogVitals">
+               <property name="text">
+                <string>Log Vitals</string>
+               </property>
+              </widget>
+             </item>
              <item row="4" column="1">
               <layout class="QHBoxLayout" name="horizontalLayout_3">
                <item>
@@ -735,39 +793,33 @@ QLabel#lblMacrosValue {
                </item>
               </layout>
              </item>
-             <item row="6" column="0">
-              <widget class="QSpinBox" name="spinSugar"/>
-             </item>
-             <item row="4" column="0">
-              <widget class="QSpinBox" name="spinHeartRate"/>
-             </item>
-             <item row="2" column="0">
-              <widget class="QDoubleSpinBox" name="spinWeight"/>
-             </item>
-             <item row="1" column="1">
-              <widget class="QLabel" name="lblTemp">
+             <item row="3" column="1">
+              <widget class="QLabel" name="lblBP">
                <property name="text">
-                <string>BODY TEMPERATURE (°C)</string>
-               </property>
-              </widget>
-             </item>
-             <item row="3" column="0">
-              <widget class="QLabel" name="lblHeartRate">
-               <property name="text">
-                <string>HEART RATE (BPM)</string>
+                <string>BLOOD PRESSURE (SYS / DIA)</string>
                </property>
               </widget>
              </item>
              <item row="6" column="1">
               <widget class="QSpinBox" name="spinStress"/>
              </item>
-             <item row="2" column="1">
-              <widget class="QDoubleSpinBox" name="spinTemp"/>
-             </item>
-             <item row="3" column="1">
-              <widget class="QLabel" name="lblBP">
+             <item row="7" column="0">
+              <widget class="QLabel" name="label_3">
                <property name="text">
-                <string>BLOOD PRESSURE (SYS / DIA)</string>
+                <string>Sleep (Hours)</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QDoubleSpinBox" name="spinWeight"/>
+             </item>
+             <item row="4" column="0">
+              <widget class="QSpinBox" name="spinHeartRate"/>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="lblHeartRate">
+               <property name="text">
+                <string>HEART RATE (BPM)</string>
                </property>
               </widget>
              </item>
@@ -778,10 +830,10 @@ QLabel#lblMacrosValue {
                </property>
               </widget>
              </item>
-             <item row="5" column="1">
-              <widget class="QLabel" name="lblStress">
+             <item row="1" column="1">
+              <widget class="QLabel" name="lblTemp">
                <property name="text">
-                <string>STRESS LEVEL (1-10)</string>
+                <string>BODY TEMPERATURE (°C)</string>
                </property>
               </widget>
              </item>
@@ -792,12 +844,11 @@ QLabel#lblMacrosValue {
                </property>
               </widget>
              </item>
-             <item row="0" column="0">
-              <widget class="QLabel" name="lblLogVitals">
-               <property name="text">
-                <string>Log Vitals</string>
-               </property>
-              </widget>
+             <item row="6" column="0">
+              <widget class="QSpinBox" name="spinSugar"/>
+             </item>
+             <item row="8" column="0">
+              <widget class="QSpinBox" name="sleepSpinBox"/>
              </item>
             </layout>
            </widget>
