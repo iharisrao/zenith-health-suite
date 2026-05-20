@@ -100,12 +100,16 @@
   <ItemGroup>
     <QtRcc Include="Resource.qrc" />
     <QtRcc Include="ZenithHealthSuite.qrc" />
+    <QtUic Include="Activity.ui" />
+    <QtUic Include="analytics.ui" />
     <QtUic Include="DashboardScreen.ui" />
     <QtUic Include="History.ui" />
     <QtUic Include="login.ui" />
     <QtUic Include="RegistrationScreen.ui" />
     <QtUic Include="ZenithHealthSuite.ui" />
     <QtMoc Include="ZenithHealthSuite.h" />
+    <ClCompile Include="Activity.cpp" />
+    <ClCompile Include="analytics.cpp" />
     <ClCompile Include="DashboardScreen.cpp" />
     <ClCompile Include="DatabaseManager.cpp" />
     <ClCompile Include="History.cpp" />
@@ -118,6 +122,8 @@
   <ItemGroup>
     <QtMoc Include="RegistrationScreen.h" />
     <QtMoc Include="DashboardScreen.h" />
+    <QtMoc Include="Activity.h" />
+    <QtMoc Include="analytics.h" />
     <ClInclude Include="DatabaseManager.h" />
     <QtMoc Include="login.h" />
     <QtMoc Include="History.h" />

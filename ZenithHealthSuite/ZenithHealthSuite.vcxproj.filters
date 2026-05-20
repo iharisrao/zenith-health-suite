@@ -73,14 +73,17 @@
     <ClCompile Include="DashboardScreen.cpp">
       <Filter>DashBoard</Filter>
     </ClCompile>
-    <ClCompile Include="Activity.cpp">
-      <Filter>Activity</Filter>
-    </ClCompile>
     <ClCompile Include="login.cpp">
       <Filter>Login</Filter>
     </ClCompile>
     <ClCompile Include="History.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="analytics.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Activity.cpp">
+      <Filter>Activity</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -98,14 +101,17 @@
     <QtMoc Include="DashboardScreen.h">
       <Filter>DashBoard</Filter>
     </QtMoc>
-    <QtMoc Include="Activity.h">
-      <Filter>Activity</Filter>
-    </QtMoc>
     <QtMoc Include="login.h">
       <Filter>Login</Filter>
     </QtMoc>
     <QtMoc Include="History.h">
       <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="analytics.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Activity.h">
+      <Filter>Activity</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
@@ -115,14 +121,17 @@
     <QtUic Include="DashboardScreen.ui">
       <Filter>DashBoard</Filter>
     </QtUic>
-    <QtUic Include="Activity.ui">
-      <Filter>Activity</Filter>
-    </QtUic>
     <QtUic Include="login.ui">
       <Filter>Login</Filter>
     </QtUic>
     <QtUic Include="History.ui">
       <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="analytics.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="Activity.ui">
+      <Filter>Activity</Filter>
     </QtUic>
   </ItemGroup>
 </Project>
