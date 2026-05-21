@@ -20,13 +20,19 @@
    <string>analytics</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #f5f7fa;</string>
+   <string notr="true">background-color: #f5f7fa;
+
+
+
+
+
+</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QFrame" name="analyticsMainCard">
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>260</x>
       <y>0</y>
       <width>981</width>
       <height>691</height>
@@ -197,25 +203,6 @@ background-color: #F8FAFC;
        </size>
       </property>
      </widget>
-     <widget class="QLineEdit" name="searchLineEdit_2">
-      <property name="geometry">
-       <rect>
-        <x>400</x>
-        <y>10</y>
-        <width>261</width>
-        <height>40</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>232</width>
-        <height>40</height>
-       </size>
-      </property>
-      <property name="placeholderText">
-       <string>Search metrics...</string>
-      </property>
-     </widget>
      <widget class="QPushButton" name="btnInventory">
       <property name="geometry">
        <rect>
@@ -280,7 +267,7 @@ background-color: #F8FAFC;
        <x>10</x>
        <y>60</y>
        <width>931</width>
-       <height>71</height>
+       <height>61</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -334,9 +321,9 @@ background-color: #F8FAFC;
       <property name="geometry">
        <rect>
         <x>840</x>
-        <y>10</y>
+        <y>0</y>
         <width>80</width>
-        <height>24</height>
+        <height>31</height>
        </rect>
       </property>
       <property name="text">
@@ -346,10 +333,10 @@ background-color: #F8FAFC;
      <widget class="QPushButton" name="btn7Days">
       <property name="geometry">
        <rect>
-        <x>760</x>
-        <y>10</y>
-        <width>80</width>
-        <height>24</height>
+        <x>759</x>
+        <y>0</y>
+        <width>81</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="text">
@@ -359,8 +346,8 @@ background-color: #F8FAFC;
      <widget class="QLabel" name="lblAnalyticsTitle">
       <property name="geometry">
        <rect>
-        <x>21</x>
-        <y>11</y>
+        <x>10</x>
+        <y>0</y>
         <width>305</width>
         <height>30</height>
        </rect>
@@ -372,8 +359,8 @@ background-color: #F8FAFC;
      <widget class="QLabel" name="lblAnalyticsSubtitle">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>47</y>
+        <x>0</x>
+        <y>30</y>
         <width>356</width>
         <height>20</height>
        </rect>
@@ -387,9 +374,9 @@ background-color: #F8FAFC;
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>140</y>
+       <y>120</y>
        <width>921</width>
-       <height>141</height>
+       <height>161</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -411,7 +398,7 @@ QLabel#lblHeartRateTitle, QLabel#lblSleepTitle {
     color: #0F172A !important;
     font-family: &quot;Segoe UI&quot;, Arial, sans-serif !important;
     font-weight: 800 !important;
-    font-size: 16px !important;
+    font-size: 12px !important;
     border: none !important;
     background: transparent !important;
     padding: 10px !important;
@@ -442,10 +429,10 @@ QLabel#lblHeartRateTitle, QLabel#lblSleepTitle {
      <widget class="QFrame" name="frameSleep">
       <property name="geometry">
        <rect>
-        <x>610</x>
+        <x>560</x>
         <y>0</y>
         <width>291</width>
-        <height>121</height>
+        <height>151</height>
        </rect>
       </property>
       <property name="frameShape">
@@ -458,7 +445,7 @@ QLabel#lblHeartRateTitle, QLabel#lblSleepTitle {
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>10</y>
+         <y>0</y>
          <width>141</width>
          <height>41</height>
         </rect>
@@ -471,7 +458,7 @@ QLabel#lblHeartRateTitle, QLabel#lblSleepTitle {
      <widget class="QFrame" name="frameHeartRate">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>0</x>
         <y>0</y>
         <width>441</width>
         <height>131</height>
@@ -570,8 +557,8 @@ QLabel#lblIntensityTitle {
      <widget class="QLabel" name="lblIntensityTitle">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>40</y>
+        <x>0</x>
+        <y>10</y>
         <width>181</width>
         <height>16</height>
        </rect>
@@ -822,8 +809,8 @@ QLabel#lblIntensityTitle {
      <widget class="QLabel" name="lblIntensitySub">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>60</y>
+        <x>10</x>
+        <y>30</y>
         <width>111</width>
         <height>16</height>
        </rect>
@@ -835,10 +822,10 @@ QLabel#lblIntensityTitle {
      <widget class="QFrame" name="frameBarChart">
       <property name="geometry">
        <rect>
-        <x>240</x>
-        <y>40</y>
-        <width>120</width>
-        <height>80</height>
+        <x>20</x>
+        <y>70</y>
+        <width>421</width>
+        <height>111</height>
        </rect>
       </property>
       <property name="frameShape">
@@ -852,10 +839,10 @@ QLabel#lblIntensityTitle {
     <widget class="QFrame" name="row4Frame">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>460</y>
+       <x>10</x>
+       <y>450</y>
        <width>911</width>
-       <height>221</height>
+       <height>241</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -950,54 +937,13 @@ QTableWidget#TableWidget::item:selected {
      <property name="frameShadow">
       <enum>QFrame::Shadow::Raised</enum>
      </property>
-     <widget class="QFrame" name="tableHeaderContainer">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>20</y>
-        <width>300</width>
-        <height>35</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>30</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>300</width>
-        <height>35</height>
-       </size>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::Shape::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Shadow::Raised</enum>
-      </property>
-      <widget class="QLabel" name="lblNutritionTitle">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>10</y>
-         <width>241</width>
-         <height>22</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Nutritional &amp; Metabolic History</string>
-       </property>
-      </widget>
-     </widget>
      <widget class="QTableWidget" name="TableWidget">
       <property name="geometry">
        <rect>
-        <x>-10</x>
-        <y>50</y>
+        <x>-20</x>
+        <y>80</y>
         <width>861</width>
-        <height>250</height>
+        <height>271</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -1088,12 +1034,53 @@ QTableWidget#TableWidget::item:selected {
        </property>
       </item>
      </widget>
+     <widget class="QFrame" name="tableHeaderContainer">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>20</y>
+        <width>300</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>300</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <widget class="QLabel" name="lblNutritionTitle">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>10</y>
+         <width>241</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Nutritional &amp; Metabolic History</string>
+       </property>
+      </widget>
+     </widget>
     </widget>
    </widget>
    <widget class="QWidget" name="sidebarWidget" native="true">
     <property name="geometry">
      <rect>
-      <x>130</x>
+      <x>0</x>
       <y>0</y>
       <width>261</width>
       <height>703</height>
@@ -1118,7 +1105,57 @@ QTableWidget#TableWidget::item:selected {
      </size>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: white;
+     <string notr="true">
+#centralwidget{background-color: #f5f7fa;
+
+}
+
+#sidebarWidget {
+    background-color: #FFFFFF;
+    border-right: 1px solid #E5E7EB;
+    min-width: 260px; 
+}
+
+#appNameLabel {
+    color: #1558A8;
+    font-size: 18px;
+    font-weight: 800;
+    padding: 5px 15px 0px 15px;
+    background-color: transparent;
+    margin-top: 0px;
+    border: none;
+    min-height: 30px;
+    max-height: 35px;
+}
+
+#sidebarWidget QPushButton {
+    text-align: left;
+    padding: 8px 20px;
+    background-color: transparent;
+    border: none;
+    color: #6B7280; 
+    font-size: 14px;
+    font-weight: 600;
+    margin: 2px 15px; 
+    border-radius: 8px;
+    min-height: 34px; 
+}
+
+#sidebarWidget QPushButton:hover {
+    background-color: #F0F7FF; 
+    color: #1558A8;            
+}
+
+QPushButton#analyticsButton {
+    background-color: #F0F7FF !important;
+    color: #1558A8 !important;
+    font-weight: 900 !important;
+    border-left: 4px solid #1558A8 !important;
+    border-radius: 0px 8px 8px 0px !important;
+}
+
+
+
 </string>
     </property>
     <widget class="QLabel" name="appNameLabel">

@@ -109,7 +109,12 @@
     <QtUic Include="ZenithHealthSuite.ui" />
     <QtMoc Include="ZenithHealthSuite.h" />
     <ClCompile Include="Activity.cpp" />
-    <ClCompile Include="analytics.cpp" />
+    <ClCompile Include="analytics.cpp">
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Filename).moc</QtMocFileName>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|x64'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Filename).moc</QtMocFileName>
+    </ClCompile>
     <ClCompile Include="DashboardScreen.cpp" />
     <ClCompile Include="DatabaseManager.cpp" />
     <ClCompile Include="History.cpp" />

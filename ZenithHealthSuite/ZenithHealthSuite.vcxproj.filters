@@ -79,11 +79,11 @@
     <ClCompile Include="History.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="analytics.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Activity.cpp">
       <Filter>Activity</Filter>
+    </ClCompile>
+    <ClCompile Include="analytics.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

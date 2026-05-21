@@ -20,7 +20,7 @@
    <string>Activity</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#centralwidget { background-color: #F4F7FA; }
+   <string notr="true">#activity { background-color: #FFFFFF; }
 QFrame { background-color: #FFFFFF; border-radius: 12px; border: none; }
 QLineEdit, QSpinBox, QDoubleSpinBox, QComboBox { background-color: #F8FAFC; border: none; border-bottom: 2px solid #E2E8F0; border-radius: 4px 4px 0px 0px; padding: 10px 15px; color: #0F172A; font-weight: bold; font-size: 14px; }
 QLineEdit:focus, QSpinBox:focus, QDoubleSpinBox:focus, QComboBox:focus { background-color: #F0F7FF; border-bottom: 2px solid #1558A8; }

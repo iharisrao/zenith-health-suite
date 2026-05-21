@@ -1,4 +1,4 @@
-#include "DashboardScreen.h"
+#include "analytics.h"
 #include <QtWidgets/QApplication>
 
 int main(int argc, char* argv[])
@@ -6,7 +6,7 @@ int main(int argc, char* argv[])
     QApplication a(argc, argv);
 
    
-    DashboardScreen w;
+    analytics w;
     w.show();
 
     return a.exec();
