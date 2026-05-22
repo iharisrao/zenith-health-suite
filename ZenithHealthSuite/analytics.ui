@@ -20,11 +20,204 @@
    <string>analytics</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #f5f7fa;
+   <string notr="true">#centralwidget, 
+#headerWidget, 
+QFrame#titleFilterFrame,
+QFrame#row3Frame, 
+QFrame#row4Frame {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+QFrame#row2Frame,
+QFrame#frameCommonTopMetrics,        
+QFrame#frameCommonIntensityMetrics,  
+QFrame#frameTable {                  
+    background-color: #FFFFFF !important;
+    border-radius: 12px !important;
+    border: 1px solid #E2E8F0 !important;
+}
+
+QFrame#frameHeartRate, 
+QFrame#frameSleep, 
+QFrame#frameMiniCardsContainer,  
+QFrame#frameBarChart, 
+QFrame#frameBloodPressure, 
+QFrame#frameHydration, 
+QFrame#frameStress, 
+QFrame#frameMetabolic,
+QFrame#tableHeaderContainer {
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 0px !important;
+}
+
+QLabel {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    border: none !important;
+    background: transparent !important;
+}
+
+#sidebarWidget {
+    background-color: #FFFFFF;
+    border-right: 1px solid #E5E7EB;
+    min-width: 260px; 
+}
+
+#appNameLabel {
+    color: #1558A8;
+    font-size: 18px;
+    font-weight: 800;
+    padding: 5px 15px 0px 15px;
+    background-color: transparent;
+    margin-top: 0px;
+    border: none;
+    min-height: 30px;
+    max-height: 35px;
+}
+
+#sidebarWidget QPushButton {
+    text-align: left;
+    padding: 8px 20px;
+    background-color: transparent;
+    border: none;
+    color: #6B7280; 
+    font-size: 14px;
+    font-weight: 600;
+    margin: 2px 15px; 
+    border-radius: 8px;
+    min-height: 34px; 
+}
+
+#sidebarWidget QPushButton:hover {
+    background-color: #F0F7FF; 
+    color: #1558A8;            
+}
+
+QPushButton#analyticsButton {
+    background-color: #F0F7FF !important;
+    color: #1558A8 !important;
+    font-weight: 900 !important;
+    border-left: 4px solid #1558A8 !important;
+    border-radius: 0px 8px 8px 0px !important;
+}
 
 
 
 
+QLabel#lblHeaderTitle { 
+    color: #1558A8; 
+    font-size: 16px; 
+    font-weight: 800; 
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+}
+
+QLabel#lblAnalyticsTitle { 
+    font-size: 22px; 
+    font-weight: 900; 
+    color: #0F172A; 
+}
+
+QLabel#lblAnalyticsSubtitle { 
+    font-size: 13px; 
+    color: #64748B; 
+    margin-top: 2px; 
+}
+
+QLabel#lblHeartRateTitle, 
+QLabel#lblSleepTitle, 
+QLabel#lblIntensityTitle, 
+QLabel#lblNutritionTitle { 
+    color: #0F172A !important; 
+    font-weight: 900 !important; 
+    font-size: 16px !important; 
+}
+
+QLabel#lblIntensitySub {
+    color: #8C98A4 !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    letter-spacing: 1px !important;
+}
+
+QLabel#lblBloodPressureTitle, 
+QLabel#lblHydrationTitle, 
+QLabel#lblStressTitle, 
+QLabel#lblMetabolicTitle {
+    color: #8C98A4 !important; 
+    font-size: 11px !important; 
+    font-weight: 800 !important; 
+    letter-spacing: 1px !important;
+}
+
+QLabel#lblBloodPressureValue, 
+QLabel#lblHydrationValue, 
+QLabel#lblStressValue, 
+QLabel#lblMetabolicValue {
+    color: #0F172A !important; 
+    font-size: 26px !important; 
+    font-weight: 900 !important; 
+}
+
+QLabel#lblBloodPressureSub, 
+QLabel#lblHydrationSub, 
+QLabel#lblStressSub, 
+QLabel#lblMetabolicSub {
+    color: #94A3B8 !important; 
+    font-size: 11px !important; 
+    font-weight: normal !important; 
+    margin-top: -2px;
+}
+
+
+QPushButton#syncDataButton {
+    background-color: #1558A8 !important; 
+    color: #FFFFFF !important; 
+    font-weight: bold; 
+    font-size: 13px; 
+    border-radius: 8px; 
+    padding: 8px 20px; 
+    border: none;
+}
+
+QPushButton#syncDataButton:hover { 
+    background-color: #0E417F !important; 
+}
+
+#headerWidget QPushButton { 
+    background-color: transparent; 
+    border: none; 
+    padding: 5px; 
+}
+
+QTableWidget#TableWidget, 
+QTableWidget#TableWidget * {
+    background-color: transparent !important; 
+    border: none !important;
+    outline: none !important; 
+    color: #0F172A !important; 
+    font-size: 13px !important;
+}
+
+QTableWidget#TableWidget QHeaderView::section {
+    background-color: transparent !important; 
+    color: #8C98A4 !important; 
+    font-weight: bold !important; 
+    font-size: 11px !important; 
+    padding: 5px 5px !important; 
+    border: none !important; 
+    border-bottom: 1px solid #E2E8F0 !important; 
+    text-align: left !important; 
+    text-transform: uppercase !important;
+}
+
+QTableWidget#TableWidget::item {
+    color: #0F172A !important; 
+    font-weight: 500 !important;
+    padding: 0px 10px !important; 
+    border-bottom: 1px solid #F8FAFC !important;
+}
 
 </string>
   </property>
@@ -35,8 +228,11 @@
       <x>260</x>
       <y>0</y>
       <width>981</width>
-      <height>691</height>
+      <height>721</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #f4f6f8;</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::Shape::StyledPanel</enum>
@@ -47,74 +243,14 @@
     <widget class="QFrame" name="headerWidget">
      <property name="geometry">
       <rect>
-       <x>-10</x>
+       <x>0</x>
        <y>0</y>
-       <width>931</width>
+       <width>981</width>
        <height>61</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">/* Header ka main background */
-#headerWidget {
-    background-color: #FFFFFF;
-    border-bottom: 1px solid #E2E8F0;
-}
-
-/* Left side ke normal buttons (Overview, Inventory) */
-#btnOverview, #btnInventory {
-    color: #64748B;
-    font-family: &quot;Segoe UI&quot;, sans-serif;
-    font-weight: 600;
-    font-size: 14px;
-    border: none;
-    background: transparent;
-    padding: 8px 12px;
-}
-
-/* &quot;Reports&quot; wala Active button (Blue line ke sath) */
-#btnReports {
-    color: #1558A8;
-    font-family: &quot;Segoe UI&quot;, sans-serif;
-    font-weight: bold;
-    font-size: 14px;
-    border: none;
-    background: transparent;
-    border-bottom: 3px solid #1558A8; /* Neechay wali blue line */
-    padding: 8px 12px;
-}
-
-/* Gol (Pill-shaped) Search Bar */
-#searchAnalytics {
-background-color: #F8FAFC;
-    color: #333333;
-
-    border: 1px solid #E2E8F0;
-    border-radius: 18px; /* Is se search bar gol (round) ho jayega */
-    padding: 8px 15px;
-    color: #475569;
-    font-family: &quot;Segoe UI&quot;, sans-serif;
-    min-width: 200px;
-}
-
-/* Sync Data Button */
-#btnSyncData {
-    background-color: #1558A8;
-    color: #FFFFFF;
-    border-radius: 8px;
-    padding: 8px 16px;
-    font-weight: bold;
-    font-family: &quot;Segoe UI&quot;, sans-serif;
-}
-
-/* Notification aur Profile ke Gol Buttons */
-#btnBell, #btnProfile {
-    background-color: transparent;
-    border: 1px solid #E2E8F0;
-    border-radius: 18px; /* Mukammal gol */
-    min-width: 36px;
-    min-height: 36px;
-    color: #475569;
-}</string>
+      <string notr="true"/>
      </property>
      <property name="frameShape">
       <enum>QFrame::Shape::StyledPanel</enum>
@@ -122,46 +258,37 @@ background-color: #F8FAFC;
      <property name="frameShadow">
       <enum>QFrame::Shadow::Raised</enum>
      </property>
-     <widget class="QPushButton" name="btnBell">
-      <property name="geometry">
-       <rect>
-        <x>810</x>
-        <y>10</y>
-        <width>48</width>
-        <height>38</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>icons/notifications_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</normaloff>icons/notifications_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>24</width>
-        <height>24</height>
-       </size>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btnSyncData">
-      <property name="geometry">
-       <rect>
-        <x>670</x>
-        <y>7</y>
-        <width>120</width>
-        <height>40</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>120</width>
-        <height>40</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">#syncDataButton {
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="lblHeaderTitle">
+        <property name="text">
+         <string>Health Performance Metrics</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>413</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="syncDataButton">
+        <property name="minimumSize">
+         <size>
+          <width>120</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#syncDataButton {
     background-color: #1558A8 !important; 
     color: #FFFFFF !important;             
     font-weight: bold;
@@ -175,141 +302,76 @@ background-color: #F8FAFC;
     background-color: #0E417F !important;
 }
 </string>
-      </property>
-      <property name="text">
-       <string>Sync Data</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="profileButton">
-      <property name="geometry">
-       <rect>
-        <x>878</x>
-        <y>10</y>
-        <width>48</width>
-        <height>34</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>icons/account_circle_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</normaloff>icons/account_circle_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>24</width>
-        <height>24</height>
-       </size>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btnInventory">
-      <property name="geometry">
-       <rect>
-        <x>240</x>
-        <y>10</y>
-        <width>100</width>
-        <height>40</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>100</width>
-        <height>40</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>Inventory</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btnReports">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>10</y>
-        <width>100</width>
-        <height>40</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>100</width>
-        <height>40</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>Reports</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btnOverview">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>100</width>
-        <height>40</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>100</width>
-        <height>40</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>Overview</string>
-      </property>
-     </widget>
+        </property>
+        <property name="text">
+         <string>Sync Data</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="bellButton">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>icons/notifications_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</normaloff>icons/notifications_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="profileButton">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>icons/account_circle_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</normaloff>icons/account_circle_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
     <widget class="QFrame" name="titleFilterFrame">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>60</y>
-       <width>931</width>
-       <height>61</height>
+       <x>0</x>
+       <y>50</y>
+       <width>981</width>
+       <height>51</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">/* --- ANALYTICS TITLE &amp; SUBTITLE --- */
-#lblAnalyticsTitle {
-    font-size: 22px;
-    font-weight: 900;
-    color: #0F172A;
+      <string notr="true">QPushButton#btn7Days {
+    background-color: #1558A8; 
+    color: #FFFFFF; 
+    border-radius: 15px; 
+    padding: 5px 15px; 
+    font-weight: bold; 
+    border: none;
 }
 
-#lblAnalyticsSubtitle {
-    font-size: 13px;
-    color: #64748B;
-    margin-top: 2px;
-}
-
-/* --- DAYS FILTER BUTTONS --- */
-#btn7Days {
-    background-color: #FFFFFF;
-    border: 1px solid #E2E8F0;
-    border-radius: 6px;
-    color: #475569;
+QPushButton#btn30Days {
+    background-color: #FFFFFF; 
+    color: #475569; 
+    border: 1px solid #E2E8F0; 
+    border-radius: 15px; 
+    padding: 5px 15px; 
     font-weight: bold;
-    font-size: 13px;
-    padding: 6px 16px;
 }
-
-#btn7Days:hover{
-    background-color: #F8FAFC;
-    border: 1px solid #CBD5E1;
-}
-
-/* Active Button (30 Days - Blue) */
-#btn30Days {
-    background-color: #1558A8;
-    border: 1px solid #1558A8;
-    border-radius: 6px;
-    color: #FFFFFF;
-    font-weight: bold;
-    font-size: 13px;
-    padding: 6px 16px;
-}</string>
+</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::Shape::StyledPanel</enum>
@@ -320,8 +382,8 @@ background-color: #F8FAFC;
      <widget class="QPushButton" name="btn30Days">
       <property name="geometry">
        <rect>
-        <x>840</x>
-        <y>0</y>
+        <x>880</x>
+        <y>10</y>
         <width>80</width>
         <height>31</height>
        </rect>
@@ -333,8 +395,8 @@ background-color: #F8FAFC;
      <widget class="QPushButton" name="btn7Days">
       <property name="geometry">
        <rect>
-        <x>759</x>
-        <y>0</y>
+        <x>790</x>
+        <y>10</y>
         <width>81</width>
         <height>31</height>
        </rect>
@@ -343,82 +405,18 @@ background-color: #F8FAFC;
        <string>7 Days</string>
       </property>
      </widget>
-     <widget class="QLabel" name="lblAnalyticsTitle">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>0</y>
-        <width>305</width>
-        <height>30</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Health Performance Metrics</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="lblAnalyticsSubtitle">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>30</y>
-        <width>356</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Comprehensive diagnostic analysis of biometric data streams</string>
-      </property>
-     </widget>
     </widget>
     <widget class="QFrame" name="row2Frame">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>120</y>
-       <width>921</width>
-       <height>161</height>
+       <x>10</x>
+       <y>110</y>
+       <width>961</width>
+       <height>181</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">/* Container ko transparent karna */
-QFrame#row2Frame {
-    background: transparent !important;
-    border: none !important;
-}
-
-/* White Cards with Rounded Borders */
-QFrame#frameHeartRate, QFrame#frameSleep {
-    background-color: #FFFFFF !important;
-    border-radius: 12px !important;
-    border: 1px solid #E2E8F0 !important;
-}
-
-/* Chart Titles */
-QLabel#lblHeartRateTitle, QLabel#lblSleepTitle {
-    color: #0F172A !important;
-    font-family: &quot;Segoe UI&quot;, Arial, sans-serif !important;
-    font-weight: 800 !important;
-    font-size: 12px !important;
-    border: none !important;
-    background: transparent !important;
-    padding: 10px !important;
-}/* =========================================
-   ROW 2: CHART CONTAINERS
-========================================= */
-QFrame#frameHeartRate, QFrame#frameSleep {
-    background-color: #FFFFFF !important;
-    border-radius: 12px !important;
-    border: 1px solid #E2E8F0 !important;
-}
-QLabel#lblHeartRateTitle, QLabel#lblSleepTitle {
-    color: #0F172A !important;
-    font-family: &quot;Segoe UI&quot;, Arial, sans-serif !important;
-    font-weight: 800 !important;
-    font-size: 16px !important;
-    border: none !important;
-    background: transparent !important;
-}
- </string>
+      <string notr="true"/>
      </property>
      <property name="frameShape">
       <enum>QFrame::Shape::StyledPanel</enum>
@@ -431,9 +429,15 @@ QLabel#lblHeartRateTitle, QLabel#lblSleepTitle {
        <rect>
         <x>560</x>
         <y>0</y>
-        <width>291</width>
-        <height>151</height>
+        <width>381</width>
+        <height>180</height>
        </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>180</height>
+       </size>
       </property>
       <property name="frameShape">
        <enum>QFrame::Shape::StyledPanel</enum>
@@ -444,9 +448,9 @@ QLabel#lblHeartRateTitle, QLabel#lblSleepTitle {
       <widget class="QLabel" name="lblSleepTitle">
        <property name="geometry">
         <rect>
-         <x>10</x>
+         <x>0</x>
          <y>0</y>
-         <width>141</width>
+         <width>171</width>
          <height>41</height>
         </rect>
        </property>
@@ -460,9 +464,15 @@ QLabel#lblHeartRateTitle, QLabel#lblSleepTitle {
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>441</width>
-        <height>131</height>
+        <width>491</width>
+        <height>180</height>
        </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>180</height>
+       </size>
       </property>
       <property name="frameShape">
        <enum>QFrame::Shape::StyledPanel</enum>
@@ -473,8 +483,8 @@ QLabel#lblHeartRateTitle, QLabel#lblSleepTitle {
       <widget class="QLabel" name="lblHeartRateTitle">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>10</y>
+         <x>0</x>
+         <y>0</y>
          <width>251</width>
          <height>41</height>
         </rect>
@@ -485,68 +495,17 @@ QLabel#lblHeartRateTitle, QLabel#lblSleepTitle {
       </widget>
      </widget>
     </widget>
-    <widget class="QFrame" name="row3Frame">
+    <widget class="QFrame" name="frameCommonIntensityMetrics">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>280</y>
-       <width>921</width>
-       <height>181</height>
+       <x>10</x>
+       <y>290</y>
+       <width>961</width>
+       <height>161</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">QLabel#lblIntensitySub {
-    color: #0F172A !important;
-   font-family:   Arial !important;
-    font-weight: 800 !important;
-    font-size: 11px !important;
-    border: none !important;
-    background: transparent !important;
-}
-QLabel#lblIntensityTitle {
-    color: #0F172A !important;
-    font-family: &quot;Segoe UI&quot;, Arial, sans-serif !important;
-    font-weight: 800 !important;
-    font-size: 16px !important;
-    border: none !important;
-    background: transparent !important;
-}
-/* =========================================
-   MINI CARDS: TITLES (Oopar wala chota text)
-========================================= */
-#lblBPTitle, #lblHydrationTitle, #lblStressTitle, #lblCaloriesTitle {
-    color: #64748B !important;          /* Grey color */
-    font-family: &quot;Segoe UI&quot;, Arial, sans-serif !important;
-    font-weight: 700 !important;        /* Bold */
-    font-size: 11px !important;
-    letter-spacing: 1px !important;
-    background: transparent !important;
-    border: none !important;
-}
-
-/* =========================================
-   MINI CARDS: VALUES (Beech wale baray numbers)
-========================================= */
-#lblBPValue, #lblHydrationValue, #lblStressValue, #lblCaloriesValue {
-    color: #0F172A !important;          /* Dark Blue/Black color */
-    font-family: &quot;Segoe UI&quot;, Arial, sans-serif !important;
-    font-weight: 900 !important;        /* Extra Bold */
-    font-size: 26px !important;         /* Bada Size */
-    background: transparent !important;
-    border: none !important;
-}
-
-/* =========================================
-   MINI CARDS: SUBTITLES (Neechay wala halka text)
-========================================= */
-#lblBPSub, #lblHydrationSub, #lblStressSub, #lblCaloriesSub {
-    color: #8C98A4 !important;          /* Light Grey color */
-    font-family: &quot;Segoe UI&quot;, Arial, sans-serif !important;
-    font-weight: normal !important;
-    font-size: 12px !important;
-    background: transparent !important;
-    border: none !important;
-}</string>
+      <string notr="true"/>
      </property>
      <property name="frameShape">
       <enum>QFrame::Shape::StyledPanel</enum>
@@ -557,10 +516,10 @@ QLabel#lblIntensityTitle {
      <widget class="QLabel" name="lblIntensityTitle">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>10</y>
+        <x>10</x>
+        <y>30</y>
         <width>181</width>
-        <height>16</height>
+        <height>21</height>
        </rect>
       </property>
       <property name="text">
@@ -570,10 +529,10 @@ QLabel#lblIntensityTitle {
      <widget class="QFrame" name="frameMiniCardsContainer">
       <property name="geometry">
        <rect>
-        <x>570</x>
+        <x>490</x>
         <y>10</y>
-        <width>341</width>
-        <height>161</height>
+        <width>461</width>
+        <height>171</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -585,232 +544,210 @@ QLabel#lblIntensityTitle {
       <property name="frameShadow">
        <enum>QFrame::Shadow::Raised</enum>
       </property>
-      <widget class="QFrame" name="cardHydration_2">
-       <property name="geometry">
-        <rect>
-         <x>174</x>
-         <y>10</y>
-         <width>157</width>
-         <height>71</height>
-        </rect>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::Shape::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Shadow::Raised</enum>
-       </property>
-       <widget class="QLabel" name="lblHydrationTitle">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>0</y>
-          <width>131</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>HYDRATION INDEX</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="lblHydrationValue">
-        <property name="geometry">
-         <rect>
-          <x>40</x>
-          <y>20</y>
-          <width>61</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>2.4L</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="lblHydrationSub">
-        <property name="geometry">
-         <rect>
-          <x>40</x>
-          <y>40</y>
-          <width>71</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Target: 3.0L</string>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QFrame" name="cardStress">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>94</y>
-         <width>158</width>
-         <height>61</height>
-        </rect>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::Shape::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Shadow::Raised</enum>
-       </property>
-       <widget class="QLabel" name="lblStressTitle">
-        <property name="geometry">
-         <rect>
-          <x>30</x>
-          <y>0</y>
-          <width>81</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>STRESS LEVEL</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="lblStressValue">
-        <property name="geometry">
-         <rect>
-          <x>50</x>
-          <y>20</y>
-          <width>51</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Low</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="lblStressSub">
-        <property name="geometry">
-         <rect>
-          <x>30</x>
-          <y>40</y>
-          <width>101</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Stable for 72hrs</string>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QFrame" name="cardCalories">
-       <property name="geometry">
-        <rect>
-         <x>174</x>
-         <y>94</y>
-         <width>157</width>
-         <height>61</height>
-        </rect>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::Shape::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Shadow::Raised</enum>
-       </property>
-       <widget class="QLabel" name="lblCaloriesTitle">
-        <property name="geometry">
-         <rect>
-          <x>18</x>
-          <y>0</y>
-          <width>121</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>METABOLIC RATE</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="lblCaloriesValue">
-        <property name="geometry">
-         <rect>
-          <x>50</x>
-          <y>20</y>
-          <width>61</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>1.8k</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="lblCaloriesSub">
-        <property name="geometry">
-         <rect>
-          <x>50</x>
-          <y>40</y>
-          <width>49</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>BMR (kcal/day)</string>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QFrame" name="cardBP">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>10</y>
-         <width>158</width>
-         <height>71</height>
-        </rect>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::Shape::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Shadow::Raised</enum>
-       </property>
-       <widget class="QLabel" name="lblBPTitle">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>0</y>
-          <width>111</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>BLOOD PRESSURE</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="lblBPValue">
-        <property name="geometry">
-         <rect>
-          <x>40</x>
-          <y>30</y>
-          <width>91</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>118/74</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="lblBPSub">
-        <property name="geometry">
-         <rect>
-          <x>60</x>
-          <y>50</y>
-          <width>41</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Normal</string>
-        </property>
-       </widget>
-      </widget>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="QFrame" name="frameBloodPressure">
+         <property name="frameShape">
+          <enum>QFrame::Shape::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Raised</enum>
+         </property>
+         <widget class="QLabel" name="lblBloodPressureTitle">
+          <property name="geometry">
+           <rect>
+            <x>50</x>
+            <y>0</y>
+            <width>111</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>BLOOD PRESSURE</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblBloodPressureValue">
+          <property name="geometry">
+           <rect>
+            <x>60</x>
+            <y>30</y>
+            <width>91</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>118/74</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblBloodPressureSub">
+          <property name="geometry">
+           <rect>
+            <x>90</x>
+            <y>50</y>
+            <width>41</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Normal</string>
+          </property>
+         </widget>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QFrame" name="frameHydration">
+         <property name="frameShape">
+          <enum>QFrame::Shape::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Raised</enum>
+         </property>
+         <widget class="QLabel" name="lblHydrationTitle">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>0</y>
+            <width>131</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>HYDRATION INDEX</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblHydrationValue">
+          <property name="geometry">
+           <rect>
+            <x>80</x>
+            <y>20</y>
+            <width>61</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>2.4L</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblHydrationSub">
+          <property name="geometry">
+           <rect>
+            <x>80</x>
+            <y>40</y>
+            <width>61</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Target: 3.0L</string>
+          </property>
+         </widget>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QFrame" name="frameStress">
+         <property name="frameShape">
+          <enum>QFrame::Shape::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Raised</enum>
+         </property>
+         <widget class="QLabel" name="lblStressTitle">
+          <property name="geometry">
+           <rect>
+            <x>60</x>
+            <y>0</y>
+            <width>81</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>STRESS LEVEL</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblStressValue">
+          <property name="geometry">
+           <rect>
+            <x>70</x>
+            <y>20</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Low</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblStressSub">
+          <property name="geometry">
+           <rect>
+            <x>60</x>
+            <y>40</y>
+            <width>81</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Stable for 72hrs</string>
+          </property>
+         </widget>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QFrame" name="frameMetabolic">
+         <property name="frameShape">
+          <enum>QFrame::Shape::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Raised</enum>
+         </property>
+         <widget class="QLabel" name="lblMetabolicTitle">
+          <property name="geometry">
+           <rect>
+            <x>50</x>
+            <y>0</y>
+            <width>121</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>METABOLIC RATE</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblMetabolicValue">
+          <property name="geometry">
+           <rect>
+            <x>70</x>
+            <y>20</y>
+            <width>61</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>1.8k</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lblMetabolicSub">
+          <property name="geometry">
+           <rect>
+            <x>70</x>
+            <y>40</y>
+            <width>81</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>BMR (kcal/day)</string>
+          </property>
+         </widget>
+        </widget>
+       </item>
+      </layout>
      </widget>
      <widget class="QLabel" name="lblIntensitySub">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>30</y>
+        <y>10</y>
         <width>111</width>
         <height>16</height>
        </rect>
@@ -822,9 +759,9 @@ QLabel#lblIntensityTitle {
      <widget class="QFrame" name="frameBarChart">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>70</y>
-        <width>421</width>
+        <x>10</x>
+        <y>60</y>
+        <width>311</width>
         <height>111</height>
        </rect>
       </property>
@@ -835,18 +772,72 @@ QLabel#lblIntensityTitle {
        <enum>QFrame::Shadow::Raised</enum>
       </property>
      </widget>
+     <widget class="QFrame" name="tableHeaderContainer">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>20</y>
+        <width>201</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>300</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+     </widget>
     </widget>
-    <widget class="QFrame" name="row4Frame">
+    <widget class="QFrame" name="frameTable">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>450</y>
-       <width>911</width>
+       <y>460</y>
+       <width>961</width>
        <height>241</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">/* =========================================================================
+      <string notr="true">/* Table ki basic setting */
+QTableView {
+    background-color: transparent;
+    border: none;
+    gridline-color: transparent; /* Lines gayab kar dein */
+}
+
+/* Table ka Oopar Wala Hissa (Headers) */
+QHeaderView::section {
+    background-color: transparent;
+    color: #8C98A4; /* Halka Grey */
+    font-weight: bold;
+    font-size: 11px;
+    border: none;
+    border-bottom: 1px solid #E2E8F0; /* Sirf neechay ek line */
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+/* Table ke andar ka data */
+QTableView::item {
+    border-bottom: 1px solid #F8FAFC; /* Rows ke darmiyan bohot halki line */
+    padding: 12px;
+    color: #0F172A;
+}
+
+/* =========================================================================
    ROW 4: MAIN WHITE CONTAINER CARD
 ========================================================================= */
 QFrame#row4Frame {
@@ -940,9 +931,9 @@ QTableWidget#TableWidget::item:selected {
      <widget class="QTableWidget" name="TableWidget">
       <property name="geometry">
        <rect>
-        <x>-20</x>
-        <y>80</y>
-        <width>861</width>
+        <x>10</x>
+        <y>30</y>
+        <width>931</width>
         <height>271</height>
        </rect>
       </property>
@@ -1034,46 +1025,18 @@ QTableWidget#TableWidget::item:selected {
        </property>
       </item>
      </widget>
-     <widget class="QFrame" name="tableHeaderContainer">
+     <widget class="QLabel" name="lblNutritionTitle">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>20</y>
-        <width>300</width>
-        <height>35</height>
+        <x>10</x>
+        <y>10</y>
+        <width>241</width>
+        <height>22</height>
        </rect>
       </property>
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>30</height>
-       </size>
+      <property name="text">
+       <string>Nutritional &amp; Metabolic History</string>
       </property>
-      <property name="maximumSize">
-       <size>
-        <width>300</width>
-        <height>35</height>
-       </size>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::Shape::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Shadow::Raised</enum>
-      </property>
-      <widget class="QLabel" name="lblNutritionTitle">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>10</y>
-         <width>241</width>
-         <height>22</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Nutritional &amp; Metabolic History</string>
-       </property>
-      </widget>
      </widget>
     </widget>
    </widget>
@@ -1105,58 +1068,7 @@ QTableWidget#TableWidget::item:selected {
      </size>
     </property>
     <property name="styleSheet">
-     <string notr="true">
-#centralwidget{background-color: #f5f7fa;
-
-}
-
-#sidebarWidget {
-    background-color: #FFFFFF;
-    border-right: 1px solid #E5E7EB;
-    min-width: 260px; 
-}
-
-#appNameLabel {
-    color: #1558A8;
-    font-size: 18px;
-    font-weight: 800;
-    padding: 5px 15px 0px 15px;
-    background-color: transparent;
-    margin-top: 0px;
-    border: none;
-    min-height: 30px;
-    max-height: 35px;
-}
-
-#sidebarWidget QPushButton {
-    text-align: left;
-    padding: 8px 20px;
-    background-color: transparent;
-    border: none;
-    color: #6B7280; 
-    font-size: 14px;
-    font-weight: 600;
-    margin: 2px 15px; 
-    border-radius: 8px;
-    min-height: 34px; 
-}
-
-#sidebarWidget QPushButton:hover {
-    background-color: #F0F7FF; 
-    color: #1558A8;            
-}
-
-QPushButton#analyticsButton {
-    background-color: #F0F7FF !important;
-    color: #1558A8 !important;
-    font-weight: 900 !important;
-    border-left: 4px solid #1558A8 !important;
-    border-radius: 0px 8px 8px 0px !important;
-}
-
-
-
-</string>
+     <string notr="true"/>
     </property>
     <widget class="QLabel" name="appNameLabel">
      <property name="geometry">
@@ -1174,13 +1086,13 @@ QPushButton#analyticsButton {
     <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
-       <x>40</x>
-       <y>50</y>
-       <width>179</width>
-       <height>296</height>
+       <x>41</x>
+       <y>51</y>
+       <width>169</width>
+       <height>581</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
+     <layout class="QVBoxLayout" name="verticalLayout">
       <item>
        <widget class="QPushButton" name="dashboardButton">
         <property name="text">
@@ -1266,18 +1178,6 @@ QPushButton#analyticsButton {
         </property>
        </widget>
       </item>
-     </layout>
-    </widget>
-    <widget class="QWidget" name="layoutWidget_2">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>420</y>
-       <width>152</width>
-       <height>116</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_12">
       <item>
        <widget class="QPushButton" name="settingsButton">
         <property name="text">

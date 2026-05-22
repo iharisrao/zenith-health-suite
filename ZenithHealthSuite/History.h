@@ -6,6 +6,7 @@
 #include <QSqlError>
 #include "DashboardScreen.h"
 #include "Activity.h"
+#include"analytics.h"
 
 
 namespace Ui {

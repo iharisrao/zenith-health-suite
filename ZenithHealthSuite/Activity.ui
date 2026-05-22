@@ -84,11 +84,45 @@ QPushButton#activityButton {
 }
 
 
-#headerWidget { background: transparent; border-bottom: 1px solid #E2E8F0; }
-QLabel#lblHeaderTitle { color: #0F172A; font-size: 22px; font-weight: 900; }
-QPushButton#btnHeaderDate { background-color: #FFFFFF; color: #475569; border: 1px solid #E2E8F0; border-radius: 16px; padding: 6px 20px; font-weight: bold; }
-QPushButton#btnNotification, QPushButton#btnUserProfile { background-color: #FFFFFF; color: #475569; border: 1px solid #E2E8F0; border-radius: 18px; min-width: 36px; max-width: 36px; min-height: 36px; max-height: 36px; qproperty-iconSize: 18px 18px; }
-QPushButton#btnHeaderDate:hover, QPushButton#btnNotification:hover, QPushButton#btnUserProfile:hover { background-color: #F8FAFC; border: 1px solid #CBD5E1; }
+#headerWidget {
+    background-color: transparent;
+    border-bottom: none;
+}
+
+QLabel#lblHeaderTitle {
+    color: #1558A8;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#headerWidget QPushButton {
+    background-color: transparent;
+    border: none;
+    color: #8C98A4;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+#headerWidget QPushButton:hover {
+    color: #1558A8;
+}
+
+#navOverviewButton {
+    color: #1558A8 !important;
+    border-bottom: 3px solid #1558A8;
+    border-radius: 0px;
+}
+
+QLabel {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+}
+
+QPushButton#btnHeaderDate { background-color: #FFFFFF; color: #475569; border: transparent; padding: 6px 20px; font-weight: bold; }
+
+QPushButton#btnHeaderDate:hover,
 QLabel#lblLogActivity, QLabel#lblLogVitals, QLabel#lblLogNutrition { color: #0F172A; font-size: 16px; font-weight: 900; background: transparent; border: none; padding-bottom: 10px; }
 QFrame#vitalsRefCard { background-color: #F8FAFC; border-radius: 12px; border: 1px solid #E2E8F0; }
 QLabel#lblClinicalTitle { color: #1558A8; font-size: 13px; font-weight: 900; letter-spacing: 1px; padding-bottom: 8px; }
@@ -131,7 +165,7 @@ QFrame#lineClinical { border: none; background-color: #CBD5E1; max-height: 2px; 
       <rect>
        <x>30</x>
        <y>9</y>
-       <width>191</width>
+       <width>201</width>
        <height>35</height>
       </rect>
      </property>
@@ -282,8 +316,8 @@ QFrame#lineClinical { border: none; background-color: #CBD5E1; max-height: 2px; 
      <rect>
       <x>260</x>
       <y>0</y>
-      <width>1041</width>
-      <height>81</height>
+      <width>1039</width>
+      <height>67</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -310,84 +344,78 @@ QFrame#lineClinical { border: none; background-color: #CBD5E1; max-height: 2px; 
          <height>100</height>
         </size>
        </property>
-       <widget class="QLabel" name="lblHeaderTitle">
-        <property name="geometry">
-         <rect>
-          <x>15</x>
-          <y>10</y>
-          <width>250</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>250</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Data Logging</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="btnUserProfile">
-        <property name="geometry">
-         <rect>
-          <x>930</x>
-          <y>0</y>
-          <width>62</width>
-          <height>62</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>icons/account_circle_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</normaloff>icons/account_circle_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>18</width>
-          <height>18</height>
-         </size>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="btnHeaderDate">
-        <property name="geometry">
-         <rect>
-          <x>670</x>
-          <y>10</y>
-          <width>171</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>16 May, 2026</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="btnNotification">
-        <property name="geometry">
-         <rect>
-          <x>860</x>
-          <y>0</y>
-          <width>62</width>
-          <height>62</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>icons/notifications_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</normaloff>icons/notifications_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>18</width>
-          <height>18</height>
-         </size>
-        </property>
-       </widget>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="lblHeaderTitle">
+          <property name="minimumSize">
+           <size>
+            <width>250</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Data Logging</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>518</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnHeaderDate">
+          <property name="text">
+           <string>16 May, 2026</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="bellButton">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>icons/notifications_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</normaloff>icons/notifications_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>18</width>
+            <height>18</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="profileButton">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>icons/account_circle_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</normaloff>icons/account_circle_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>18</width>
+            <height>18</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </widget>
      </item>
     </layout>

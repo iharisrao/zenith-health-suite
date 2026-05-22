@@ -30,7 +30,9 @@ void Activity::on_dashboardButton_clicked() {
 
 
 void Activity::on_analyticsButton_clicked() {
-    qDebug() << "Analytics coming soon...";
+    analytics* analyticsScreen = new analytics();
+    analyticsScreen->show();
+    this->close();
 }
 
 void Activity::on_activityButton_clicked() {

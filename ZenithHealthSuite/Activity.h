@@ -6,6 +6,7 @@
 #include <QDebug>
 #include "DashboardScreen.h"
 #include "History.h"
+#include"analytics.h"
 
 namespace Ui {
     class Activity;
