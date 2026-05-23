@@ -12,6 +12,10 @@
 #include <QtCharts/QValueAxis>
 #include <QTableWidgetItem>
 
+#include "DashboardScreen.h"
+#include "Activity.h"
+#include "History.h"
+
 namespace Ui {
     class analyticsClass;
 }
@@ -23,6 +27,19 @@ class analytics : public QMainWindow
 public:
     explicit analytics(QWidget* parent = nullptr);
     ~analytics();
+
+private slots:
+    void on_dashboardButton_clicked();
+    void on_analyticsButton_clicked();
+    void on_activityButton_clicked();
+    void on_goalsButton_clicked();
+    void on_historyButton_clicked();
+    void on_settingsButton_clicked();
+    void on_supportButton_clicked();
+
+
+    void on_profileButton_clicked();
+    void on_bellButton_clicked();
 
 private:
     Ui::analyticsClass* ui;

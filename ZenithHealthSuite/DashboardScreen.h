@@ -5,6 +5,7 @@
 #include <QDebug> 
 #include "Activity.h"
 #include "History.h"
+#include"analytics.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class DashboardScreen; }

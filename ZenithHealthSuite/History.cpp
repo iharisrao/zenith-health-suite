@@ -39,7 +39,9 @@ void HistoryScreen::on_dashboardButton_clicked() {
 
 
 void HistoryScreen::on_analyticsButton_clicked() {
-    qDebug() << "Analytics coming soon...";
+    analytics* analyticsScreen = new analytics();
+    analyticsScreen->show();
+    this->close();
 }
 
 void HistoryScreen::on_activityButton_clicked() {

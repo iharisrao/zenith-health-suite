@@ -170,6 +170,23 @@ void DatabaseManager::createDashboardTables() {
     if (!query.exec(createNutritionQuery)) {
         qDebug() << "Failed to create NutritionLog table:" << query.lastError().text();
     }
+
+    QString createGoalsQuery =
+        "CREATE TABLE IF NOT EXISTS UserGoals("
+        "goal_id INTEGER PRIMARY KEY AUTOINCREMENT,"
+        "username TEXT,"
+        "target_name TEXT,"
+        "categoy TEXT,"
+        "baseline REAL,"
+        "threshold REAL,"
+        "frequency TEXT)";
+
+    if (!query.exec(createGoalsQuery)) {
+        qDebug() << "Failed to create UserGoals table:" << query.lastError().text();
+    }
+
+
+
 }
 
 DailyMetrics DatabaseManager::getDailyMetrics(const QString& username, const QDate& date) {
@@ -299,4 +316,50 @@ bool DatabaseManager::saveNutritionRecord(const QString& username, const QDate& 
         return false;
     }
     return true;
+}
+
+bool DatabaseManager::saveGoal(const QString& username, const QString& targetName, const QString& category, double baseline, double threshold, const QString& frequency)
+{
+    QSqlQuery query(db);
+    query.prepare("INSERT INTO UserGoals (username,target_name,category,baseline,threshold,frequency)"
+        "VALUES (:username, :targetName, :category, :baseline, :threshold ,:frequency)");
+
+    query.bindValue(":username", username);
+	query.bindValue(":targetName", targetName);
+	query.bindValue(":category", category);
+	query.bindValue(":baseline", baseline);
+	query.bindValue(":threshold", threshold);
+    query.bindValue(":frequency", frequency);
+
+    if (!query.exec()) {
+		qDebug() << "Error Saving Goal:" << query.lastError().text();
+		return false;
+    }
+    return true;
+}
+
+QList<GoalRecord> DatabaseManager::getGoals(const QString& username)
+{
+    QList<GoalRecord> goalsList;
+    QSqlQuery query(db);
+
+    query.prepare("SELECT target_name, category, baseline, threshold, frequency FROM UserGoals WHERE username=:username");
+	query.bindValue(":username", username);
+
+    if (query.exec()) {
+        while (query.next()) {
+            GoalRecord record;
+            record.targetName = query.value("target_name").toString();
+			record.category = query.value("category").toString();
+			record.baseline = query.value("baseline").toDouble();
+			record.threshold = query.value("threshold").toDouble();
+			record.frequency = query.value("frequency").toString();
+            
+            goalsList.append(record);
+        }
+    }
+    else {
+		qDebug() << "Failed to fetch goals:" << query.lastError().text();
+    }
+	return goalsList;
 }

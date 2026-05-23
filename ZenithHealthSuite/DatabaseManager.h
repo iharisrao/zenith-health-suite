@@ -33,6 +33,14 @@ struct ActivityRecord {
     QString syncStatus;
 };
 
+struct GoalRecord {
+    QString targetName;
+    QString category;
+    double baseline;
+    double threshold;
+    QString frequency;
+};
+
 class DatabaseManager {
 public:
     DatabaseManager();
@@ -56,6 +64,9 @@ public:
     bool saveVitalsRecord(const QString& username, const QDate& date, double weight, double bodyTemp, int heartRate, int bpSys, int bpDia, int bloodSugar, int stressLevel, int sleepHours);
 
     bool saveNutritionRecord(const QString& username, const QDate& date, const QString& mealType, const QString& foodName, int calories, int protein, int carbs, int fats, int waterIntake, int caffeine);
+
+    bool saveGoal(const QString& username, const QString& targetName, const QString& category, double baseline, double threshold, const QString& frequency);
+    QList<GoalRecord> getGoals(const QString& username);
 
 private:
     QSqlDatabase db;

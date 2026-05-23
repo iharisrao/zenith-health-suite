@@ -39,6 +39,12 @@
     <Filter Include="Login">
       <UniqueIdentifier>{7b61645b-6484-4e3f-99a0-160d9d937e64}</UniqueIdentifier>
     </Filter>
+    <Filter Include="History">
+      <UniqueIdentifier>{8dfcb6c0-e562-484d-80d4-4e081cec37e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Analytics">
+      <UniqueIdentifier>{a9ab6d61-8737-4559-9d46-aab2c204fc31}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="ZenithHealthSuite.qrc">
@@ -76,14 +82,14 @@
     <ClCompile Include="login.cpp">
       <Filter>Login</Filter>
     </ClCompile>
-    <ClCompile Include="History.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Activity.cpp">
       <Filter>Activity</Filter>
     </ClCompile>
+    <ClCompile Include="History.cpp">
+      <Filter>History</Filter>
+    </ClCompile>
     <ClCompile Include="analytics.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Analytics</Filter>
     </ClCompile>
     <ClCompile Include="Goals.cpp">
       <Filter>Source Files</Filter>
@@ -110,14 +116,14 @@
     <QtMoc Include="login.h">
       <Filter>Login</Filter>
     </QtMoc>
-    <QtMoc Include="History.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="analytics.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
     <QtMoc Include="Activity.h">
       <Filter>Activity</Filter>
+    </QtMoc>
+    <QtMoc Include="History.h">
+      <Filter>History</Filter>
+    </QtMoc>
+    <QtMoc Include="analytics.h">
+      <Filter>Analytics</Filter>
     </QtMoc>
     <QtMoc Include="Goals.h">
       <Filter>Header Files</Filter>
@@ -136,14 +142,14 @@
     <QtUic Include="login.ui">
       <Filter>Login</Filter>
     </QtUic>
-    <QtUic Include="History.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-    <QtUic Include="analytics.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
     <QtUic Include="Activity.ui">
       <Filter>Activity</Filter>
+    </QtUic>
+    <QtUic Include="History.ui">
+      <Filter>History</Filter>
+    </QtUic>
+    <QtUic Include="analytics.ui">
+      <Filter>Analytics</Filter>
     </QtUic>
     <QtUic Include="Goals.ui">
       <Filter>Form Files</Filter>

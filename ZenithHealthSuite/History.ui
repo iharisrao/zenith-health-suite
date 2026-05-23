@@ -49,7 +49,6 @@ QLabel#lblHeaderTitle {
 QLabel {
     font-family: 'Segoe UI', 'Roboto', sans-serif;
 }
-
 #sidebarWidget {
     background-color: #FFFFFF;
     border-right: 1px solid #E5E7EB;
@@ -94,9 +93,9 @@ QPushButton#historyButton {
     border-radius: 0px 8px 8px 0px !important;
 }
 
-/* =========================================
-   1. MAIN CONTAINERS
-========================================= */
+
+
+
 QFrame#topCardsFrame {
     background: transparent !important;
     border: none !important;
