@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GoalCardClass</class>
+ <widget class="QMainWindow" name="GoalCardClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>840</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>GoalCard</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QFrame" name="cardFrame">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>20</y>
+      <width>691</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* 1. Main Card ka White Background aur Rounded Corners */
+#cardFrame {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+}
+
+/* 2. Main Title (Cardiovascular Endurance) */
+#cardFrame #lblTitle {
+    color: #0F172A;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+}
+
+/* 3. Subtitle (Target: 45...) */
+#cardFrame #lblTargetDesc {
+    color: #64748B;
+    font-size: 12px;
+    border: none;
+}
+
+/* 4. Icon Dabba (Light Blue Box) */
+#cardFrame #lblIcon {
+    background-color: #E0E7FF;
+    border-radius: 6px;
+    border: none;
+}
+
+/* 5. Category Badge (STRATEGIC) */
+#cardFrame #lblCategory {
+    background-color: #F1F5F9;
+    color: #334155;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid #E2E8F0;
+}
+
+/* 6. Current Status &amp; Percentage Labels */
+#cardFrame #lblCurrentStatus {
+    color: #64748B;
+    font-size: 10px;
+    font-weight: bold;
+    border: none;
+}
+
+#cardFrame #lblPercentage {
+    color: #1558A8;
+    font-size: 11px;
+    font-weight: bold;
+    border: none;
+}
+
+/* 7. Progress Bar ka Modern Design */
+#cardFrame QProgressBar {
+    background-color: #F1F5F9; /* Background Track Color */
+    border: none;
+    border-radius: 4px;
+    height: 8px; /* Patli line */
+}
+
+#cardFrame QProgressBar::chunk {
+    background-color: #1558A8; /* Blue Fill Color */
+    border-radius: 4px;
+}
+
+/* 8. Bottom Action Button (VIEW ANALYTICS) */
+#cardFrame #btnAction {
+    color: #1558A8;
+    font-size: 11px;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+}
+
+/* 9. Bottom Note (Adjusted 3 days...) */
+#cardFrame #lblBottomNote {
+    color: #94A3B8;
+    font-size: 10px;
+    font-style: italic;
+    border: none;
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QLabel" name="lblIcon">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>31</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblTitle">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>10</y>
+       <width>201</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Cardiovascular Endurance</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblTargetDesc">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>30</y>
+       <width>141</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Target: 45 VO2 Max Level.</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblCategory">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>10</y>
+       <width>81</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>STRATEGIC</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblCurrentStatus">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>60</y>
+       <width>161</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>CURRENT STATUS: 41 VO2 MAX.</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblPercentage">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>70</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>82% ACHIEVED.</string>
+     </property>
+    </widget>
+    <widget class="QProgressBar" name="progressBar">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>90</y>
+       <width>561</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="value">
+      <number>24</number>
+     </property>
+     <property name="textVisible">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblBottomNote">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>120</y>
+       <width>151</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Adjusted 3 days ago by Health AI</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnAction">
+     <property name="geometry">
+      <rect>
+       <x>510</x>
+       <y>110</y>
+       <width>121</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>VIEW ANALYTICS</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>840</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

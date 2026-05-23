@@ -85,6 +85,12 @@
     <ClCompile Include="analytics.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Goals.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GoalCard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DatabaseManager.h">
@@ -113,6 +119,12 @@
     <QtMoc Include="Activity.h">
       <Filter>Activity</Filter>
     </QtMoc>
+    <QtMoc Include="Goals.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="GoalCard.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="RegistrationScreen.ui">
@@ -132,6 +144,12 @@
     </QtUic>
     <QtUic Include="Activity.ui">
       <Filter>Activity</Filter>
+    </QtUic>
+    <QtUic Include="Goals.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="GoalCard.ui">
+      <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
 </Project>

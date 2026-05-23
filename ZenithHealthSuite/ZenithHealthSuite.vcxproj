@@ -103,6 +103,8 @@
     <QtUic Include="Activity.ui" />
     <QtUic Include="analytics.ui" />
     <QtUic Include="DashboardScreen.ui" />
+    <QtUic Include="GoalCard.ui" />
+    <QtUic Include="Goals.ui" />
     <QtUic Include="History.ui" />
     <QtUic Include="login.ui" />
     <QtUic Include="RegistrationScreen.ui" />
@@ -117,6 +119,8 @@
     </ClCompile>
     <ClCompile Include="DashboardScreen.cpp" />
     <ClCompile Include="DatabaseManager.cpp" />
+    <ClCompile Include="GoalCard.cpp" />
+    <ClCompile Include="Goals.cpp" />
     <ClCompile Include="History.cpp" />
     <ClCompile Include="login.cpp" />
     <ClCompile Include="RegistrationScreen.cpp" />
@@ -132,6 +136,8 @@
     <ClInclude Include="DatabaseManager.h" />
     <QtMoc Include="login.h" />
     <QtMoc Include="History.h" />
+    <QtMoc Include="Goals.h" />
+    <QtMoc Include="GoalCard.h" />
     <ClInclude Include="user.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
