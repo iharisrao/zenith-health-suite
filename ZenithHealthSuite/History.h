@@ -7,6 +7,7 @@
 #include "DashboardScreen.h"
 #include "Activity.h"
 #include"analytics.h"
+#include"Goals.h"
 
 
 namespace Ui {

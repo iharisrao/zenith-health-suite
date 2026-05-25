@@ -15,6 +15,7 @@
 #include "DashboardScreen.h"
 #include "Activity.h"
 #include "History.h"
+#include"Goals.h"
 
 namespace Ui {
     class analyticsClass;

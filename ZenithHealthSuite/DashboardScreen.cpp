@@ -21,6 +21,7 @@ DashboardScreen::DashboardScreen(QWidget* parent)
 {
     ui->setupUi(this);
     this->showMaximized();
+    this->setWindowTitle("ZenithHealthSuite - Dashboard");
 
 	setupHeartRateChart();
     setupActiveEnergyChart();
@@ -52,7 +53,9 @@ void DashboardScreen::on_activityButton_clicked() {
 }
 
 void DashboardScreen::on_goalsButton_clicked() {
-    qDebug() << "Goals coming soon...";
+    Goals* goalsscreen = new Goals("iharisrao");
+    goalsscreen->show();
+    this->close();
 }
 
 void DashboardScreen::on_historyButton_clicked() {

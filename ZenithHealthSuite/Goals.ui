@@ -6,15 +6,28 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1220</width>
-    <height>456</height>
+    <width>1487</width>
+    <height>760</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Goals</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#headerWidget QPushButton {
+   <string notr="true">#headerWidget {
+    background-color: transparent;
+    border-bottom: none;
+}
+
+QLabel#lblHeaderTitle {
+    color: #1558A8;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#headerWidget QPushButton {
     background-color: transparent;
     border: none;
     color: #8C98A4;
@@ -33,53 +46,11 @@
     border-radius: 0px;
 }
 
-#searchLineEdit {
-    background-color: #FFFFFF;
-    color: #333333;
-    border: 1px solid #EAEAEA;
-    border-radius: 18px;
-    padding: 8px 15px;
-    font-size: 13px;
-    min-width: 200px;
-}
-
-
 QLabel {
     font-family: 'Segoe UI', 'Roboto', sans-serif;
 }
 
-</string>
-  </property>
-  <widget class="QWidget" name="centralWidget">
-   <widget class="QWidget" name="sidebarWidget" native="true">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>261</width>
-      <height>703</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>261</width>
-      <height>0</height>
-     </size>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>250</width>
-      <height>16777215</height>
-     </size>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#sidebarWidget {
+#sidebarWidget {
     background-color: #FFFFFF;
     border-right: 1px solid #E5E7EB;
     min-width: 260px; 
@@ -123,8 +94,103 @@ QPushButton#goalsButton {
     border-radius: 0px 8px 8px 0px !important;
 }
 
+#frameActiveGoals, #frameCompletionRate {
+    background-color: transparent;
+    border: 1px solid #D1D5DB;
+    border-radius: 4px;
+}
 
-</string>
+#lblActiveGoalsText, #lblCompletionRateText {
+    color: #6B7280;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+#lblActiveGoalsValue, #lblCompletionRateValue {
+    color: #1558A8;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#formFrame {
+    background-color: #F8FAFC; 
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+}
+
+#formFrame QLabel {
+    color: #6B7280;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+#formFrame QLineEdit, #formFrame QComboBox {
+    background-color: #FFFFFF;
+    border: 1px solid #D1D5DB;
+    border-radius: 4px;
+    padding: 8px 12px;
+    color: #4B5563;
+    font-size: 13px;
+}
+
+#btnDaily, #btnWeekly, #btnQuarterly {
+    background-color: #FFFFFF;
+    border: 1px solid #D1D5DB;
+    border-radius: 4px;
+    padding: 8px 15px;
+    color: #4B5563;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+#btnDaily:checked, #btnWeekly:checked, #btnQuarterly:checked {
+    background-color: #0A3D91; 
+    color: #FFFFFF;
+    border: 1px solid #0A3D91;
+}
+
+
+#comboCategory::drop-down {
+    border: none;
+    width: 0px;
+}
+
+#comboCategory::down-arrow {
+    image: none;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QWidget" name="sidebarWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>9</y>
+      <width>261</width>
+      <height>682</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>261</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>250</width>
+      <height>16777215</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
     </property>
     <widget class="QLabel" name="appNameLabel">
      <property name="geometry">
@@ -145,7 +211,7 @@ QPushButton#goalsButton {
        <x>41</x>
        <y>51</y>
        <width>179</width>
-       <height>521</height>
+       <height>571</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -277,155 +343,73 @@ QPushButton#goalsButton {
      </layout>
     </widget>
    </widget>
-   <widget class="QWidget" name="headerWidget" native="true">
+   <widget class="QFrame" name="mainContentWidget">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>0</y>
-      <width>961</width>
-      <height>71</height>
+      <x>267</x>
+      <y>9</y>
+      <width>1211</width>
+      <height>682</height>
      </rect>
     </property>
-    <property name="maximumSize">
-     <size>
-      <width>16777215</width>
-      <height>100</height>
-     </size>
-    </property>
     <property name="styleSheet">
-     <string notr="true"> #headerWidget  {
-background-color: #FFFFFF;
-}
-#headerWidget QPushButton {
-    background-color: transparent;
-    border: none;
-    color: #8C98A4;
-    font-size: 14px;
-    font-weight: bold;
-    padding: 5px 10px;
-}
-
-#headerWidget QPushButton:hover {
-    color: #1558A8;
-}
-
-#navOverviewButton {
-    color: #1558A8 !important;
-    border-bottom: 3px solid #1558A8;
-    border-radius: 0px;
-}
-
-#searchLineEdit {
-    background-color: #FFFFFF;
-    color: #333333;
-    border: 1px solid #EAEAEA;
-    border-radius: 18px;
-    padding: 8px 15px;
-    font-size: 13px;
-    min-width: 200px;
-}
-QLabel#executiveDashboardLabel {
-    color: #1558A8;
-    font-size: 16px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-
-</string>
+     <string notr="true">background-color: #f4f6f8;</string>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_3">
-     <property name="spacing">
-      <number>20</number>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QFrame" name="headerWidget">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1011</width>
+       <height>61</height>
+      </rect>
      </property>
-     <property name="leftMargin">
-      <number>15</number>
+     <property name="styleSheet">
+      <string notr="true"/>
      </property>
-     <property name="topMargin">
-      <number>10</number>
+     <property name="frameShape">
+      <enum>QFrame::Shape::StyledPanel</enum>
      </property>
-     <property name="rightMargin">
-      <number>15</number>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Raised</enum>
      </property>
-     <property name="bottomMargin">
-      <number>10</number>
-     </property>
-     <item>
-      <widget class="QPushButton" name="navOverviewButton">
-       <property name="minimumSize">
-        <size>
-         <width>100</width>
-         <height>40</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Overview</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="reportsTabButton">
-       <property name="minimumSize">
-        <size>
-         <width>100</width>
-         <height>40</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Goals</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="inventoryTabButton">
-       <property name="minimumSize">
-        <size>
-         <width>100</width>
-         <height>40</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Reports</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer">
-       <property name="orientation">
-        <enum>Qt::Orientation::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>13</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="searchLineEdit">
-       <property name="minimumSize">
-        <size>
-         <width>232</width>
-         <height>40</height>
-        </size>
-       </property>
-       <property name="placeholderText">
-        <string>Search metrics...</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="syncDataButton">
-       <property name="minimumSize">
-        <size>
-         <width>120</width>
-         <height>40</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">#syncDataButton {
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="lblHeaderTitle">
+        <property name="text">
+         <string>Executive Goal Planner</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>413</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="syncDataButton">
+        <property name="minimumSize">
+         <size>
+          <width>120</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#syncDataButton {
     background-color: #1558A8 !important; 
     color: #FFFFFF !important;             
     font-weight: bold;
@@ -439,110 +423,347 @@ QLabel#executiveDashboardLabel {
     background-color: #0E417F !important;
 }
 </string>
-       </property>
-       <property name="text">
-        <string>Sync Data</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="bellButton">
-       <property name="text">
-        <string/>
-       </property>
-       <property name="icon">
-        <iconset>
-         <normaloff>icons/notifications_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</normaloff>icons/notifications_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>24</width>
-         <height>24</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="profileButton">
-       <property name="text">
-        <string/>
-       </property>
-       <property name="icon">
-        <iconset>
-         <normaloff>icons/account_circle_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</normaloff>icons/account_circle_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>24</width>
-         <height>24</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QFrame" name="titleFrame">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>70</y>
-      <width>951</width>
-      <height>80</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">/* 1. Title Frame ka apna background White karein */
-#titleFrame {
-    background-color: #FFFFFF; 
+        </property>
+        <property name="text">
+         <string>Sync Data</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="bellButton">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>icons/notifications_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</normaloff>icons/notifications_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="profileButton">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>icons/account_circle_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</normaloff>icons/account_circle_24dp_000000_FILL0_wght400_GRAD0_opsz24.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QFrame" name="frameActiveGoals">
+     <property name="geometry">
+      <rect>
+       <x>670</x>
+       <y>70</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Raised</enum>
+     </property>
+     <widget class="QLabel" name="lblActiveGoalsText">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>ACTIVE GOALS</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblActiveGoalsValue">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>10</y>
+        <width>31</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>04</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="frameCompletionRate">
+     <property name="geometry">
+      <rect>
+       <x>810</x>
+       <y>70</y>
+       <width>181</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Raised</enum>
+     </property>
+     <widget class="QLabel" name="lblCompletionRateText">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>121</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>COMPLETION RATE</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblCompletionRateValue">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>10</y>
+        <width>41</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>78%</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QScrollArea" name="scrollAreaGoals">
+     <property name="geometry">
+      <rect>
+       <x>39</x>
+       <y>130</y>
+       <width>491</width>
+       <height>461</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::NoFrame</enum>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>491</width>
+        <height>461</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="formFrame">
+     <property name="geometry">
+      <rect>
+       <x>630</x>
+       <y>130</y>
+       <width>380</width>
+       <height>531</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>380</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>30</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="spacing">
+       <number>15</number>
+      </property>
+      <property name="leftMargin">
+       <number>25</number>
+      </property>
+      <property name="topMargin">
+       <number>25</number>
+      </property>
+      <property name="rightMargin">
+       <number>25</number>
+      </property>
+      <property name="bottomMargin">
+       <number>25</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="lblFormTitle">
+        <property name="styleSheet">
+         <string notr="true">/* Form Main Title */
+#lblFormTitle {
+    color: #111827;
+    font-size: 22px;         /* Size thora bada kar diya */
+    font-weight: bold;       /* Sirf bold (approx 700), 900 nahi */
+    margin-bottom: 15px;     /* Neechay wali cheezon se thora faasla */
+}</string>
+        </property>
+        <property name="text">
+         <string>New Strategic Target</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>TARGET NAME</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="txtTargetName">
+        <property name="placeholderText">
+         <string>e.g. Metabolic Efficiency</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>METRIC CATEGORY</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboCategory"/>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>BASELINE</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>THRESHOLD</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLineEdit" name="txtBaseline">
+          <property name="placeholderText">
+           <string>0.0</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="txtThreshold"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>REPORTING FREQUENCY</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QPushButton" name="btnDaily">
+          <property name="styleSheet">
+           <string notr="true">#btnDaily, #btnDaily:checked {
+    background-color: #0A3D91;
+    color: #FFFFFF;
+    border: 1px solid #0A3D91;
+}</string>
+          </property>
+          <property name="text">
+           <string>DAILY</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnWeekly">
+          <property name="text">
+           <string>WEEKLY</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnQuarterly">
+          <property name="text">
+           <string>QUARTERLY</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnInitializeTarget">
+        <property name="styleSheet">
+         <string notr="true">/* MAIN SUBMIT BUTTON (INITIALIZE TARGET) */
+#formFrame #btnInitializeTarget {
+    background-color: #1C1C1C; /* Figma wala almost black */
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    padding: 14px;
+    margin-top: 10px;
+    border-radius: 4px;
     border: none;
 }
 
-/* 2. Main Title (Executive Goal Planner) ka design */
-#titleFrame #lblMainTitle {
-    color: #0F172A;/* Dark Blue/Black */
-    font-size: 26px;
-    font-weight: 900; /* Extra Bold */
-    background-color: transparent; /* Taake peechay ka white frame nazar aaye */
-}
-
-/* 3. Subtitle (Strategic health...) ka design */
-#titleFrame #lblSubTitle {
-    color: #64748B; /* Grey Color */
-    font-size: 14px;
-    background-color: transparent; /* Taake peechay ka white frame nazar aaye */
+#formFrame #btnInitializeTarget:hover {
+    background-color: #333333;
 }</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::Shape::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Shadow::Raised</enum>
-    </property>
-    <widget class="QLabel" name="lblMainTitle">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>10</y>
-       <width>311</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Executive Goal Planner</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="lblSubTitle">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>40</y>
-       <width>361</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Strategic health optimization and target management</string>
-     </property>
+        </property>
+        <property name="text">
+         <string>INITIALIZE TARGET</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
     </widget>
    </widget>
   </widget>
@@ -551,7 +772,7 @@ QLabel#executiveDashboardLabel {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1220</width>
+     <width>1487</width>
      <height>21</height>
     </rect>
    </property>

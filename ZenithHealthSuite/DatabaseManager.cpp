@@ -176,7 +176,7 @@ void DatabaseManager::createDashboardTables() {
         "goal_id INTEGER PRIMARY KEY AUTOINCREMENT,"
         "username TEXT,"
         "target_name TEXT,"
-        "categoy TEXT,"
+        "category TEXT,"
         "baseline REAL,"
         "threshold REAL,"
         "frequency TEXT)";

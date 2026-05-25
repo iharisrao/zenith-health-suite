@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GoalsCardClass</class>
+ <widget class="QWidget" name="GoalsCardClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>750</width>
+    <height>180</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>GoalsCard</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#cardFrame {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px; 
+}
+
+#lblTargetName {
+    color: #111827;
+    font-size: 16px;
+    font-weight: bold; 
+    border: none;
+}
+
+#lblTargetDetails {
+    color: #6B7280;
+    font-size: 12px;
+    border: none;
+    margin-top: 2px;
+}
+
+#lblCategory {
+    background-color: #F3F4F6;
+    color: #4B5563;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    padding: 5px 12px;
+    border-radius: 4px;
+    border: 1px solid #E5E7EB;
+}
+
+#lblCurrentStatus {
+    color: #4B5563;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    border: none;
+}
+
+#lblPercentage {
+    color: #1558A8;
+    font-size: 11px;
+    font-weight: 900;
+    border: none;
+}
+
+#progressBar {
+    background-color: #E2E8F0; 
+    border: none;
+    border-radius: 3px;
+    height: 6px; 
+    text-align: right; 
+    color: transparent; 
+}
+
+#progressBar::chunk {
+    background-color: #1558A8; 
+    border-radius: 3px;
+}
+
+#btnAction {
+    color: #1558A8;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+}
+
+#btnAction:hover {
+    color: #0F172A; 
+}</string>
+  </property>
+  <widget class="QFrame" name="cardFrame">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>661</width>
+     <height>148</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Shadow::Raised</enum>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="lblTargetName">
+        <property name="text">
+         <string>Cardiovascular Endurance</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblCategory">
+        <property name="text">
+         <string>STRATEGIC</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QLabel" name="lblTargetDetails">
+      <property name="text">
+       <string>Target: 45 VO2 Max Level.</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="lblCurrentStatus">
+        <property name="text">
+         <string>CURRENT STATUS: 41 VO2 MAX.</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblPercentage">
+        <property name="text">
+         <string>82% ACHIEVED.</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QProgressBar" name="progressBar">
+      <property name="value">
+       <number>24</number>
+      </property>
+      <property name="textVisible">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnAction">
+        <property name="text">
+         <string>VIEW ANALYTICS</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

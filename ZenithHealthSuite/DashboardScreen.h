@@ -6,6 +6,7 @@
 #include "Activity.h"
 #include "History.h"
 #include"analytics.h"
+#include"Goals.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class DashboardScreen; }

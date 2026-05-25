@@ -51,7 +51,9 @@ void HistoryScreen::on_activityButton_clicked() {
 }
 
 void HistoryScreen::on_goalsButton_clicked() {
-    qDebug() << "Goals coming soon...";
+    Goals* goalsscreen = new Goals("iharisrao");
+    goalsscreen->show();
+    this->close();
 }
 
 void HistoryScreen::on_historyButton_clicked() {

@@ -312,7 +312,7 @@ QLabel#stressStatusLabel {
          <x>41</x>
          <y>51</y>
          <width>179</width>
-         <height>521</height>
+         <height>581</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_2">

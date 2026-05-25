@@ -41,7 +41,9 @@ void analytics::on_activityButton_clicked() {
 }
 
 void analytics::on_goalsButton_clicked() {
-    qDebug() << "Goals coming soon...";
+    Goals* goalsscreen = new Goals("iharisrao");
+    goalsscreen->show();
+    this->close();
 }
 
 void analytics::on_historyButton_clicked() {

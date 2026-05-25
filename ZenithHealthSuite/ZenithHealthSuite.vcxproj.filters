@@ -94,7 +94,7 @@
     <ClCompile Include="Goals.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GoalCard.cpp">
+    <ClCompile Include="GoalsCard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -128,7 +128,7 @@
     <QtMoc Include="Goals.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="GoalCard.h">
+    <QtMoc Include="GoalsCard.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -154,7 +154,7 @@
     <QtUic Include="Goals.ui">
       <Filter>Form Files</Filter>
     </QtUic>
-    <QtUic Include="GoalCard.ui">
+    <QtUic Include="GoalsCard.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
