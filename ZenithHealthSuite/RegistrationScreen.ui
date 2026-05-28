@@ -942,10 +942,38 @@ QPushButton#completeRegistrationButton:hover {
      </rect>
     </property>
     <property name="text">
-     <string>Please provide clinical precision in your data entry for optimal diagnostic accuracy</string>
+     <string>Set up your health profile to personalize your fitness journey</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnBackToLogin">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    border: 2px solid #1558A8;
+    background-color: transparent;
+    color: #1558A8;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 6px 15px;
+}
+QPushButton:hover {
+    background-color: #1558A8;
+    color: white;
+}</string>
+    </property>
+    <property name="text">
+     <string>← Back</string>
     </property>
    </widget>
   </widget>
@@ -954,7 +982,7 @@ QPushButton#completeRegistrationButton:hover {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1100</width>
+     <width>1109</width>
      <height>21</height>
     </rect>
    </property>

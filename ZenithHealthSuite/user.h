@@ -1,37 +1,62 @@
-#ifndef user_h          //it acts as bodyguard as prevents the computer from accidentally reading this blueprint twice and crashing the app
-#define user_h
+#ifndef USER_H
+#define USER_H
 
-// we use <qtstring> instead of <string> because we are using Qt framework for our application and it provides its own string class which is more suitable for our needs
 #include <QString>
 
 class user {
 private:
-	//All data is private so it cannot be accidentally modified or deleted by other parts of the application.
-	QString username;
-	QString password;
-	QString name;
-	QString	gender;
-	int age;
-	QString email;
-	QString contactNumber;
-	double weight;
-	double height;
-	QString medicalHistory;
+    QString username;
+    QString password;
+    QString name;
+    QString email;
+    QString phone;
+    double targetWeight;
+    double weight;
+    double height;
+    QString gender;
+    QString bloodGroup;
+    QString dob;
+    QString medicalHistory;
+    bool consent;
+
 public:
-	user(QString usr, QString pass, QString n, QString g, int a, QString e, QString c, double w, double h, QString med);
 
-	QString getUsername() const;
-	QString getPassword() const;
-	QString getName() const;
-	QString getGender() const;
-	int getAge() const;
-	QString getEmail() const;
-	QString getContactNumber() const;
-	double getWeight() const;
-	double getHeight() const;
-	QString getMedicalHistory() const;
+    user();
 
-	double calculateTargetBPM() const;
+    user(
+        QString usr,
+        QString pass,
+        QString n,
+        QString e,
+        QString p,
+        double tWeight,
+        double w,
+        double h,
+        QString g,
+        QString bg,
+        QString d,
+        QString med,
+        bool c
+    );
+
+    QString getUsername() const;
+    QString getPassword() const;
+    QString getName() const;
+    QString getEmail() const;
+    QString getPhone() const;
+    double getTargetWeight() const;
+    double getWeight() const;
+    double getHeight() const;
+    QString getGender() const;
+    QString getBloodGroup() const;
+    QString getDob() const;
+    QString getMedicalHistory() const;
+    bool getConsent() const;
+
+    void setWeight(double newWeight);
+    void setTargetWeight(double newTarget);
+
+    double calculateTargetBPM(int age) const;
 };
-// end of include guard
-#endif 
+
+#endif

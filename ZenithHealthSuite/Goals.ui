@@ -552,10 +552,10 @@ QPushButton#goalsButton {
     <widget class="QScrollArea" name="scrollAreaGoals">
      <property name="geometry">
       <rect>
-       <x>39</x>
+       <x>9</x>
        <y>130</y>
-       <width>491</width>
-       <height>461</height>
+       <width>611</width>
+       <height>491</height>
       </rect>
      </property>
      <property name="frameShape">
@@ -569,8 +569,8 @@ QPushButton#goalsButton {
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>491</width>
-        <height>461</height>
+        <width>611</width>
+        <height>491</height>
        </rect>
       </property>
      </widget>

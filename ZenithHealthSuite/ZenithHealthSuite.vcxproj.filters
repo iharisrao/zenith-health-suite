@@ -45,6 +45,9 @@
     <Filter Include="Analytics">
       <UniqueIdentifier>{a9ab6d61-8737-4559-9d46-aab2c204fc31}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Goals">
+      <UniqueIdentifier>{1a9c7168-e8f7-4558-9718-436c35e7e738}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="ZenithHealthSuite.qrc">
@@ -92,10 +95,10 @@
       <Filter>Analytics</Filter>
     </ClCompile>
     <ClCompile Include="Goals.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Goals</Filter>
     </ClCompile>
     <ClCompile Include="GoalsCard.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Goals</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -125,11 +128,11 @@
     <QtMoc Include="analytics.h">
       <Filter>Analytics</Filter>
     </QtMoc>
-    <QtMoc Include="Goals.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
     <QtMoc Include="GoalsCard.h">
-      <Filter>Header Files</Filter>
+      <Filter>Goals</Filter>
+    </QtMoc>
+    <QtMoc Include="Goals.h">
+      <Filter>Goals</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
@@ -152,10 +155,15 @@
       <Filter>Analytics</Filter>
     </QtUic>
     <QtUic Include="Goals.ui">
-      <Filter>Form Files</Filter>
+      <Filter>Goals</Filter>
     </QtUic>
     <QtUic Include="GoalsCard.ui">
-      <Filter>Form Files</Filter>
+      <Filter>Goals</Filter>
     </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="app.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

@@ -7,6 +7,7 @@
 #include <QtSql/QSqlError>
 #include <QDate>
 #include <QList>
+#include "user.h" 
 
 struct DailyMetrics {
     int caloriesConsumed;
@@ -46,31 +47,27 @@ public:
     DatabaseManager();
     ~DatabaseManager();
 
-    bool saveUserRegistration(
-        const QString& username, const QString& password, const QString& name,
-        const QString& email, const QString& contact, double targetWeight,
-        double weight, double height, const QString& gender,
-        const QString& bloodGroup, const QString& dob,
-        const QString& medicalHistory, bool consent
-    );
+    bool saveUserRegistration(const user& newUser);
 
+    user getUserDetails(const QString& username);
 
     void createDashboardTables();
     DailyMetrics getDailyMetrics(const QString& username, const QDate& date);
     QList<ActivityRecord> getActivityLog(const QString& username, const QDate& date);
 
-    bool saveActivityRecord(const QString& username, const QDate& date, const QString& exerciseName, int durationMins, int intensity, int caloriesBurned);
+    bool saveActivityRecord(const QString& username, const QDate& date, const QString& exerciseName, int durationMins, int intensity, int caloriesBurned, int steps);
 
-    bool saveVitalsRecord(const QString& username, const QDate& date, double weight, double bodyTemp, int heartRate, int bpSys, int bpDia, int bloodSugar, int stressLevel, int sleepHours);
+    bool saveVitalsRecord(const QString& username, const QDate& date, double weight, double bodyTemp, int heartRate, int bpSys, int bpDia, int bloodSugar, int stressLevel, double sleepHours);
 
-    bool saveNutritionRecord(const QString& username, const QDate& date, const QString& mealType, const QString& foodName, int calories, int protein, int carbs, int fats, int waterIntake, int caffeine);
+    bool saveNutritionRecord(const QString& username, const QDate& date, const QString& mealType, const QString& foodName, int calories, int protein, int carbs, int fats, double waterIntake, int caffeine);
 
     bool saveGoal(const QString& username, const QString& targetName, const QString& category, double baseline, double threshold, const QString& frequency);
     QList<GoalRecord> getGoals(const QString& username);
+
+    bool markDataAsSynced(const QString& username);
 
 private:
     QSqlDatabase db;
     bool setupDatabase();
 };
-
 #endif

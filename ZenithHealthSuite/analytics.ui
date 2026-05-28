@@ -157,7 +157,7 @@ QLabel#lblStressValue,
 QLabel#lblMetabolicValue {
     color: #0F172A !important; 
     font-size: 26px !important; 
-    font-weight: 900 !important; 
+    font-weight: bold !important; 
 }
 
 QLabel#lblBloodPressureSub, 
@@ -569,14 +569,17 @@ QPushButton#btn30Days {
          <widget class="QLabel" name="lblBloodPressureValue">
           <property name="geometry">
            <rect>
-            <x>60</x>
+            <x>50</x>
             <y>30</y>
-            <width>91</width>
+            <width>121</width>
             <height>20</height>
            </rect>
           </property>
           <property name="text">
            <string>118/74</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignCenter</set>
           </property>
          </widget>
          <widget class="QLabel" name="lblBloodPressureSub">
@@ -618,14 +621,17 @@ QPushButton#btn30Days {
          <widget class="QLabel" name="lblHydrationValue">
           <property name="geometry">
            <rect>
-            <x>80</x>
+            <x>40</x>
             <y>20</y>
-            <width>61</width>
+            <width>121</width>
             <height>21</height>
            </rect>
           </property>
           <property name="text">
            <string>2.4L</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignCenter</set>
           </property>
          </widget>
          <widget class="QLabel" name="lblHydrationSub">
@@ -654,7 +660,7 @@ QPushButton#btn30Days {
          <widget class="QLabel" name="lblStressTitle">
           <property name="geometry">
            <rect>
-            <x>60</x>
+            <x>70</x>
             <y>0</y>
             <width>81</width>
             <height>20</height>
@@ -667,20 +673,23 @@ QPushButton#btn30Days {
          <widget class="QLabel" name="lblStressValue">
           <property name="geometry">
            <rect>
-            <x>70</x>
+            <x>50</x>
             <y>20</y>
-            <width>51</width>
+            <width>121</width>
             <height>21</height>
            </rect>
           </property>
           <property name="text">
            <string>Low</string>
           </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignCenter</set>
+          </property>
          </widget>
          <widget class="QLabel" name="lblStressSub">
           <property name="geometry">
            <rect>
-            <x>60</x>
+            <x>80</x>
             <y>40</y>
             <width>81</width>
             <height>21</height>
@@ -716,14 +725,17 @@ QPushButton#btn30Days {
          <widget class="QLabel" name="lblMetabolicValue">
           <property name="geometry">
            <rect>
-            <x>70</x>
+            <x>40</x>
             <y>20</y>
-            <width>61</width>
+            <width>121</width>
             <height>21</height>
            </rect>
           </property>
           <property name="text">
            <string>1.8k</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignCenter</set>
           </property>
          </widget>
          <widget class="QLabel" name="lblMetabolicSub">

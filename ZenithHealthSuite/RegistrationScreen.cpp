@@ -1,21 +1,22 @@
 #include "RegistrationScreen.h"
-#include "ui_RegistrationScreen.h"  // it is secret file which is created by Qt when we use drag and drop canvas
-#include "DatabaseManager.h"        // Required to save to the database
-#include <QMessageBox>          // tool which is used to make pop up alerts and show on screen
+#include "ui_RegistrationScreen.h"
+#include "DatabaseManager.h"
+#include <QMessageBox>
 #include <QGraphicsDropShadowEffect>
+#include "DashboardScreen.h"
+#include "user.h"
+#include "login.h"
 
-// Constructor: We use 'new' here because ui is a pointer in the .h file
-RegistrationScreen::RegistrationScreen(QWidget  *parent) :
+RegistrationScreen::RegistrationScreen(QWidget* parent) :
     QMainWindow(parent),
     ui(new Ui::RegistrationScreenClass)
 {
-    ui->setupUi(this);    
-
+    ui->setupUi(this);
 
     QGraphicsDropShadowEffect* shadow1 = new QGraphicsDropShadowEffect(this);
     shadow1->setBlurRadius(30);
-    shadow1->setColor(QColor(0, 0, 0, 15)); 
-    shadow1->setOffset(0, 4); 
+    shadow1->setColor(QColor(0, 0, 0, 15));
+    shadow1->setOffset(0, 4);
     ui->card1->setGraphicsEffect(shadow1);
 
     QGraphicsDropShadowEffect* shadow2 = new QGraphicsDropShadowEffect(this);
@@ -31,7 +32,6 @@ RegistrationScreen::RegistrationScreen(QWidget  *parent) :
     ui->card3->setGraphicsEffect(shadow3);
 }
 
-// Destructor: We must delete the pointer to prevent memory leaks
 RegistrationScreen::~RegistrationScreen()
 {
     delete ui;
@@ -39,22 +39,20 @@ RegistrationScreen::~RegistrationScreen()
 
 void RegistrationScreen::on_completeRegistrationButton_clicked()
 {
-    // 1. Extract data - names must match Object Inspector
-    QString AppUsername = ui->usernameLineEdit->text();
+    QString AppUsername = ui->usernameLineEdit->text().trimmed();
     QString AppPassword = ui->passwordLineEdit->text();
-    QString UserName = ui->namelinedit->text();
-    QString UserEmail = ui->emailineEdit->text(); // Corrected from emailineEdit
-    QString UserPhone = ui->phoneLineEdit->text();
-
+    QString UserName = ui->namelinedit->text().trimmed();
+    QString UserEmail = ui->emailineEdit->text().trimmed();
+    QString UserPhone = ui->phoneLineEdit->text().trimmed();
 
     double UserTargetWeight = ui->targetWeightLineEdit->text().toDouble();
     double UserWeight = ui->weightLineEdit->text().toDouble();
     double UserHeight = ui->heightLineEdit->text().toDouble();
 
-    QString UserGender = ui->genderComboBox->currentText(); 
+    QString UserGender = ui->genderComboBox->currentText();
     QString UserBloodGroup = ui->bloodComboBox->currentText();
     QString UserDOB = ui->dateEdit->date().toString("dd/MM/yyyy");
-    QString UserMedicalHistory = ui->medicalhistrotyLineEdit->toPlainText(); 
+    QString UserMedicalHistory = ui->medicalhistrotyLineEdit->toPlainText().trimmed();
     bool hasconsent = ui->consentCheckBox->isChecked();
 
     if (UserName.isEmpty() || UserEmail.isEmpty() || UserPhone.isEmpty() || AppUsername.isEmpty() || AppPassword.isEmpty()) {
@@ -63,26 +61,35 @@ void RegistrationScreen::on_completeRegistrationButton_clicked()
     }
 
     if (!hasconsent) {
-        QMessageBox::warning(this, "Missing Consent", "Error: user must consent to regulations!");
+        QMessageBox::warning(this, "Missing Consent", "Error: You must consent to the terms of service to proceed.");
         return;
     }
 
-
-    
-    DatabaseManager dbmanager;
-    bool issaved = dbmanager.saveUserRegistration(
+    user newUser(
         AppUsername, AppPassword, UserName, UserEmail, UserPhone,
         UserTargetWeight, UserWeight, UserHeight,
         UserGender, UserBloodGroup, UserDOB,
         UserMedicalHistory, hasconsent
     );
-    
-	 // Placeholder for testing without database
+
+    DatabaseManager dbmanager;
+    bool issaved = dbmanager.saveUserRegistration(newUser);
+
     if (issaved) {
-        QMessageBox::information(this, "Success", "Data saved for " + UserName);
-        this->hide();
+        QMessageBox::information(this, "Success", "Registration Successful! Welcome, " + UserName + ".\nPlease login to continue.");
+
+        login* loginScreen = new login();
+        loginScreen->show();
+        this->close();
     }
     else {
-        QMessageBox::critical(this, "Error", "Database error occurred.");
+        QMessageBox::critical(this, "Error", "Registration failed. Username or Email might already exist.");
     }
+}
+
+void RegistrationScreen::on_btnBackToLogin_clicked()
+{
+    login* loginscreen = new login();
+    loginscreen->show();
+    this->close();
 }

@@ -25,10 +25,6 @@
   <property name="windowTitle">
    <string>DashboardScreen</string>
   </property>
-  <property name="windowIcon">
-   <iconset>
-    <normaloff>icons/dashboard_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png</normaloff>icons/dashboard_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.png</iconset>
-  </property>
   <property name="styleSheet">
    <string notr="true">#centralwidget {
     background-color: #F4F7FA;
@@ -551,19 +547,6 @@ QLabel#stressStatusLabel {
              </size>
             </property>
            </spacer>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="searchLineEdit">
-            <property name="minimumSize">
-             <size>
-              <width>232</width>
-              <height>40</height>
-             </size>
-            </property>
-            <property name="placeholderText">
-             <string>Search metrics...</string>
-            </property>
-           </widget>
           </item>
           <item>
            <widget class="QPushButton" name="syncDataButton">

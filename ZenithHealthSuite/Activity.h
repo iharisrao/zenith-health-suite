@@ -4,10 +4,14 @@
 #include <QMainWindow> 
 #include <QDate>
 #include <QDebug>
+#include <QTimer> 
+#include <QSqlQuery> 
 #include "DashboardScreen.h"
 #include "History.h"
-#include"analytics.h"
-#include"Goals.h"
+#include "analytics.h"
+#include "Goals.h"
+#include "DatabaseManager.h" 
+#include "user.h" 
 
 namespace Ui {
     class Activity;
@@ -18,11 +22,10 @@ class Activity : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit Activity(QWidget* parent = nullptr);
+    explicit Activity(const user& currentUserObj, QWidget* parent = nullptr);
     ~Activity();
 
 private slots:
- 
     void on_dashboardButton_clicked();
     void on_analyticsButton_clicked();
     void on_activityButton_clicked();
@@ -30,21 +33,22 @@ private slots:
     void on_historyButton_clicked();
     void on_settingsButton_clicked();
     void on_supportButton_clicked();
-
-
     void on_profileButton_clicked();
     void on_bellButton_clicked();
 
+    void on_btnSaveActivity_clicked();
+    void on_btnSaveVitals_clicked();
+    void on_btnSaveMeal_clicked();
 
-    void on_btnSaveActivity_clicked();   
-    void on_btnSaveVitals_clicked();  
-    void on_btnSaveMeal_clicked();    
+    void on_syncDataButton_clicked();
 
 private:
     Ui::Activity* ui;
+    DatabaseManager dbManager;
+    user loggedInUser;
 
     void setupCurrentDate();
     void loadIntegratedMetrics();
 };
 
-#endif 
+#endif

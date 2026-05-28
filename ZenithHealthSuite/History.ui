@@ -725,7 +725,7 @@ QLabel#lblShowingRecords {
            <item row="1" column="0">
             <widget class="QLabel" name="lblTableSubtitle">
              <property name="text">
-              <string>Comprehensive history of clinical and fitness data</string>
+              <string>Comprehensive history of fitness data</string>
              </property>
             </widget>
            </item>

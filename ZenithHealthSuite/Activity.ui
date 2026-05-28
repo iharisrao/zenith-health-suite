@@ -442,7 +442,7 @@ QFrame#lineClinical {
      <rect>
       <x>260</x>
       <y>0</y>
-      <width>1021</width>
+      <width>1011</width>
       <height>76</height>
      </rect>
     </property>
@@ -688,7 +688,11 @@ QFrame#lineClinical {
              </widget>
             </item>
             <item row="1" column="0">
-             <widget class="QSpinBox" name="spinDuration"/>
+             <widget class="QSpinBox" name="spinDuration">
+              <property name="maximum">
+               <number>999</number>
+              </property>
+             </widget>
             </item>
             <item row="0" column="0">
              <widget class="QLabel" name="lblDuration">
@@ -698,19 +702,48 @@ QFrame#lineClinical {
              </widget>
             </item>
             <item row="1" column="1">
-             <widget class="QSpinBox" name="spinIntensity"/>
+             <widget class="QSpinBox" name="spinIntensity">
+              <property name="maximum">
+               <number>10</number>
+              </property>
+             </widget>
             </item>
            </layout>
           </item>
           <item>
-           <widget class="QLabel" name="lblCalories">
-            <property name="text">
-             <string>CALORIES BURNED (EST.)</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="lineCalories"/>
+           <layout class="QGridLayout" name="gridLayout_6">
+            <item row="0" column="1">
+             <widget class="QLabel" name="label_4">
+              <property name="text">
+               <string>STEP COUNT</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="lblCalories">
+              <property name="text">
+               <string>CALORIES BURNED (EST.)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLineEdit" name="lineCalories">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QSpinBox" name="spinSteps">
+              <property name="maximum">
+               <number>99999</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
          </layout>
         </widget>
@@ -876,7 +909,7 @@ QLabel#lblMacrosValue {
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QPushButton" name="btnSaveActivity">
         <property name="text">
          <string>SAVE</string>
         </property>
@@ -956,7 +989,11 @@ QLabel#lblMacrosValue {
              <item row="4" column="1">
               <layout class="QHBoxLayout" name="horizontalLayout_3">
                <item>
-                <widget class="QSpinBox" name="pinBPSys"/>
+                <widget class="QSpinBox" name="pinBPSys">
+                 <property name="maximum">
+                  <number>999</number>
+                 </property>
+                </widget>
                </item>
                <item>
                 <widget class="QLabel" name="label">
@@ -984,7 +1021,11 @@ QLabel#lblMacrosValue {
               </widget>
              </item>
              <item row="6" column="1">
-              <widget class="QSpinBox" name="spinStress"/>
+              <widget class="QSpinBox" name="spinStress">
+               <property name="maximum">
+                <number>10</number>
+               </property>
+              </widget>
              </item>
              <item row="7" column="0">
               <widget class="QLabel" name="label_3">
@@ -997,7 +1038,11 @@ QLabel#lblMacrosValue {
               <widget class="QDoubleSpinBox" name="spinWeight"/>
              </item>
              <item row="4" column="0">
-              <widget class="QSpinBox" name="spinHeartRate"/>
+              <widget class="QSpinBox" name="spinHeartRate">
+               <property name="maximum">
+                <number>999</number>
+               </property>
+              </widget>
              </item>
              <item row="3" column="0">
               <widget class="QLabel" name="lblHeartRate">
@@ -1028,10 +1073,14 @@ QLabel#lblMacrosValue {
               </widget>
              </item>
              <item row="6" column="0">
-              <widget class="QSpinBox" name="spinSugar"/>
+              <widget class="QSpinBox" name="spinSugar">
+               <property name="maximum">
+                <number>999</number>
+               </property>
+              </widget>
              </item>
              <item row="8" column="0">
-              <widget class="QSpinBox" name="sleepSpinBox"/>
+              <widget class="QDoubleSpinBox" name="sleepDoubleSpinBox"/>
              </item>
             </layout>
            </widget>
@@ -1189,7 +1238,11 @@ QLabel#lblMacrosValue {
            </widget>
           </item>
           <item row="4" column="0">
-           <widget class="QSpinBox" name="spinCals"/>
+           <widget class="QSpinBox" name="spinCals">
+            <property name="maximum">
+             <number>999</number>
+            </property>
+           </widget>
           </item>
           <item row="5" column="1">
            <widget class="QLabel" name="lblFats">
@@ -1256,19 +1309,28 @@ QLabel#lblMacrosValue {
            </widget>
           </item>
           <item row="6" column="0">
-           <widget class="QSpinBox" name="spinCarbs"/>
+           <widget class="QSpinBox" name="spinCarbs">
+            <property name="maximum">
+             <number>999</number>
+            </property>
+           </widget>
           </item>
           <item row="2" column="1">
            <widget class="QLineEdit" name="lineFoodName"/>
           </item>
           <item row="4" column="1">
-           <widget class="QSpinBox" name="spinProtein"/>
+           <widget class="QSpinBox" name="spinProtein">
+            <property name="maximum">
+             <number>999</number>
+            </property>
+           </widget>
           </item>
           <item row="6" column="1">
-           <widget class="QSpinBox" name="spinFats"/>
-          </item>
-          <item row="8" column="0">
-           <widget class="QSpinBox" name="spinWater"/>
+           <widget class="QSpinBox" name="spinFats">
+            <property name="maximum">
+             <number>999</number>
+            </property>
+           </widget>
           </item>
           <item row="7" column="0">
            <widget class="QLabel" name="lblWater">
@@ -1314,6 +1376,9 @@ QLabel#lblMacrosValue {
              <string>Log Nutrition</string>
             </property>
            </widget>
+          </item>
+          <item row="8" column="0">
+           <widget class="QDoubleSpinBox" name="spinWater"/>
           </item>
          </layout>
         </item>

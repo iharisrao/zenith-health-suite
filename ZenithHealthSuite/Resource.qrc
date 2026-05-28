@@ -5,4 +5,7 @@
         <file>icons/account.png</file>
         <file>icons/lock.png</file>
     </qresource>
+    <qresource prefix="/icons">
+        <file>icons/app_icon.ico</file>
+    </qresource>
 </RCC>

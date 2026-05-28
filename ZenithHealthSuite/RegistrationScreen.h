@@ -2,10 +2,12 @@
 #ifndef RegistrationScreen_h
 #define RegistrationScreen_h
 
-#include<QMainWindow>
-namespace Ui {                              // telling c++ that there is registration.ui is available so dont worry about it
-	class RegistrationScreenClass;
+#include <QMainWindow>
+
+namespace Ui {                              
+    class RegistrationScreenClass;
 }
+
 class RegistrationScreen : public QMainWindow
 {
     Q_OBJECT
@@ -14,12 +16,12 @@ public:
     explicit RegistrationScreen(QWidget* parent = nullptr);
     ~RegistrationScreen();
 
-    
 private slots:
     void on_completeRegistrationButton_clicked();
+    void on_btnBackToLogin_clicked();
 
 private:
     Ui::RegistrationScreenClass* ui;
 };
 
-#endif         // RegistrationScreen_h
+#endif         

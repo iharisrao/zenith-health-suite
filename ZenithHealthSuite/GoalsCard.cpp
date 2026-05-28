@@ -1,34 +1,55 @@
 #include "GoalsCard.h"
-GoalsCard::GoalsCard(QWidget* parent)
-	: QWidget(parent)
-{
-	ui.setupUi(this);
-}
 
+GoalsCard::GoalsCard(QWidget* parent)
+    : QWidget(parent)
+{
+    ui.setupUi(this);
+}
 
 GoalsCard::~GoalsCard()
 {
-	// we dont need dlete ui bcz it is not  pointer
+    // we dont need delete ui bcz it is not pointer
 }
 
 void GoalsCard::setGoalData(const QString& targetName, const QString& category, double baseline, double threshold)
 {
+    ui.lblTargetName->setText(targetName);
+    ui.lblCategory->setText(category);
+    ui.lblTargetDetails->setText("Target: " + QString::number(threshold));
 
-	ui.lblTargetName->setText(targetName);
-	ui.lblCategory->setText(category.toUpper());
+    ui.lblCurrentStatus->setText("CURRENT STATUS: " + QString::number(baseline));
 
-	ui.lblTargetDetails->setText("Target: " + QString::number(threshold));
-	ui.lblCurrentStatus->setText("CURRENT STATUS: " + QString::number(baseline));
+    double percentage = 0;
+    if (threshold > 0) {
+        if (threshold > baseline) {
+            percentage = (baseline / threshold) * 100.0;
+        }
+        else {
+            if (baseline > threshold) {
+                percentage = (threshold / baseline) * 100.0;
+            }
+            else {
+                percentage = 100.0;
+            }
+        }
+    }
 
-	int percentage = 0;
-	if (threshold > 0) {
-		percentage = (baseline / threshold) * 100;
-	}
+    if (percentage > 100) percentage = 100;
+    if (percentage < 0) percentage = 0;
 
-	if (percentage > 100) {
-		percentage = 100;
-	}
+    ui.progressBar->setValue(static_cast<int>(percentage));
+    ui.progressBar->setMinimumHeight(10);
+    ui.lblPercentage->setText(QString::number(static_cast<int>(percentage)) + "% ACHIEVED.");
 
-	ui.progressBar->setValue(percentage);
-	ui.lblPercentage->setText(QString::number(percentage) + "% ACHIEVED");
+    ui.lblTargetName->setStyleSheet("background: transparent; font-size: 15px; font-weight: 900; color: #0F172A;");
+    ui.lblCategory->setStyleSheet("background: transparent; font-size: 11px; font-weight: bold; color: #64748B;");
+    ui.lblTargetDetails->setStyleSheet("background: transparent; font-size: 12px; color: #8C98A4;");
+    ui.lblCurrentStatus->setStyleSheet("background: transparent; font-size: 11px; font-weight: bold; color: #0F172A;");
+
+    ui.lblPercentage->setStyleSheet("background: transparent; font-size: 12px; font-weight: bold; color: #1558A8;");
+
+    ui.progressBar->setStyleSheet(
+        "QProgressBar { border: none; border-radius: 5px; background-color: #E2E8F0; color: transparent; }"
+        "QProgressBar::chunk { background-color: #1558A8; border-radius: 5px; }"
+    );
 }

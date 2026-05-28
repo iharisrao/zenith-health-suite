@@ -11,11 +11,14 @@
 #include <QtCharts/QBarCategoryAxis>
 #include <QtCharts/QValueAxis>
 #include <QTableWidgetItem>
-
+#include <QTimer>       
+#include <QMessageBox>  
 #include "DashboardScreen.h"
 #include "Activity.h"
 #include "History.h"
-#include"Goals.h"
+#include "Goals.h"
+#include "DatabaseManager.h"
+#include "user.h" 
 
 namespace Ui {
     class analyticsClass;
@@ -26,7 +29,7 @@ class analytics : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit analytics(QWidget* parent = nullptr);
+    explicit analytics(const user& currentUserObj, QWidget* parent = nullptr);
     ~analytics();
 
 private slots:
@@ -37,18 +40,28 @@ private slots:
     void on_historyButton_clicked();
     void on_settingsButton_clicked();
     void on_supportButton_clicked();
-
-
     void on_profileButton_clicked();
     void on_bellButton_clicked();
 
+    void on_btn7Days_clicked();
+    void on_btn30Days_clicked();
+    void on_syncDataButton_clicked();
+
 private:
     Ui::analyticsClass* ui;
+    DatabaseManager dbManager;
+    user loggedInUser;
 
-    void setupHeartRateChart();
-    void setupSleepChart();
-    void setupBarChart();
-    void populateTable();
+    int currentDays;
+    void updateButtonStyles();
+
+    // 💡 UPDATED: Ab yeh functions parameters accept karenge
+    void setupHeartRateChart(int baseHR);
+    void setupSleepChart(int sleepPercentage);
+    void setupBarChart(QList<int> weeklyData, QStringList daysList);
+
+    void populateTable(const DailyMetrics& metrics);
+    void loadRealData();
 };
 
 #endif
