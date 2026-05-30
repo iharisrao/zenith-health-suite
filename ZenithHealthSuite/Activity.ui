@@ -585,7 +585,7 @@ QFrame#lineClinical {
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -1240,7 +1240,7 @@ QLabel#lblMacrosValue {
           <item row="4" column="0">
            <widget class="QSpinBox" name="spinCals">
             <property name="maximum">
-             <number>999</number>
+             <number>9999</number>
             </property>
            </widget>
           </item>
