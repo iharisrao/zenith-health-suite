@@ -18,6 +18,39 @@ HistoryScreen::HistoryScreen(const user& currentUserObj, QWidget* parent) :
     totalPages(1)
 {
     ui->setupUi(this);
+
+    ui->tableHistory->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    ui->tableHistory->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
+    ui->tableHistory->setStyleSheet(R"(
+        QTableWidget { 
+            border: none; 
+            background-color: transparent; 
+        }
+        QScrollBar:vertical { 
+            border: none; 
+            background: #F1F5F9; 
+            width: 8px; 
+            border-radius: 4px; 
+            margin: 0px 0px 0px 0px; 
+        }
+        QScrollBar::handle:vertical { 
+            background: #1558A8; 
+            min-height: 30px; 
+            border-radius: 4px; 
+        }
+        QScrollBar::handle:vertical:hover { 
+            background: #0E3D73; 
+        }
+        QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical { 
+            border: none; 
+            background: none; 
+            height: 0px; 
+        }
+        QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical { 
+            background: none; 
+        }
+    )");
     this->showMaximized();
     this->setWindowTitle("ZenithHealthSuite - History [" + loggedInUser.getName() + "]");
 

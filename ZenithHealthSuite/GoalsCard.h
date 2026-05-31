@@ -5,13 +5,12 @@
 
 class GoalsCard : public QWidget
 {
-	Q_OBJECT
-
+    Q_OBJECT
 public:
-	GoalsCard(QWidget* parent = nullptr);
-	~GoalsCard();
-	void setGoalData(const QString& targetName, const QString& category, double baseline, double threshold);
+    GoalsCard(QWidget* parent = nullptr);
+    ~GoalsCard();
+    void setGoalData(const QString& targetName, const QString& category, double originalBaseline, double currentStatus, double threshold);
 
 private:
-	Ui::GoalsCardClass ui;
+    Ui::GoalsCardClass ui;
 };

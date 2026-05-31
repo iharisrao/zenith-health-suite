@@ -84,13 +84,12 @@ void DashboardScreen::on_supportButton_clicked() { qDebug() << "Support coming s
 void DashboardScreen::on_profileButton_clicked() { qDebug() << "User profile..."; }
 void DashboardScreen::on_bellButton_clicked() { qDebug() << "No new notifications."; }
 
-
 void DashboardScreen::updateDashboardMetrics(int caloriesConsumed, int caloriesGoal, int steps, int activeEnergy)
 {
-    if (caloriesGoal == 0) caloriesGoal = 1; 
+    if (caloriesGoal == 0) caloriesGoal = 1;
 
     int caloriesPercentage = (static_cast<double>(caloriesConsumed) / caloriesGoal) * 100;
-    if (caloriesPercentage > 100) caloriesPercentage = 100; 
+    if (caloriesPercentage > 100) caloriesPercentage = 100;
 
     int stepsPercentage = (static_cast<double>(steps) / 10000.0) * 100;
     if (stepsPercentage > 100) stepsPercentage = 100;
@@ -133,7 +132,7 @@ void DashboardScreen::setupHeartRateChart()
     }
 
     int xPoint = 0;
-    int lastKnownHR = 70; 
+    int lastKnownHR = 70;
     for (auto it = chartData.begin(); it != chartData.end(); ++it) {
         if (it.value() > 0) {
             lastKnownHR = it.value();
@@ -292,7 +291,7 @@ void DashboardScreen::loadRealData()
     ui->stressStatusLabel->setText("STRESS: " + stressStatus.toUpper());
 
     if (hydroStatus.contains("MODERATE") || hydroStatus.contains("LOW")) ui->hydrationStatusLabel->setStyleSheet("color: #E65100;");
-    else ui->hydrationStatusLabel->setStyleSheet("color: #2E7D32;"); 
+    else ui->hydrationStatusLabel->setStyleSheet("color: #2E7D32;");
 
     if (recStatus == "LOW") ui->recoveryStatusLabel->setStyleSheet("color: #D32F2F;");
     else if (recStatus == "OPTIMAL") ui->recoveryStatusLabel->setStyleSheet("color: #2E7D32;");
@@ -300,17 +299,72 @@ void DashboardScreen::loadRealData()
 
     if (stressStatus == "HIGH") ui->stressStatusLabel->setStyleSheet("color: #D32F2F;");
     else if (stressStatus == "MODERATE") ui->stressStatusLabel->setStyleSheet("color: #E65100;");
-    else ui->stressStatusLabel->setStyleSheet("color: #2E7D32;"); 
+    else ui->stressStatusLabel->setStyleSheet("color: #2E7D32;");
 
-    QList<ActivityRecord> logs = dbManager.getActivityLog(loggedInUser.getUsername(), currentDate);
+    QList<ActivityRecord> logs;
+    QSqlQuery logQuery;
+
+    logQuery.prepare("SELECT exercise_name, duration_mins, intensity, calories_burned, sync_status "
+        "FROM ActivityLog WHERE username = :usr ORDER BY record_date DESC LIMIT 5");
+    logQuery.bindValue(":usr", loggedInUser.getUsername());
+
+    if (logQuery.exec()) {
+        while (logQuery.next()) {
+            ActivityRecord record;
+            record.exerciseName = logQuery.value("exercise_name").toString();
+            record.durationMins = logQuery.value("duration_mins").toInt();
+            record.intensity = logQuery.value("intensity").toString();
+            record.caloriesBurned = logQuery.value("calories_burned").toInt();
+            record.syncStatus = logQuery.value("sync_status").toString();
+            logs.append(record);
+        }
+    }
 
     if (ui->activityTable) {
+        ui->activityTable->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+        ui->activityTable->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        ui->activityTable->setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
+
+        ui->activityTable->setStyleSheet(R"(
+            QTableWidget { 
+                border: none; 
+                background-color: transparent; 
+            }
+            QScrollBar:vertical { 
+                border: none; 
+                background: #F1F5F9; 
+                width: 8px; 
+                border-radius: 4px; 
+                margin: 0px; 
+            }
+            QScrollBar::handle:vertical { 
+                background: #1558A8; 
+                min-height: 20px; 
+                border-radius: 4px; 
+            }
+            QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical { 
+                border: none; 
+                background: none; 
+                height: 0px; 
+            }
+            QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical { 
+                background: none; 
+            }
+        )");
+        ui->activityTable->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+        ui->activityTable->verticalHeader()->setDefaultSectionSize(35);
+        ui->activityTable->verticalHeader()->setVisible(false);
         ui->activityTable->setRowCount(logs.size());
         for (int i = 0; i < logs.size(); ++i) {
             QTableWidgetItem* exerciseItem = new QTableWidgetItem(logs[i].exerciseName);
             QTableWidgetItem* durationItem = new QTableWidgetItem(QString::number(logs[i].durationMins) + " mins");
             QTableWidgetItem* intensityItem = new QTableWidgetItem(logs[i].intensity);
             QTableWidgetItem* caloriesItem = new QTableWidgetItem(QString::number(logs[i].caloriesBurned) + " kcal");
+
+            exerciseItem->setTextAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+            durationItem->setTextAlignment(Qt::AlignCenter);
+            intensityItem->setTextAlignment(Qt::AlignCenter);
+            caloriesItem->setTextAlignment(Qt::AlignCenter);
 
             ui->activityTable->setItem(i, 0, exerciseItem);
             ui->activityTable->setItem(i, 1, durationItem);

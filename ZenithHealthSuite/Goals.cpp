@@ -167,7 +167,7 @@ void Goals::loadGoalsFromDatabase()
 
         GoalsCard* card = new GoalsCard(ui.scrollAreaGoals->widget());
 
-        card->setGoalData(record.targetName, record.category, currentDynamicStatus, record.threshold);
+        card->setGoalData(record.targetName, record.category, record.baseline, currentDynamicStatus, record.threshold);
 
         card->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Fixed);
         card->setMinimumHeight(120);
@@ -175,16 +175,14 @@ void Goals::loadGoalsFromDatabase()
         cardsLayout->addWidget(card);
         card->show();
 
-        if (record.threshold > 0) {
+        if (record.threshold != record.baseline) { 
+
             double pct = 0;
-            if (record.threshold > record.baseline) {
-                pct = (currentDynamicStatus / record.threshold) * 100.0;
-            }
-            else {
-                pct = (record.threshold / currentDynamicStatus) * 100.0;
-            }
-            if (pct > 100) pct = 100;
-            if (pct < 0) pct = 0;
+            pct = ((currentDynamicStatus - record.baseline) / (record.threshold - record.baseline)) * 100.0;
+
+            if (pct > 100.0) pct = 100.0;
+            if (pct < 0.0) pct = 0.0;
+
             totalPercentage += pct;
         }
     }

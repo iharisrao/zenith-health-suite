@@ -8,34 +8,23 @@ GoalsCard::GoalsCard(QWidget* parent)
 
 GoalsCard::~GoalsCard()
 {
-    // we dont need delete ui bcz it is not pointer
 }
 
-void GoalsCard::setGoalData(const QString& targetName, const QString& category, double baseline, double threshold)
+void GoalsCard::setGoalData(const QString& targetName, const QString& category, double originalBaseline, double currentStatus, double threshold)
 {
     ui.lblTargetName->setText(targetName);
     ui.lblCategory->setText(category);
     ui.lblTargetDetails->setText("Target: " + QString::number(threshold));
 
-    ui.lblCurrentStatus->setText("CURRENT STATUS: " + QString::number(baseline));
+    ui.lblCurrentStatus->setText("CURRENT STATUS: " + QString::number(currentStatus));
 
-    double percentage = 0;
-    if (threshold > 0) {
-        if (threshold > baseline) {
-            percentage = (baseline / threshold) * 100.0;
-        }
-        else {
-            if (baseline > threshold) {
-                percentage = (threshold / baseline) * 100.0;
-            }
-            else {
-                percentage = 100.0;
-            }
-        }
+    double percentage = 0.0;
+    if (threshold != originalBaseline) {
+        percentage = ((currentStatus - originalBaseline) / (threshold - originalBaseline)) * 100.0;
     }
 
-    if (percentage > 100) percentage = 100;
-    if (percentage < 0) percentage = 0;
+    if (percentage > 100.0) percentage = 100.0;
+    if (percentage < 0.0) percentage = 0.0;
 
     ui.progressBar->setValue(static_cast<int>(percentage));
     ui.progressBar->setMinimumHeight(10);
