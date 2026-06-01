@@ -305,8 +305,9 @@ void DashboardScreen::loadRealData()
     QSqlQuery logQuery;
 
     logQuery.prepare("SELECT exercise_name, duration_mins, intensity, calories_burned, sync_status "
-        "FROM ActivityLog WHERE username = :usr ORDER BY record_date DESC LIMIT 5");
+        "FROM ActivityLog WHERE username = :usr AND record_date = :date ORDER BY activity_id DESC");
     logQuery.bindValue(":usr", loggedInUser.getUsername());
+    logQuery.bindValue(":date", currentDate.toString("yyyy-MM-dd"));
 
     if (logQuery.exec()) {
         while (logQuery.next()) {
